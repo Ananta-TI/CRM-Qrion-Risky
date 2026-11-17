@@ -1,0 +1,82 @@
+{
+ "risky": {
+  "n_risky_1": {
+   "teks": "Prioritas minggu ini\n- Tutup tiket Critical\n- Review anggaran server\n- Follow up SMA Plus Mandiri",
+   "dibuat": "@t-1d@03:00",
+   "diubah": "@t-1d@03:00"
+  },
+  "n_risky_2": {
+   "teks": "Ide fitur\nNotifikasi WhatsApp otomatis saat tiket berubah status",
+   "dibuat": "@t-6d@03:00",
+   "diubah": "@t-6d@03:00"
+  }
+ },
+ "ceo": {
+  "n_ceo_1": {
+   "teks": "Target kuartal\nMRR Rp 20 jt dan 12 sekolah mitra aktif",
+   "dibuat": "@t-3d@03:00",
+   "diubah": "@t-3d@03:00"
+  }
+ },
+ "pm": {
+  "n_pm_1": {
+   "teks": "Rapat mingguan\nBahas progres Implementasi Oncard dan Ontime SMK",
+   "dibuat": "@t-1d@03:00",
+   "diubah": "@t-1d@03:00"
+  },
+  "n_pm_2": {
+   "teks": "Risiko\nAnggaran server belum disetujui",
+   "dibuat": "@t-4d@03:00",
+   "diubah": "@t-4d@03:00"
+  }
+ },
+ "cs": {
+  "n_cs_1": {
+   "teks": "Skrip balasan cepat\nTerima kasih sudah menghubungi QRION, tiket Anda sudah kami catat.",
+   "dibuat": "@t-2d@03:00",
+   "diubah": "@t-2d@03:00"
+  }
+ },
+ "pindy": {
+  "n_pindy_1": {
+   "teks": "Kunjungan\nSMA Harapan: bahas perpanjangan kontrak, bawa penawaran",
+   "dibuat": "@t-2d@03:00",
+   "diubah": "@t-2d@03:00"
+  }
+ },
+ "dila": {
+  "n_dila_1": {
+   "teks": "Follow up\nSD Cahaya Bangsa menunggu jadwal pelatihan",
+   "dibuat": "@t-1d@03:00",
+   "diubah": "@t-1d@03:00"
+  }
+ },
+ "nadia": {
+  "n_nadia_1": {
+   "teks": "Rencana\nDemo Qrion Jurnal ke Yayasan Nurul Ilmi",
+   "dibuat": "@t-2d@03:00",
+   "diubah": "@t-2d@03:00"
+  }
+ },
+ "ridho": {
+  "n_ridho_1": {
+   "teks": "Debug\nCek log gateway pembayaran untuk tiket top up",
+   "dibuat": "@t-1d@03:00",
+   "diubah": "@t-1d@03:00"
+  }
+ },
+ "randy": {
+  "n_randy_1": {
+   "teks": "Catatan\nImpor data siswa SD Cahaya perlu validasi NIS",
+   "dibuat": "@t-2d@03:00",
+   "diubah": "@t-2d@03:00"
+  }
+ },
+ "bima": {
+  "n_bima_1": {
+   "teks": "Todo\nSelesaikan ekspor Excel laporan harian",
+   "dibuat": "@t-1d@03:00",
+   "diubah": "@t-1d@03:00"
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "t1": {
+  "nama": "Template Surat Pemberitahuan",
+  "kode": "SPB",
+  "link": "",
+  "ket": "Contoh",
+  "menu": "surat",
+  "dibuat": "@t-60d@03:00",
+  "diubah": "@t-60d@03:00"
+ },
+ "t2": {
+  "nama": "Template Surat Undangan",
+  "kode": "UND",
+  "link": "",
+  "ket": "Undangan pelatihan atau rapat",
+  "menu": "surat",
+  "dibuat": "@t-55d@03:00",
+  "diubah": "@t-55d@03:00"
+ },
+ "t3": {
+  "nama": "Template Perjanjian Kerjasama",
+  "kode": "PKS",
+  "link": "",
+  "ket": "Draf standar PKS",
+  "menu": "mou",
+  "dibuat": "@t-50d@03:00",
+  "diubah": "@t-50d@03:00"
+ }
+}

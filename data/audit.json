@@ -1,0 +1,62 @@
+{
+ "a1": {
+  "t": "@t-1d@03:00",
+  "by": "Risky Antonio (@risky)",
+  "menu": "Mitra Sekolah",
+  "aksi": "AM diubah: SMA Harapan Nusantara"
+ },
+ "a2": {
+  "t": "@t-1d@03:00",
+  "by": "Sari Wulandari (@cs)",
+  "menu": "Isu",
+  "aksi": "Tiket dibuat: Server tidak bisa diakses"
+ },
+ "a3": {
+  "t": "@t-2d@03:00",
+  "by": "Ridho Pratama (@ridho)",
+  "menu": "Isu",
+  "aksi": "Status tiket diperbarui"
+ },
+ "a4": {
+  "t": "@t-3d@03:00",
+  "by": "Pindy Maharani (@pindy)",
+  "menu": "Pipeline Leads",
+  "aksi": "Dipindahkan ke Negosiasi"
+ },
+ "a5": {
+  "t": "@t-4d@03:00",
+  "by": "Hendra Saputra (@pm)",
+  "menu": "Project",
+  "aksi": "Status project diperbarui"
+ },
+ "a6": {
+  "t": "@t-5d@03:00",
+  "by": "Risky Antonio (@risky)",
+  "menu": "Pembayaran Mitra",
+  "aksi": "Pembayaran dicatat"
+ },
+ "a7": {
+  "t": "@t-6d@03:00",
+  "by": "Dewi Anggraini (@ceo)",
+  "menu": "Administrasi",
+  "aksi": "Nomor surat dibuat"
+ },
+ "a8": {
+  "t": "@t-8d@03:00",
+  "by": "Risky Antonio (@risky)",
+  "menu": "Pengaturan",
+  "aksi": "Akun @bima dibuat"
+ },
+ "a9": {
+  "t": "@t-9d@03:00",
+  "by": "Nadia Safitri (@nadia)",
+  "menu": "Mitra Sekolah",
+  "aksi": "Aktivitas ditambahkan"
+ },
+ "a10": {
+  "t": "@t-12d@03:00",
+  "by": "Risky Antonio (@risky)",
+  "menu": "Pengaturan",
+  "aksi": "Hak akses tersimpan"
+ }
+}

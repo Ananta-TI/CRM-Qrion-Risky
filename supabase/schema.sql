@@ -1,0 +1,1 @@
+-- Tidak dipakai lagi. Gunakan 1_struktur.sql lalu 2_data.sql (atau setup_all.sql).

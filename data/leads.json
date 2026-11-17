@@ -1,0 +1,269 @@
+{
+ "l1": {
+  "name": "SMP Tunas Harapan",
+  "stage": "proposal",
+  "estMrr": 2000000,
+  "source": "Daftar akun QMS",
+  "am": "Dila",
+  "city": "Siak",
+  "contact": "Bu Mega",
+  "phone": "0811111222",
+  "products": [
+   "p-a"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Bu Mega, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "nextDate": "@d+2",
+  "nextAction": "Kirim penawaran",
+  "closeDate": "@d+22"
+ },
+ "l2": {
+  "name": "SMA Plus Mandiri",
+  "stage": "demo",
+  "estMrr": 3200000,
+  "source": "Website (Live Preview)",
+  "am": "Pindy",
+  "city": "Pekanbaru",
+  "contact": "Pak Rudi",
+  "phone": "0812222333",
+  "products": [
+   "p-a",
+   "p-b"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Pak Rudi, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "nextDate": "@d+3",
+  "nextAction": "Jadwalkan demo Oncard",
+  "closeDate": "@d+23"
+ },
+ "l3": {
+  "name": "SD Negeri 12 Dumai",
+  "stage": "kontak",
+  "estMrr": 700000,
+  "source": "Chat WA QRION",
+  "am": "Dila",
+  "city": "Dumai",
+  "contact": "Bu Wati",
+  "phone": "0813333444",
+  "products": [
+   "p-a"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Bu Wati, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "nextDate": "@d+1",
+  "nextAction": "Kirim brosur",
+  "closeDate": "@d+21"
+ },
+ "l4": {
+  "name": "Yayasan Al-Hikmah",
+  "stage": "negosiasi",
+  "estMrr": 5200000,
+  "source": "Leads Offline",
+  "am": "Nadia",
+  "city": "Bengkalis",
+  "contact": "Ustaz Farhan",
+  "phone": "0814444555",
+  "products": [
+   "p-a",
+   "p-b",
+   "p-c"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Ustaz Farhan, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "nextDate": "@d+4",
+  "nextAction": "Revisi harga paket",
+  "closeDate": "@d+24"
+ },
+ "l5": {
+  "name": "SMK Bina Karya",
+  "stage": "baru",
+  "estMrr": 1800000,
+  "source": "Website (Live Preview)",
+  "am": "Nadia",
+  "city": "Duri",
+  "contact": "Pak Edi",
+  "phone": "0815555666",
+  "products": [
+   "p-a"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Pak Edi, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "nextDate": "@d+2",
+  "nextAction": "Telepon pertama",
+  "closeDate": "@d+22"
+ },
+ "l6": {
+  "name": "SMP Islam Ar-Raudah",
+  "stage": "menang",
+  "estMrr": 1500000,
+  "source": "Daftar akun QMS",
+  "am": "Pindy",
+  "city": "Pekanbaru",
+  "contact": "Bu Nurul",
+  "phone": "0816666777",
+  "products": [
+   "p-a",
+   "p-d"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Bu Nurul, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   },
+   {
+    "at": "@t-3d@06:00",
+    "type": "Catatan",
+    "text": "Kontrak ditandatangani"
+   }
+  ]
+ },
+ "l7": {
+  "name": "SD Mutiara Bunda",
+  "stage": "kalah",
+  "estMrr": 900000,
+  "source": "Chat WA QRION",
+  "am": "Dila",
+  "city": "Dumai",
+  "contact": "Bu Reni",
+  "phone": "0817777888",
+  "products": [
+   "p-a"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Bu Reni, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "lostReason": "Memilih vendor lain dengan harga lebih murah"
+ },
+ "l8": {
+  "name": "SMA Taruna Bangsa",
+  "stage": "proposal",
+  "estMrr": 4100000,
+  "source": "Leads Offline",
+  "am": "Pindy",
+  "city": "Pekanbaru",
+  "contact": "Pak Wahyu",
+  "phone": "0818888999",
+  "products": [
+   "p-a",
+   "p-b"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Pak Wahyu, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "nextDate": "@d+5",
+  "nextAction": "Presentasi ke komite",
+  "closeDate": "@d+25"
+ },
+ "l9": {
+  "name": "Yayasan Nurul Ilmi",
+  "stage": "demo",
+  "estMrr": 2600000,
+  "source": "Website (Live Preview)",
+  "am": "Nadia",
+  "city": "Siak",
+  "contact": "Bu Salma",
+  "phone": "0819999000",
+  "products": [
+   "p-a",
+   "p-d"
+  ],
+  "createdAt": "@t-30d@03:00",
+  "log": [
+   {
+    "at": "@t-15d@04:00",
+    "type": "Telepon",
+    "text": "Telepon Bu Salma, tertarik mencoba"
+   },
+   {
+    "at": "@t-6d@05:00",
+    "type": "WhatsApp",
+    "text": "Kirim materi pengenalan"
+   }
+  ],
+  "nextDate": "@d+6",
+  "nextAction": "Demo Qrion Jurnal",
+  "closeDate": "@d+26"
+ }
+}

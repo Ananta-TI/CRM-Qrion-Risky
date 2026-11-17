@@ -1,0 +1,68 @@
+{
+ "s1": {
+  "pihak": "SMA Harapan Nusantara",
+  "perihal": "Pemberitahuan Disbursement",
+  "nomor": "001/SPB-QRION/XI/2026",
+  "kode": "SPB",
+  "arah": "keluar",
+  "tanggal": "@d-8",
+  "status": "terkirim",
+  "createdBy": "a:risky",
+  "createdAt": "@t-8d@03:00"
+ },
+ "s2": {
+  "pihak": "SMK Teknologi Riau",
+  "perihal": "Permohonan Penawaran Ontime",
+  "nomor": "014/SM/X/2026",
+  "kode": "SM",
+  "arah": "masuk",
+  "tanggal": "@d-16",
+  "status": "diterima",
+  "createdBy": "a:pindy",
+  "createdAt": "@t-16d@03:00"
+ },
+ "s3": {
+  "pihak": "SMA Negeri 3 Duri",
+  "perihal": "Konfirmasi Penambahan Mesin Kartu",
+  "nomor": "002/SPB-QRION/XI/2026",
+  "kode": "SPB",
+  "arah": "keluar",
+  "tanggal": "@d-4",
+  "status": "terkirim",
+  "createdBy": "a:nadia",
+  "createdAt": "@t-4d@03:00"
+ },
+ "s4": {
+  "pihak": "Yayasan Abdi Negara",
+  "perihal": "Pemberitahuan Kontrak Berakhir",
+  "nomor": "003/SPB-QRION/XI/2026",
+  "kode": "SPB",
+  "arah": "keluar",
+  "tanggal": "@d-11",
+  "status": "terkirim",
+  "createdBy": "a:pindy",
+  "createdAt": "@t-11d@03:00"
+ },
+ "s5": {
+  "pihak": "SD Islam Al-Furqan",
+  "perihal": "Surat Balasan Permintaan Pelatihan",
+  "nomor": "021/SM/X/2026",
+  "kode": "SM",
+  "arah": "masuk",
+  "tanggal": "@d-25",
+  "status": "diterima",
+  "createdBy": "a:pindy",
+  "createdAt": "@t-25d@03:00"
+ },
+ "s6": {
+  "pihak": "SMP Bina Insani",
+  "perihal": "Undangan Pelatihan Qrion Jurnal",
+  "nomor": "004/UND-QRION/XI/2026",
+  "kode": "UND",
+  "arah": "keluar",
+  "tanggal": "@d-2",
+  "status": "draft",
+  "createdBy": "a:nadia",
+  "createdAt": "@t-2d@03:00"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "u1": {
+  "untuk": "SMA Harapan Nusantara",
+  "judul": "MoU Kerjasama",
+  "nomor": "001/SKS",
+  "status": "aktif",
+  "berakhir": "@d+20",
+  "tanggalTtd": "@d-300",
+  "createdBy": "a:risky",
+  "createdAt": "@t-300d@03:00"
+ },
+ "u2": {
+  "untuk": "SMK Teknologi Riau",
+  "judul": "Perjanjian Kerjasama Oncard dan Ontime",
+  "nomor": "007/PKS",
+  "status": "aktif",
+  "berakhir": "@d+165",
+  "tanggalTtd": "@d-200",
+  "createdBy": "a:risky",
+  "createdAt": "@t-200d@03:00"
+ },
+ "u3": {
+  "untuk": "SMA Negeri 3 Duri",
+  "judul": "Perjanjian Kerjasama Paket Lengkap",
+  "nomor": "009/PKS",
+  "status": "aktif",
+  "berakhir": "@d+65",
+  "tanggalTtd": "@d-300",
+  "createdBy": "a:risky",
+  "createdAt": "@t-300d@03:00"
+ },
+ "u4": {
+  "untuk": "Yayasan Pendidikan Mutiara",
+  "judul": "MoU Kerjasama (berakhir)",
+  "nomor": "002/SKS",
+  "status": "berakhir",
+  "berakhir": "@d-70",
+  "tanggalTtd": "@d-500",
+  "createdBy": "a:risky",
+  "createdAt": "@t-500d@03:00"
+ }
+}

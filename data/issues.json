@@ -1,0 +1,1351 @@
+{
+ "i1": {
+  "subject": "Login gagal di aplikasi Oncard",
+  "description": "Operator tidak bisa login sejak pagi, muncul pesan kata sandi salah.",
+  "schoolId": "m1",
+  "category": "Teknis",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "Open",
+  "reporter": "Pak Doni",
+  "createdBy": "a:cs",
+  "createdAt": "@n-45m",
+  "reportedDate": "@d+0",
+  "slaDeadline": "@n-45m+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": null,
+  "messages": [
+   {
+    "at": "@n-45m",
+    "by": "a:cs",
+    "kind": "text",
+    "body": "Operator tidak bisa login sejak pagi, muncul pesan kata sandi salah."
+   }
+  ],
+  "am": "Pindy"
+ },
+ "i2": {
+  "subject": "Saldo kartu Oncard tidak sesuai",
+  "description": "Saldo beberapa kartu berbeda dengan yang tertera di laporan kantin.",
+  "schoolId": "m2",
+  "category": "Transaksi",
+  "urgency": "Critical",
+  "productId": "p-a",
+  "status": "In Progress",
+  "reporter": "Pak Anton",
+  "createdBy": "a:dila",
+  "createdAt": "@n-2880m",
+  "reportedDate": "@d-2",
+  "slaDeadline": "@n-2880m+240m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": "@n-2880m+35m",
+  "messages": [
+   {
+    "at": "@n-2880m",
+    "by": "a:dila",
+    "kind": "text",
+    "body": "Saldo beberapa kartu berbeda dengan yang tertera di laporan kantin."
+   },
+   {
+    "at": "@n-2880m+35m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@n-2880m+36m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@n-2880m+515m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:ridho"
+ },
+ "i3": {
+  "subject": "Top up kartu Oncard tidak masuk",
+  "description": "Beberapa wali murid sudah transfer top up kemarin tapi saldo kartu anak belum bertambah.",
+  "schoolId": "m1",
+  "category": "Transaksi",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Operator sekolah",
+  "createdBy": "a:risky",
+  "createdAt": "@t-9d@04:00",
+  "reportedDate": "@d-9",
+  "slaDeadline": "@t-9d@04:00+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 4,
+   "comment": "Sangat membantu."
+  },
+  "closedAt": "@t-9d@04:00+440m",
+  "firstResponseAt": "@t-9d@04:00+20m",
+  "messages": [
+   {
+    "at": "@t-9d@04:00",
+    "by": "a:risky",
+    "kind": "text",
+    "body": "Beberapa wali murid sudah transfer top up kemarin tapi saldo kartu anak belum bertambah."
+   },
+   {
+    "at": "@t-9d@04:00+20m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@t-9d@04:00+21m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-9d@04:00+30m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-9d@04:00+439m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sudah kami proses ulang manual, hasilnya sudah sesuai."
+   },
+   {
+    "at": "@t-9d@04:00+440m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Pindy",
+  "assignee": "a:ridho"
+ },
+ "i4": {
+  "subject": "Siswa tidak bisa login",
+  "description": "Satu siswa kelas 8A tidak bisa masuk ke aplikasi, kata sandi dianggap salah.",
+  "schoolId": "m1",
+  "category": "Akun",
+  "urgency": "Medium",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Operator sekolah",
+  "createdBy": "a:risky",
+  "createdAt": "@t-8d@05:00",
+  "reportedDate": "@d-8",
+  "slaDeadline": "@t-8d@05:00+1440m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 5,
+   "comment": "Masalah selesai dengan baik."
+  },
+  "closedAt": "@t-8d@05:00+135m",
+  "firstResponseAt": "@t-8d@05:00+15m",
+  "messages": [
+   {
+    "at": "@t-8d@05:00",
+    "by": "a:risky",
+    "kind": "text",
+    "body": "Satu siswa kelas 8A tidak bisa masuk ke aplikasi, kata sandi dianggap salah."
+   },
+   {
+    "at": "@t-8d@05:00+15m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@t-8d@05:00+16m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-8d@05:00+25m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-8d@05:00+134m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Perangkat sudah diatur ulang dan berfungsi normal."
+   },
+   {
+    "at": "@t-8d@05:00+135m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Pindy",
+  "assignee": "a:ridho"
+ },
+ "i5": {
+  "subject": "Tertagih dua kali (double charge)",
+  "description": "Wali murid melaporkan SPP bulan ini terpotong dua kali dari rekeningnya.",
+  "schoolId": "m2",
+  "category": "Pembayaran",
+  "urgency": "Critical",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Operator sekolah",
+  "createdBy": "a:nadia",
+  "createdAt": "@t-14d@03:00",
+  "reportedDate": "@d-14",
+  "slaDeadline": "@t-14d@03:00+240m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 3,
+   "comment": "Terima kasih, sudah berfungsi."
+  },
+  "closedAt": "@t-14d@03:00+210m",
+  "firstResponseAt": "@t-14d@03:00+90m",
+  "messages": [
+   {
+    "at": "@t-14d@03:00",
+    "by": "a:nadia",
+    "kind": "text",
+    "body": "Wali murid melaporkan SPP bulan ini terpotong dua kali dari rekeningnya."
+   },
+   {
+    "at": "@t-14d@03:00+90m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Ditugaskan ke Randy"
+   },
+   {
+    "at": "@t-14d@03:00+91m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-14d@03:00+100m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-14d@03:00+209m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sudah dicek dan diperbaiki, mohon dicoba lagi."
+   },
+   {
+    "at": "@t-14d@03:00+210m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:randy"
+ },
+ "i6": {
+  "subject": "Lupa kata sandi akun",
+  "description": "Guru Matematika lupa kata sandi dan tidak bisa menerima email reset.",
+  "schoolId": "m3",
+  "category": "Akun",
+  "urgency": "Low",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Bu Lestari",
+  "createdBy": "a:nadia",
+  "createdAt": "@t-5d@06:00",
+  "reportedDate": "@d-5",
+  "slaDeadline": "@t-5d@06:00+4320m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 4,
+   "comment": "Cepat ditangani, terima kasih."
+  },
+  "closedAt": "@t-5d@06:00+935m",
+  "firstResponseAt": "@t-5d@06:00+35m",
+  "messages": [
+   {
+    "at": "@t-5d@06:00",
+    "by": "a:nadia",
+    "kind": "text",
+    "body": "Guru Matematika lupa kata sandi dan tidak bisa menerima email reset."
+   },
+   {
+    "at": "@t-5d@06:00+35m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Ditugaskan ke Bima"
+   },
+   {
+    "at": "@t-5d@06:00+36m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-5d@06:00+45m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-5d@06:00+934m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Penyebabnya konfigurasi yang berubah setelah pembaruan, sudah dikembalikan."
+   },
+   {
+    "at": "@t-5d@06:00+935m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Pindy",
+  "assignee": "a:bima"
+ },
+ "i7": {
+  "subject": "Impor data siswa gagal",
+  "description": "File impor siswa kelas 7 ditolak dengan pesan format tidak sesuai.",
+  "schoolId": "m2",
+  "category": "Teknis",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Pak Anton",
+  "createdBy": "a:nadia",
+  "createdAt": "@t-20d@04:00",
+  "reportedDate": "@d-20",
+  "slaDeadline": "@t-20d@04:00+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 5,
+   "comment": "Solusi sudah tepat, tapi sempat menunggu agak lama."
+  },
+  "closedAt": "@t-20d@04:00+210m",
+  "firstResponseAt": "@t-20d@04:00+90m",
+  "messages": [
+   {
+    "at": "@t-20d@04:00",
+    "by": "a:nadia",
+    "kind": "text",
+    "body": "File impor siswa kelas 7 ditolak dengan pesan format tidak sesuai."
+   },
+   {
+    "at": "@t-20d@04:00+90m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Ditugaskan ke Randy"
+   },
+   {
+    "at": "@t-20d@04:00+91m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-20d@04:00+100m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-20d@04:00+209m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Data sudah dikoreksi langsung di database dan dicek di QMS."
+   },
+   {
+    "at": "@t-20d@04:00+210m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:randy"
+ },
+ "i8": {
+  "subject": "Kartu Oncard tidak terbaca di mesin",
+  "description": "Tiga kartu tidak terbaca di mesin kantin, lampu merah menyala.",
+  "schoolId": "m4",
+  "category": "Teknis",
+  "urgency": "Medium",
+  "productId": "p-a",
+  "status": "In Progress",
+  "reporter": "Bu Yuni",
+  "createdBy": "a:tika",
+  "createdAt": "@n-600m",
+  "reportedDate": "@d+0",
+  "slaDeadline": "@n-600m+1440m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": "@n-600m+90m",
+  "messages": [
+   {
+    "at": "@n-600m",
+    "by": "a:tika",
+    "kind": "text",
+    "body": "Tiga kartu tidak terbaca di mesin kantin, lampu merah menyala."
+   },
+   {
+    "at": "@n-600m+90m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Ditugaskan ke Bima"
+   },
+   {
+    "at": "@n-600m+91m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@n-600m+190m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:bima"
+ },
+ "i9": {
+  "subject": "Absensi guru tidak tercatat",
+  "description": "Sidik jari guru terbaca di mesin tapi tidak muncul di Ontime.",
+  "schoolId": "m4",
+  "category": "Produk",
+  "urgency": "High",
+  "productId": "p-c",
+  "status": "Waiting Validation",
+  "reporter": "Pak Hendri",
+  "createdBy": "a:nadia",
+  "createdAt": "@n-300m",
+  "reportedDate": "@d+0",
+  "slaDeadline": "@n-300m+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": "@n-300m+20m",
+  "messages": [
+   {
+    "at": "@n-300m",
+    "by": "a:nadia",
+    "kind": "text",
+    "body": "Sidik jari guru terbaca di mesin tapi tidak muncul di Ontime."
+   },
+   {
+    "at": "@n-300m+20m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Ditugaskan ke Randy"
+   },
+   {
+    "at": "@n-300m+21m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@n-300m+70m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@n-300m+294m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Perangkat sudah diatur ulang dan berfungsi normal."
+   },
+   {
+    "at": "@n-300m+295m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: In Progress → Waiting Validation"
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:randy"
+ },
+ "i10": {
+  "subject": "Nominal tagihan salah",
+  "description": "Tagihan bulan ini lebih besar dari kesepakatan kontrak.",
+  "schoolId": "m6",
+  "category": "Pembayaran",
+  "urgency": "Medium",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Pak Samsul",
+  "createdBy": "a:dila",
+  "createdAt": "@t-11d@04:00",
+  "reportedDate": "@d-11",
+  "slaDeadline": "@t-11d@04:00+1440m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 4,
+   "comment": "Terima kasih, sudah berfungsi."
+  },
+  "closedAt": "@t-11d@04:00+435m",
+  "firstResponseAt": "@t-11d@04:00+15m",
+  "messages": [
+   {
+    "at": "@t-11d@04:00",
+    "by": "a:dila",
+    "kind": "text",
+    "body": "Tagihan bulan ini lebih besar dari kesepakatan kontrak."
+   },
+   {
+    "at": "@t-11d@04:00+15m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Ditugaskan ke Bima"
+   },
+   {
+    "at": "@t-11d@04:00+16m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-11d@04:00+25m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-11d@04:00+434m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Sudah dicek dan diperbaiki, mohon dicoba lagi."
+   },
+   {
+    "at": "@t-11d@04:00+435m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Nadia",
+  "assignee": "a:bima"
+ },
+ "i11": {
+  "subject": "Aplikasi lambat atau error",
+  "description": "Aplikasi sangat lambat saat jam istirahat ketika banyak transaksi.",
+  "schoolId": "m6",
+  "category": "Teknis",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "In Progress",
+  "reporter": "Bu Ratna",
+  "createdBy": "a:risky",
+  "createdAt": "@n-180m",
+  "reportedDate": "@d+0",
+  "slaDeadline": "@n-180m+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": "@n-180m+45m",
+  "messages": [
+   {
+    "at": "@n-180m",
+    "by": "a:risky",
+    "kind": "text",
+    "body": "Aplikasi sangat lambat saat jam istirahat ketika banyak transaksi."
+   },
+   {
+    "at": "@n-180m+45m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@n-180m+46m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@n-180m+75m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   }
+  ],
+  "am": "Nadia",
+  "assignee": "a:ridho"
+ },
+ "i12": {
+  "subject": "Nilai atau rapor tidak muncul",
+  "description": "Nilai ujian tengah semester belum tampil di Ontuition untuk kelas 9.",
+  "schoolId": "m1",
+  "category": "Produk",
+  "urgency": "Medium",
+  "productId": "p-b",
+  "status": "Open",
+  "reporter": "Pak Doni",
+  "createdBy": "a:cs",
+  "createdAt": "@n-120m",
+  "reportedDate": "@d+0",
+  "slaDeadline": "@n-120m+1440m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": null,
+  "messages": [
+   {
+    "at": "@n-120m",
+    "by": "a:cs",
+    "kind": "text",
+    "body": "Nilai ujian tengah semester belum tampil di Ontuition untuk kelas 9."
+   }
+  ],
+  "am": "Pindy"
+ },
+ "i13": {
+  "subject": "Permintaan fitur baru",
+  "description": "Sekolah ingin laporan transaksi harian bisa diunduh dalam format Excel.",
+  "schoolId": "m5",
+  "category": "Produk",
+  "urgency": "Low",
+  "productId": "p-a",
+  "status": "Open",
+  "reporter": "Bu Mega",
+  "createdBy": "a:tika",
+  "createdAt": "@n-1500m",
+  "reportedDate": "@d-1",
+  "slaDeadline": "@n-1500m+4320m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": null,
+  "messages": [
+   {
+    "at": "@n-1500m",
+    "by": "a:tika",
+    "kind": "text",
+    "body": "Sekolah ingin laporan transaksi harian bisa diunduh dalam format Excel."
+   }
+  ],
+  "am": "Nadia"
+ },
+ "i14": {
+  "subject": "Akun terkunci atau dinonaktifkan",
+  "description": "Akun operator terkunci setelah beberapa kali salah memasukkan sandi.",
+  "schoolId": "m5",
+  "category": "Akun",
+  "urgency": "Medium",
+  "productId": "p-d",
+  "status": "Closed",
+  "reporter": "Bu Mega",
+  "createdBy": "a:tika",
+  "createdAt": "@t-18d@05:00",
+  "reportedDate": "@d-18",
+  "slaDeadline": "@t-18d@05:00+1440m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 5,
+   "comment": "Masalah selesai dengan baik."
+  },
+  "closedAt": "@t-18d@05:00+215m",
+  "firstResponseAt": "@t-18d@05:00+15m",
+  "messages": [
+   {
+    "at": "@t-18d@05:00",
+    "by": "a:tika",
+    "kind": "text",
+    "body": "Akun operator terkunci setelah beberapa kali salah memasukkan sandi."
+   },
+   {
+    "at": "@t-18d@05:00+15m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Ditugaskan ke Bima"
+   },
+   {
+    "at": "@t-18d@05:00+16m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-18d@05:00+25m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-18d@05:00+214m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Perangkat sudah diatur ulang dan berfungsi normal."
+   },
+   {
+    "at": "@t-18d@05:00+215m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Nadia",
+  "assignee": "a:bima"
+ },
+ "i15": {
+  "subject": "Server tidak bisa diakses",
+  "description": "Semua perangkat di sekolah tidak bisa membuka aplikasi sejak 10 menit lalu.",
+  "schoolId": "m6",
+  "category": "Teknis",
+  "urgency": "Critical",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Pak Samsul",
+  "createdBy": "a:dila",
+  "createdAt": "@t-26d@03:00",
+  "reportedDate": "@d-26",
+  "slaDeadline": "@t-26d@03:00+240m",
+  "slaBreached": true,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 5,
+   "comment": "Terima kasih, sudah berfungsi."
+  },
+  "closedAt": "@t-26d@03:00+435m",
+  "firstResponseAt": "@t-26d@03:00+15m",
+  "messages": [
+   {
+    "at": "@t-26d@03:00",
+    "by": "a:dila",
+    "kind": "text",
+    "body": "Semua perangkat di sekolah tidak bisa membuka aplikasi sejak 10 menit lalu."
+   },
+   {
+    "at": "@t-26d@03:00+15m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@t-26d@03:00+16m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-26d@03:00+25m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-26d@03:00+434m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sudah dicek dan diperbaiki, mohon dicoba lagi."
+   },
+   {
+    "at": "@t-26d@03:00+435m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Nadia",
+  "assignee": "a:ridho"
+ },
+ "i16": {
+  "subject": "Data siswa tidak muncul",
+  "description": "Siswa baru kelas 1 belum tampil di daftar siswa Oncard.",
+  "schoolId": "m7",
+  "category": "Teknis",
+  "urgency": "Medium",
+  "productId": "p-a",
+  "status": "Waiting Validation",
+  "reporter": "Bu Aisyah",
+  "createdBy": "a:pindy",
+  "createdAt": "@n-900m",
+  "reportedDate": "@d+0",
+  "slaDeadline": "@n-900m+1440m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": "@n-900m+15m",
+  "messages": [
+   {
+    "at": "@n-900m",
+    "by": "a:pindy",
+    "kind": "text",
+    "body": "Siswa baru kelas 1 belum tampil di daftar siswa Oncard."
+   },
+   {
+    "at": "@n-900m+15m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Ditugaskan ke Bima"
+   },
+   {
+    "at": "@n-900m+16m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@n-900m+165m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@n-900m+894m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Penyebabnya konfigurasi yang berubah setelah pembaruan, sudah dikembalikan."
+   },
+   {
+    "at": "@n-900m+895m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: In Progress → Waiting Validation"
+   }
+  ],
+  "am": "Pindy",
+  "assignee": "a:bima"
+ },
+ "i17": {
+  "subject": "Pembayaran sudah dilakukan tapi belum terverifikasi",
+  "description": "Transfer SPP sudah dilakukan kemarin tapi status masih belum lunas.",
+  "schoolId": "m7",
+  "category": "Pembayaran",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Bu Aisyah",
+  "createdBy": "a:pindy",
+  "createdAt": "@t-13d@04:00",
+  "reportedDate": "@d-13",
+  "slaDeadline": "@t-13d@04:00+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 4,
+   "comment": "Solusi sudah tepat, tapi sempat menunggu agak lama."
+  },
+  "closedAt": "@t-13d@04:00+140m",
+  "firstResponseAt": "@t-13d@04:00+20m",
+  "messages": [
+   {
+    "at": "@t-13d@04:00",
+    "by": "a:pindy",
+    "kind": "text",
+    "body": "Transfer SPP sudah dilakukan kemarin tapi status masih belum lunas."
+   },
+   {
+    "at": "@t-13d@04:00+20m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Ditugaskan ke Randy"
+   },
+   {
+    "at": "@t-13d@04:00+21m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-13d@04:00+30m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-13d@04:00+139m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Data sudah dikoreksi langsung di database dan dicek di QMS."
+   },
+   {
+    "at": "@t-13d@04:00+140m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Pindy",
+  "assignee": "a:randy"
+ },
+ "i18": {
+  "subject": "Perubahan data sekolah",
+  "description": "Mohon ubah nama bendahara dan nomor telepon PIC di profil sekolah.",
+  "schoolId": "m4",
+  "category": "Lainnya",
+  "urgency": "Low",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Bu Yuni",
+  "createdBy": "a:nadia",
+  "createdAt": "@t-24d@07:00",
+  "reportedDate": "@d-24",
+  "slaDeadline": "@t-24d@07:00+4320m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 5,
+   "comment": "Sangat membantu."
+  },
+  "closedAt": "@t-24d@07:00+990m",
+  "firstResponseAt": "@t-24d@07:00+90m",
+  "messages": [
+   {
+    "at": "@t-24d@07:00",
+    "by": "a:nadia",
+    "kind": "text",
+    "body": "Mohon ubah nama bendahara dan nomor telepon PIC di profil sekolah."
+   },
+   {
+    "at": "@t-24d@07:00+90m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@t-24d@07:00+91m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-24d@07:00+100m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-24d@07:00+989m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sudah kami proses ulang manual, hasilnya sudah sesuai."
+   },
+   {
+    "at": "@t-24d@07:00+990m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:ridho"
+ },
+ "i19": {
+  "subject": "Laporan transaksi harian kosong",
+  "description": "Laporan harian menampilkan nol padahal ada transaksi di kantin.",
+  "schoolId": "m4",
+  "category": "Transaksi",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Pak Hendri",
+  "createdBy": "a:dila",
+  "createdAt": "@t-30d@04:00",
+  "reportedDate": "@d-30",
+  "slaDeadline": "@t-30d@04:00+480m",
+  "slaBreached": true,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 3,
+   "comment": "Masalah selesai dengan baik."
+  },
+  "closedAt": "@t-30d@04:00+510m",
+  "firstResponseAt": "@t-30d@04:00+90m",
+  "messages": [
+   {
+    "at": "@t-30d@04:00",
+    "by": "a:dila",
+    "kind": "text",
+    "body": "Laporan harian menampilkan nol padahal ada transaksi di kantin."
+   },
+   {
+    "at": "@t-30d@04:00+90m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Ditugaskan ke Randy"
+   },
+   {
+    "at": "@t-30d@04:00+91m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-30d@04:00+100m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-30d@04:00+509m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Perangkat sudah diatur ulang dan berfungsi normal."
+   },
+   {
+    "at": "@t-30d@04:00+510m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:randy"
+ },
+ "i20": {
+  "subject": "Kartu hilang minta diblokir",
+  "description": "Orang tua melaporkan kartu anak hilang dan meminta saldo diblokir.",
+  "schoolId": "m1",
+  "category": "Transaksi",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Operator sekolah",
+  "createdBy": "a:pindy",
+  "createdAt": "@t-35d@05:00",
+  "reportedDate": "@d-35",
+  "slaDeadline": "@t-35d@05:00+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 4,
+   "comment": "Terima kasih, sudah berfungsi."
+  },
+  "closedAt": "@t-35d@05:00+215m",
+  "firstResponseAt": "@t-35d@05:00+15m",
+  "messages": [
+   {
+    "at": "@t-35d@05:00",
+    "by": "a:pindy",
+    "kind": "text",
+    "body": "Orang tua melaporkan kartu anak hilang dan meminta saldo diblokir."
+   },
+   {
+    "at": "@t-35d@05:00+15m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@t-35d@05:00+16m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-35d@05:00+25m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-35d@05:00+214m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sudah dicek dan diperbaiki, mohon dicoba lagi."
+   },
+   {
+    "at": "@t-35d@05:00+215m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Pindy",
+  "assignee": "a:ridho"
+ },
+ "i21": {
+  "subject": "Jadwal pelatihan guru Qrion Jurnal",
+  "description": "Sekolah meminta jadwal pelatihan tambahan untuk guru baru.",
+  "schoolId": "m5",
+  "category": "Lainnya",
+  "urgency": "Low",
+  "productId": "p-d",
+  "status": "Closed",
+  "reporter": "Bu Mega",
+  "createdBy": "a:tika",
+  "createdAt": "@t-40d@06:00",
+  "reportedDate": "@d-40",
+  "slaDeadline": "@t-40d@06:00+4320m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 5,
+   "comment": "Cepat ditangani, terima kasih."
+  },
+  "closedAt": "@t-40d@06:00+915m",
+  "firstResponseAt": "@t-40d@06:00+15m",
+  "messages": [
+   {
+    "at": "@t-40d@06:00",
+    "by": "a:tika",
+    "kind": "text",
+    "body": "Sekolah meminta jadwal pelatihan tambahan untuk guru baru."
+   },
+   {
+    "at": "@t-40d@06:00+15m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Ditugaskan ke Bima"
+   },
+   {
+    "at": "@t-40d@06:00+16m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-40d@06:00+25m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-40d@06:00+914m",
+    "by": "a:bima",
+    "kind": "text",
+    "body": "Penyebabnya konfigurasi yang berubah setelah pembaruan, sudah dikembalikan."
+   },
+   {
+    "at": "@t-40d@06:00+915m",
+    "by": "a:bima",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Nadia",
+  "assignee": "a:bima"
+ },
+ "i22": {
+  "subject": "Mesin kartu mati total",
+  "description": "Mesin kartu di koperasi tidak menyala setelah mati listrik.",
+  "schoolId": "m6",
+  "category": "Teknis",
+  "urgency": "High",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Bu Ratna",
+  "createdBy": "a:risky",
+  "createdAt": "@t-45d@04:00",
+  "reportedDate": "@d-45",
+  "slaDeadline": "@t-45d@04:00+480m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 5,
+   "comment": "Solusi sudah tepat, tapi sempat menunggu agak lama."
+  },
+  "closedAt": "@t-45d@04:00+290m",
+  "firstResponseAt": "@t-45d@04:00+90m",
+  "messages": [
+   {
+    "at": "@t-45d@04:00",
+    "by": "a:risky",
+    "kind": "text",
+    "body": "Mesin kartu di koperasi tidak menyala setelah mati listrik."
+   },
+   {
+    "at": "@t-45d@04:00+90m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Ditugaskan ke Ridho"
+   },
+   {
+    "at": "@t-45d@04:00+91m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-45d@04:00+100m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-45d@04:00+289m",
+    "by": "a:ridho",
+    "kind": "text",
+    "body": "Data sudah dikoreksi langsung di database dan dicek di QMS."
+   },
+   {
+    "at": "@t-45d@04:00+290m",
+    "by": "a:ridho",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Nadia",
+  "assignee": "a:ridho"
+ },
+ "i23": {
+  "subject": "Duplikasi data siswa",
+  "description": "Ada dua siswa dengan NIS yang sama setelah impor ulang.",
+  "schoolId": "m2",
+  "category": "Teknis",
+  "urgency": "Medium",
+  "productId": "p-a",
+  "status": "Closed",
+  "reporter": "Pak Anton",
+  "createdBy": "a:cs",
+  "createdAt": "@t-50d@03:00",
+  "reportedDate": "@d-50",
+  "slaDeadline": "@t-50d@03:00+1440m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": {
+   "score": 4,
+   "comment": "Sangat membantu."
+  },
+  "closedAt": "@t-50d@03:00+455m",
+  "firstResponseAt": "@t-50d@03:00+35m",
+  "messages": [
+   {
+    "at": "@t-50d@03:00",
+    "by": "a:cs",
+    "kind": "text",
+    "body": "Ada dua siswa dengan NIS yang sama setelah impor ulang."
+   },
+   {
+    "at": "@t-50d@03:00+35m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Ditugaskan ke Randy"
+   },
+   {
+    "at": "@t-50d@03:00+36m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: Open → In Progress"
+   },
+   {
+    "at": "@t-50d@03:00+45m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sedang kami periksa, mohon tunggu kabar berikutnya."
+   },
+   {
+    "at": "@t-50d@03:00+454m",
+    "by": "a:randy",
+    "kind": "text",
+    "body": "Sudah kami proses ulang manual, hasilnya sudah sesuai."
+   },
+   {
+    "at": "@t-50d@03:00+455m",
+    "by": "a:randy",
+    "kind": "system",
+    "body": "Status: In Progress → Closed"
+   }
+  ],
+  "am": "Dila",
+  "assignee": "a:randy"
+ },
+ "i24": {
+  "subject": "Reset saldo massal salah",
+  "description": "Saldo 12 kartu kelas 6 ter-reset ke nol setelah pembaruan.",
+  "schoolId": "m7",
+  "category": "Transaksi",
+  "urgency": "Critical",
+  "productId": "p-a",
+  "status": "Open",
+  "reporter": "Bu Aisyah",
+  "createdBy": "a:nadia",
+  "createdAt": "@n-25m",
+  "reportedDate": "@d+0",
+  "slaDeadline": "@n-25m+240m",
+  "slaBreached": false,
+  "reopenCount": 0,
+  "pausedMinutes": 0,
+  "pausedAt": null,
+  "csat": null,
+  "closedAt": null,
+  "firstResponseAt": null,
+  "messages": [
+   {
+    "at": "@n-25m",
+    "by": "a:nadia",
+    "kind": "text",
+    "body": "Saldo 12 kartu kelas 6 ter-reset ke nol setelah pembaruan."
+   }
+  ],
+  "am": "Pindy"
+ }
+}

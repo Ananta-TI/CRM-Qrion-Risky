@@ -1,0 +1,968 @@
+{
+ "@d+0_a_risky": {
+  "tanggal": "@d+0",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t+0d@01:00",
+  "pulang": null
+ },
+ "@d+0_a_ceo": {
+  "tanggal": "@d+0",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t+0d@02:05",
+  "catatan": "Kunjungan sekolah"
+ },
+ "@d+0_a_pm": {
+  "tanggal": "@d+0",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t+0d@01:05"
+ },
+ "@d+0_a_cs": {
+  "tanggal": "@d+0",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t+0d@02:00",
+  "pulang": null
+ },
+ "@d+0_a_tika": {
+  "tanggal": "@d+0",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t+0d@01:25"
+ },
+ "@d+0_a_pindy": {
+  "tanggal": "@d+0",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t+0d@02:12"
+ },
+ "@d+0_a_dila": {
+  "tanggal": "@d+0",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t+0d@01:12",
+  "pulang": null
+ },
+ "@d+0_a_nadia": {
+  "tanggal": "@d+0",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t+0d@02:05",
+  "catatan": "Kunjungan sekolah"
+ },
+ "@d+0_a_ridho": {
+  "tanggal": "@d+0",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t+0d@01:25"
+ },
+ "@d+0_a_randy": {
+  "tanggal": "@d+0",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t+0d@02:12",
+  "pulang": null
+ },
+ "@d+0_a_bima": {
+  "tanggal": "@d+0",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t+0d@01:40"
+ },
+ "@d-1_a_risky": {
+  "tanggal": "@d-1",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-1d@01:05",
+  "pulang": "@t-1d@09:10"
+ },
+ "@d-1_a_ceo": {
+  "tanggal": "@d-1",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-1d@02:00",
+  "pulang": "@t-1d@10:30"
+ },
+ "@d-1_a_pm": {
+  "tanggal": "@d-1",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t-1d@01:12",
+  "pulang": "@t-1d@09:10"
+ },
+ "@d-1_a_cs": {
+  "tanggal": "@d-1",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-1d@02:40",
+  "pulang": "@t-1d@10:10",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-1_a_tika": {
+  "tanggal": "@d-1",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "sakit",
+  "catatan": "Flu"
+ },
+ "@d-1_a_pindy": {
+  "tanggal": "@d-1",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-1d@02:00",
+  "pulang": "@t-1d@10:00"
+ },
+ "@d-1_a_dila": {
+  "tanggal": "@d-1",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-1d@01:40",
+  "pulang": "@t-1d@09:30"
+ },
+ "@d-1_a_nadia": {
+  "tanggal": "@d-1",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-1d@02:25",
+  "pulang": "@t-1d@10:30"
+ },
+ "@d-1_a_ridho": {
+  "tanggal": "@d-1",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-1d@01:12",
+  "pulang": "@t-1d@09:00"
+ },
+ "@d-1_a_randy": {
+  "tanggal": "@d-1",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-1d@02:05",
+  "pulang": "@t-1d@10:10",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-1_a_bima": {
+  "tanggal": "@d-1",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-1d@01:25",
+  "pulang": "@t-1d@09:10",
+  "catatan": "Kunjungan sekolah"
+ },
+ "@d-2_a_risky": {
+  "tanggal": "@d-2",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-2d@01:40",
+  "pulang": "@t-2d@09:10"
+ },
+ "@d-2_a_ceo": {
+  "tanggal": "@d-2",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-2d@02:40",
+  "pulang": "@t-2d@10:10"
+ },
+ "@d-2_a_pm": {
+  "tanggal": "@d-2",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t-2d@01:25",
+  "pulang": "@t-2d@09:00"
+ },
+ "@d-2_a_cs": {
+  "tanggal": "@d-2",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-2d@02:05",
+  "pulang": "@t-2d@10:30"
+ },
+ "@d-2_a_tika": {
+  "tanggal": "@d-2",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t-2d@01:40",
+  "pulang": "@t-2d@09:00"
+ },
+ "@d-2_a_pindy": {
+  "tanggal": "@d-2",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-2_a_dila": {
+  "tanggal": "@d-2",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-2d@01:12",
+  "pulang": "@t-2d@09:30"
+ },
+ "@d-2_a_nadia": {
+  "tanggal": "@d-2",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-2d@02:40",
+  "pulang": "@t-2d@10:30"
+ },
+ "@d-2_a_ridho": {
+  "tanggal": "@d-2",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-2d@01:25",
+  "pulang": "@t-2d@09:30"
+ },
+ "@d-2_a_randy": {
+  "tanggal": "@d-2",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-2d@02:25",
+  "pulang": "@t-2d@10:10",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-2_a_bima": {
+  "tanggal": "@d-2",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-2d@01:00",
+  "pulang": "@t-2d@09:00",
+  "catatan": "Kunjungan sekolah"
+ },
+ "@d-3_a_risky": {
+  "tanggal": "@d-3",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-3d@01:05",
+  "pulang": "@t-3d@09:00"
+ },
+ "@d-3_a_ceo": {
+  "tanggal": "@d-3",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-3_a_pm": {
+  "tanggal": "@d-3",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-3_a_cs": {
+  "tanggal": "@d-3",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-3d@02:00",
+  "pulang": "@t-3d@10:10"
+ },
+ "@d-3_a_tika": {
+  "tanggal": "@d-3",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "sakit",
+  "catatan": "Flu"
+ },
+ "@d-3_a_pindy": {
+  "tanggal": "@d-3",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-3d@02:25",
+  "pulang": "@t-3d@10:00"
+ },
+ "@d-3_a_dila": {
+  "tanggal": "@d-3",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-3d@01:40",
+  "pulang": "@t-3d@09:10"
+ },
+ "@d-3_a_nadia": {
+  "tanggal": "@d-3",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-3d@02:25",
+  "pulang": "@t-3d@10:10"
+ },
+ "@d-3_a_ridho": {
+  "tanggal": "@d-3",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-3d@01:05",
+  "pulang": "@t-3d@09:00"
+ },
+ "@d-3_a_randy": {
+  "tanggal": "@d-3",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-3d@02:25",
+  "pulang": "@t-3d@10:30"
+ },
+ "@d-3_a_bima": {
+  "tanggal": "@d-3",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-4_a_risky": {
+  "tanggal": "@d-4",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-4d@01:40",
+  "pulang": "@t-4d@09:10",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-4_a_ceo": {
+  "tanggal": "@d-4",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-4d@02:00",
+  "pulang": "@t-4d@10:30"
+ },
+ "@d-4_a_pm": {
+  "tanggal": "@d-4",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t-4d@01:00",
+  "pulang": "@t-4d@09:30"
+ },
+ "@d-4_a_cs": {
+  "tanggal": "@d-4",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-4d@02:05",
+  "pulang": "@t-4d@10:10"
+ },
+ "@d-4_a_tika": {
+  "tanggal": "@d-4",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t-4d@01:40",
+  "pulang": "@t-4d@09:10"
+ },
+ "@d-4_a_pindy": {
+  "tanggal": "@d-4",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-4d@02:05",
+  "pulang": "@t-4d@10:00"
+ },
+ "@d-4_a_dila": {
+  "tanggal": "@d-4",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-4d@01:05",
+  "pulang": "@t-4d@09:00"
+ },
+ "@d-4_a_nadia": {
+  "tanggal": "@d-4",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-4d@02:00",
+  "pulang": "@t-4d@10:00"
+ },
+ "@d-4_a_ridho": {
+  "tanggal": "@d-4",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-4d@01:05",
+  "pulang": "@t-4d@09:30"
+ },
+ "@d-4_a_randy": {
+  "tanggal": "@d-4",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-4d@02:12",
+  "pulang": "@t-4d@10:10",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-4_a_bima": {
+  "tanggal": "@d-4",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-4d@01:25",
+  "pulang": "@t-4d@09:00"
+ },
+ "@d-5_a_risky": {
+  "tanggal": "@d-5",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-5d@01:40",
+  "pulang": "@t-5d@09:00"
+ },
+ "@d-5_a_ceo": {
+  "tanggal": "@d-5",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-5d@02:00",
+  "pulang": "@t-5d@10:30",
+  "catatan": "Kunjungan sekolah"
+ },
+ "@d-5_a_pm": {
+  "tanggal": "@d-5",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t-5d@01:05",
+  "pulang": "@t-5d@09:10"
+ },
+ "@d-5_a_cs": {
+  "tanggal": "@d-5",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-5d@02:12",
+  "pulang": "@t-5d@10:00"
+ },
+ "@d-5_a_tika": {
+  "tanggal": "@d-5",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t-5d@01:25",
+  "pulang": "@t-5d@09:10"
+ },
+ "@d-5_a_pindy": {
+  "tanggal": "@d-5",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-5d@02:05",
+  "pulang": "@t-5d@10:00"
+ },
+ "@d-5_a_dila": {
+  "tanggal": "@d-5",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-5_a_nadia": {
+  "tanggal": "@d-5",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-5d@02:25",
+  "pulang": "@t-5d@10:30",
+  "catatan": "Kunjungan sekolah"
+ },
+ "@d-5_a_ridho": {
+  "tanggal": "@d-5",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-5d@01:25",
+  "pulang": "@t-5d@09:30"
+ },
+ "@d-5_a_randy": {
+  "tanggal": "@d-5",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-5d@02:40",
+  "pulang": "@t-5d@10:00",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-5_a_bima": {
+  "tanggal": "@d-5",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-5d@01:00",
+  "pulang": "@t-5d@09:30"
+ },
+ "@d-6_a_risky": {
+  "tanggal": "@d-6",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-6d@01:05",
+  "pulang": "@t-6d@09:00",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-6_a_ceo": {
+  "tanggal": "@d-6",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-6d@02:40",
+  "pulang": "@t-6d@10:00"
+ },
+ "@d-6_a_pm": {
+  "tanggal": "@d-6",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t-6d@01:40",
+  "pulang": "@t-6d@09:10"
+ },
+ "@d-6_a_cs": {
+  "tanggal": "@d-6",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-6_a_tika": {
+  "tanggal": "@d-6",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t-6d@01:25",
+  "pulang": "@t-6d@09:30"
+ },
+ "@d-6_a_pindy": {
+  "tanggal": "@d-6",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-6d@02:25",
+  "pulang": "@t-6d@10:30",
+  "catatan": "Kerja dari rumah"
+ },
+ "@d-6_a_dila": {
+  "tanggal": "@d-6",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-6d@01:40",
+  "pulang": "@t-6d@09:00"
+ },
+ "@d-6_a_nadia": {
+  "tanggal": "@d-6",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-6d@02:40",
+  "pulang": "@t-6d@10:00"
+ },
+ "@d-6_a_ridho": {
+  "tanggal": "@d-6",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-6d@01:05",
+  "pulang": "@t-6d@09:10"
+ },
+ "@d-6_a_randy": {
+  "tanggal": "@d-6",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-6d@02:00",
+  "pulang": "@t-6d@10:10"
+ },
+ "@d-6_a_bima": {
+  "tanggal": "@d-6",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-6d@01:25",
+  "pulang": "@t-6d@09:00"
+ },
+ "@d-7_a_risky": {
+  "tanggal": "@d-7",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-7_a_ceo": {
+  "tanggal": "@d-7",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-7d@02:00",
+  "pulang": "@t-7d@10:00"
+ },
+ "@d-7_a_pm": {
+  "tanggal": "@d-7",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t-7d@01:00",
+  "pulang": "@t-7d@09:10"
+ },
+ "@d-7_a_cs": {
+  "tanggal": "@d-7",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-7d@02:40",
+  "pulang": "@t-7d@10:30"
+ },
+ "@d-7_a_tika": {
+  "tanggal": "@d-7",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t-7d@01:40",
+  "pulang": "@t-7d@09:30"
+ },
+ "@d-7_a_pindy": {
+  "tanggal": "@d-7",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-7d@02:05",
+  "pulang": "@t-7d@10:30"
+ },
+ "@d-7_a_dila": {
+  "tanggal": "@d-7",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-7d@01:12",
+  "pulang": "@t-7d@09:30"
+ },
+ "@d-7_a_nadia": {
+  "tanggal": "@d-7",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-7d@02:25",
+  "pulang": "@t-7d@10:00"
+ },
+ "@d-7_a_ridho": {
+  "tanggal": "@d-7",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-7d@01:12",
+  "pulang": "@t-7d@09:00"
+ },
+ "@d-7_a_randy": {
+  "tanggal": "@d-7",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-7d@02:05",
+  "pulang": "@t-7d@10:30"
+ },
+ "@d-7_a_bima": {
+  "tanggal": "@d-7",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-7d@01:05",
+  "pulang": "@t-7d@09:30"
+ },
+ "@d-8_a_risky": {
+  "tanggal": "@d-8",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-8d@01:12",
+  "pulang": "@t-8d@09:00"
+ },
+ "@d-8_a_ceo": {
+  "tanggal": "@d-8",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-8d@02:00",
+  "pulang": "@t-8d@10:10"
+ },
+ "@d-8_a_pm": {
+  "tanggal": "@d-8",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "hadir",
+  "masuk": "@t-8d@01:05",
+  "pulang": "@t-8d@09:00"
+ },
+ "@d-8_a_cs": {
+  "tanggal": "@d-8",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-8d@02:25",
+  "pulang": "@t-8d@10:10"
+ },
+ "@d-8_a_tika": {
+  "tanggal": "@d-8",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t-8d@01:00",
+  "pulang": "@t-8d@09:30"
+ },
+ "@d-8_a_pindy": {
+  "tanggal": "@d-8",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-8d@02:25",
+  "pulang": "@t-8d@10:10"
+ },
+ "@d-8_a_dila": {
+  "tanggal": "@d-8",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-8d@01:40",
+  "pulang": "@t-8d@09:30"
+ },
+ "@d-8_a_nadia": {
+  "tanggal": "@d-8",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-8d@02:00",
+  "pulang": "@t-8d@10:00"
+ },
+ "@d-8_a_ridho": {
+  "tanggal": "@d-8",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-8d@01:12",
+  "pulang": "@t-8d@09:10",
+  "catatan": "Kerja dari rumah"
+ },
+ "@d-8_a_randy": {
+  "tanggal": "@d-8",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-8d@02:12",
+  "pulang": "@t-8d@10:00"
+ },
+ "@d-8_a_bima": {
+  "tanggal": "@d-8",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-8d@01:12",
+  "pulang": "@t-8d@09:10",
+  "catatan": "Kunjungan sekolah"
+ },
+ "@d-9_a_risky": {
+  "tanggal": "@d-9",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-9d@01:40",
+  "pulang": "@t-9d@09:10"
+ },
+ "@d-9_a_ceo": {
+  "tanggal": "@d-9",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "sakit",
+  "catatan": "Flu"
+ },
+ "@d-9_a_pm": {
+  "tanggal": "@d-9",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-9_a_cs": {
+  "tanggal": "@d-9",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-9d@02:25",
+  "pulang": "@t-9d@10:00"
+ },
+ "@d-9_a_tika": {
+  "tanggal": "@d-9",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-9_a_pindy": {
+  "tanggal": "@d-9",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "sakit",
+  "catatan": "Flu"
+ },
+ "@d-9_a_dila": {
+  "tanggal": "@d-9",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-9d@01:40",
+  "pulang": "@t-9d@09:00",
+  "catatan": "Rapat sekolah"
+ },
+ "@d-9_a_nadia": {
+  "tanggal": "@d-9",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-9d@02:25",
+  "pulang": "@t-9d@10:00"
+ },
+ "@d-9_a_ridho": {
+  "tanggal": "@d-9",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-9d@01:12",
+  "pulang": "@t-9d@09:30",
+  "catatan": "Kerja dari rumah"
+ },
+ "@d-9_a_randy": {
+  "tanggal": "@d-9",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-9d@02:05",
+  "pulang": "@t-9d@10:00"
+ },
+ "@d-9_a_bima": {
+  "tanggal": "@d-9",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-9d@01:05",
+  "pulang": "@t-9d@09:00"
+ },
+ "@d-10_a_risky": {
+  "tanggal": "@d-10",
+  "uid": "a:risky",
+  "nama": "Risky Antonio",
+  "status": "hadir",
+  "masuk": "@t-10d@01:40",
+  "pulang": "@t-10d@09:00"
+ },
+ "@d-10_a_ceo": {
+  "tanggal": "@d-10",
+  "uid": "a:ceo",
+  "nama": "Dewi Anggraini",
+  "status": "hadir",
+  "masuk": "@t-10d@02:05",
+  "pulang": "@t-10d@10:10"
+ },
+ "@d-10_a_pm": {
+  "tanggal": "@d-10",
+  "uid": "a:pm",
+  "nama": "Hendra Saputra",
+  "status": "izin",
+  "catatan": "Keperluan keluarga"
+ },
+ "@d-10_a_cs": {
+  "tanggal": "@d-10",
+  "uid": "a:cs",
+  "nama": "Sari Wulandari",
+  "status": "hadir",
+  "masuk": "@t-10d@02:00",
+  "pulang": "@t-10d@10:00"
+ },
+ "@d-10_a_tika": {
+  "tanggal": "@d-10",
+  "uid": "a:tika",
+  "nama": "Tika Rahmawati",
+  "status": "hadir",
+  "masuk": "@t-10d@01:05",
+  "pulang": "@t-10d@09:30"
+ },
+ "@d-10_a_pindy": {
+  "tanggal": "@d-10",
+  "uid": "a:pindy",
+  "nama": "Pindy Maharani",
+  "status": "hadir",
+  "masuk": "@t-10d@02:00",
+  "pulang": "@t-10d@10:30"
+ },
+ "@d-10_a_dila": {
+  "tanggal": "@d-10",
+  "uid": "a:dila",
+  "nama": "Dila Putri",
+  "status": "hadir",
+  "masuk": "@t-10d@01:25",
+  "pulang": "@t-10d@09:30"
+ },
+ "@d-10_a_nadia": {
+  "tanggal": "@d-10",
+  "uid": "a:nadia",
+  "nama": "Nadia Safitri",
+  "status": "hadir",
+  "masuk": "@t-10d@02:40",
+  "pulang": "@t-10d@10:10"
+ },
+ "@d-10_a_ridho": {
+  "tanggal": "@d-10",
+  "uid": "a:ridho",
+  "nama": "Ridho Pratama",
+  "status": "hadir",
+  "masuk": "@t-10d@01:12",
+  "pulang": "@t-10d@09:00"
+ },
+ "@d-10_a_randy": {
+  "tanggal": "@d-10",
+  "uid": "a:randy",
+  "nama": "Randy Wijaya",
+  "status": "hadir",
+  "masuk": "@t-10d@02:05",
+  "pulang": "@t-10d@10:10"
+ },
+ "@d-10_a_bima": {
+  "tanggal": "@d-10",
+  "uid": "a:bima",
+  "nama": "Bima Aditya",
+  "status": "hadir",
+  "masuk": "@t-10d@01:05",
+  "pulang": "@t-10d@09:00",
+  "catatan": "Kunjungan sekolah"
+ }
+}

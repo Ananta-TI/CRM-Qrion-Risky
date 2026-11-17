@@ -1,0 +1,104 @@
+{
+ "risky": {
+  "nama": "Risky Antonio",
+  "role": "admin",
+  "aktif": true,
+  "dibuat": "@t-120d@02:00",
+  "salt": "QkCwPkeB1xCUrjA1WAiFiQ==",
+  "iter": 600000,
+  "hash": "7xn+5UvzEUeeUWMihDjNkQjzwmvrzi02zmc4rPnkQbQ="
+ },
+ "ceo": {
+  "nama": "Dewi Anggraini",
+  "role": "ceo",
+  "aktif": true,
+  "dibuat": "@t-119d@02:00",
+  "salt": "ijsvF4BTPN6HVen1VakFbA==",
+  "iter": 600000,
+  "hash": "4H5ZalmXObaow8nZniV025JaVWGxkC60rNelwQa2W6I="
+ },
+ "pm": {
+  "nama": "Hendra Saputra",
+  "role": "pm",
+  "aktif": true,
+  "dibuat": "@t-118d@02:00",
+  "salt": "8IsUfgqU3H8JstIHtIxLOw==",
+  "iter": 600000,
+  "hash": "CHgHOxwG9EpIX6kxFMnvy4EIc2ropASFAdTD7/U/qSM="
+ },
+ "cs": {
+  "nama": "Sari Wulandari",
+  "role": "cs",
+  "aktif": true,
+  "dibuat": "@t-117d@02:00",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ },
+ "tika": {
+  "nama": "Tika Rahmawati",
+  "role": "cs",
+  "aktif": true,
+  "dibuat": "@t-116d@02:00",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ },
+ "pindy": {
+  "nama": "Pindy Maharani",
+  "role": "am",
+  "aktif": true,
+  "dibuat": "@t-115d@02:00",
+  "am": "Pindy",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ },
+ "dila": {
+  "nama": "Dila Putri",
+  "role": "am",
+  "aktif": true,
+  "dibuat": "@t-114d@02:00",
+  "am": "Dila",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ },
+ "nadia": {
+  "nama": "Nadia Safitri",
+  "role": "am",
+  "aktif": true,
+  "dibuat": "@t-113d@02:00",
+  "am": "Nadia",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ },
+ "ridho": {
+  "nama": "Ridho Pratama",
+  "role": "programmer",
+  "aktif": true,
+  "dibuat": "@t-112d@02:00",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ },
+ "randy": {
+  "nama": "Randy Wijaya",
+  "role": "programmer",
+  "aktif": true,
+  "dibuat": "@t-111d@02:00",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ },
+ "bima": {
+  "nama": "Bima Aditya",
+  "role": "programmer",
+  "aktif": true,
+  "dibuat": "@t-110d@02:00",
+  "salt": "vDcYrDinPh+JpH/1WddGrA==",
+  "iter": 600000,
+  "hash": "/HQS52LLwaOFHzLwyoJ/HXOV7tftGwJkJY+JUvleT2s="
+ }
+}

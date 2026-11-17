@@ -1,0 +1,65 @@
+{
+ "b1": {
+  "judul": "Logo QRION",
+  "kategori": "Logo",
+  "produk": "",
+  "deskripsi": "Logo utama",
+  "tautan": "",
+  "files": [],
+  "dibuat": "@t-39d@03:00"
+ },
+ "b2": {
+  "judul": "Brosur Oncard",
+  "kategori": "Brosur",
+  "produk": "p-a",
+  "deskripsi": "Brosur penawaran kartu pintar",
+  "tautan": "",
+  "files": [],
+  "dibuat": "@t-38d@03:00"
+ },
+ "b3": {
+  "judul": "Poster Ontuition",
+  "kategori": "Poster",
+  "produk": "p-b",
+  "deskripsi": "Poster pendaftaran bimbel",
+  "tautan": "",
+  "files": [],
+  "dibuat": "@t-37d@03:00"
+ },
+ "b4": {
+  "judul": "Deck Presentasi Perusahaan",
+  "kategori": "Presentasi",
+  "produk": "",
+  "deskripsi": "Slide profil QRION untuk sekolah",
+  "tautan": "",
+  "files": [],
+  "dibuat": "@t-36d@03:00"
+ },
+ "b5": {
+  "judul": "Panduan Top Up Wali Murid",
+  "kategori": "Panduan",
+  "produk": "p-a",
+  "deskripsi": "Cara top up saldo kartu",
+  "tautan": "",
+  "files": [],
+  "dibuat": "@t-35d@03:00"
+ },
+ "b6": {
+  "judul": "Banner Webinar SPMB",
+  "kategori": "Banner",
+  "produk": "p-e",
+  "deskripsi": "Banner kampanye SPMB",
+  "tautan": "",
+  "files": [],
+  "dibuat": "@t-34d@03:00"
+ },
+ "b7": {
+  "judul": "Template Postingan Instagram",
+  "kategori": "Media sosial",
+  "produk": "",
+  "deskripsi": "Template konten bulanan",
+  "tautan": "",
+  "files": [],
+  "dibuat": "@t-33d@03:00"
+ }
+}

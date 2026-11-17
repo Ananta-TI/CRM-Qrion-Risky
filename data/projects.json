@@ -1,0 +1,230 @@
+{
+ "pr1": {
+  "name": "Implementasi Oncard SMA Harapan",
+  "schoolId": "m1",
+  "status": "berjalan",
+  "type": "Implementasi",
+  "priority": "tinggi",
+  "start": "@d-20",
+  "end": "@d+10",
+  "assignee": "Ridho",
+  "pm": "a:pm",
+  "assignees": [
+   "Ridho",
+   "Randy"
+  ],
+  "milestones": [
+   {
+    "title": "Instalasi mesin kartu",
+    "due": "@d+2",
+    "status": "dikerjakan",
+    "who": "Ridho"
+   },
+   {
+    "title": "Pelatihan operator",
+    "due": "@d+6",
+    "status": "belum",
+    "who": "Randy"
+   },
+   {
+    "title": "Survei kebutuhan",
+    "due": "@d-12",
+    "status": "selesai",
+    "who": "Ridho"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-8d@04:00",
+    "by": "a:pm",
+    "text": "Survei kebutuhan selesai"
+   }
+  ],
+  "notes": "Pemasangan 6 mesin kartu di kantin dan koperasi."
+ },
+ "pr2": {
+  "name": "Onboarding SD Cahaya Bangsa",
+  "schoolId": "m2",
+  "status": "berjalan",
+  "type": "Implementasi",
+  "priority": "sedang",
+  "start": "@d-18",
+  "end": "@d+20",
+  "assignee": "Randy",
+  "pm": "a:pm",
+  "assignees": [
+   "Randy"
+  ],
+  "milestones": [
+   {
+    "title": "Impor data siswa",
+    "due": "@d-9",
+    "status": "selesai",
+    "who": "Randy"
+   },
+   {
+    "title": "Pembagian kartu",
+    "due": "@d+5",
+    "status": "dikerjakan",
+    "who": "Randy"
+   },
+   {
+    "title": "Pelatihan guru",
+    "due": "@d+14",
+    "status": "belum",
+    "who": "Randy"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-9d@05:00",
+    "by": "a:pm",
+    "text": "Data 310 siswa berhasil diimpor"
+   }
+  ],
+  "notes": "Onboarding Oncard dari nol."
+ },
+ "pr3": {
+  "name": "Integrasi Ontime SMK Teknologi Riau",
+  "schoolId": "m4",
+  "status": "perencanaan",
+  "type": "Implementasi",
+  "priority": "sedang",
+  "start": "@d+5",
+  "end": "@d+40",
+  "assignee": "Ridho",
+  "pm": "a:pm",
+  "assignees": [
+   "Ridho",
+   "Bima"
+  ],
+  "milestones": [
+   {
+    "title": "Survei mesin sidik jari",
+    "due": "@d+8",
+    "status": "belum",
+    "who": "Ridho"
+   },
+   {
+    "title": "Konfigurasi jam kerja guru",
+    "due": "@d+20",
+    "status": "belum",
+    "who": "Bima"
+   }
+  ],
+  "log": [],
+  "notes": "Absensi guru dengan sidik jari."
+ },
+ "pr4": {
+  "name": "Pembaruan modul laporan transaksi",
+  "status": "berjalan",
+  "type": "IT Produk",
+  "priority": "tinggi",
+  "start": "@d-14",
+  "end": "@d+7",
+  "assignee": "Bima",
+  "pm": "a:pm",
+  "assignees": [
+   "Bima",
+   "Randy"
+  ],
+  "milestones": [
+   {
+    "title": "Rancang ulang laporan harian",
+    "due": "@d-7",
+    "status": "selesai",
+    "who": "Bima"
+   },
+   {
+    "title": "Ekspor Excel",
+    "due": "@d+2",
+    "status": "dikerjakan",
+    "who": "Randy"
+   },
+   {
+    "title": "Uji di 3 sekolah",
+    "due": "@d+6",
+    "status": "belum",
+    "who": "Bima"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-3d@06:00",
+    "by": "a:bima",
+    "text": "Ekspor Excel tahap uji"
+   }
+  ],
+  "notes": "Menjawab permintaan fitur dari beberapa sekolah."
+ },
+ "pr5": {
+  "name": "Perbaikan stabilitas server saat jam sibuk",
+  "status": "tertahan",
+  "type": "IT Produk",
+  "priority": "kritis",
+  "start": "@d-25",
+  "end": "@d-2",
+  "assignee": "Ridho",
+  "pm": "a:pm",
+  "assignees": [
+   "Ridho"
+  ],
+  "milestones": [
+   {
+    "title": "Analisis beban",
+    "due": "@d-18",
+    "status": "selesai",
+    "who": "Ridho"
+   },
+   {
+    "title": "Tambah kapasitas server",
+    "due": "@d-5",
+    "status": "belum",
+    "who": "Ridho"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-4d@04:00",
+    "by": "a:pm",
+    "text": "Menunggu persetujuan anggaran server"
+   }
+  ],
+  "notes": "Tertahan menunggu anggaran."
+ },
+ "pr6": {
+  "name": "Kampanye pendaftaran siswa baru (SPMB)",
+  "status": "selesai",
+  "type": "Bisnis",
+  "priority": "sedang",
+  "start": "@d-60",
+  "end": "@d-20",
+  "assignee": "Randy",
+  "pm": "a:ceo",
+  "assignees": [
+   "Randy"
+  ],
+  "milestones": [
+   {
+    "title": "Materi promosi",
+    "due": "@d-50",
+    "status": "selesai",
+    "who": "Randy"
+   },
+   {
+    "title": "Webinar SPMB",
+    "due": "@d-30",
+    "status": "selesai",
+    "who": "Randy"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-20d@05:00",
+    "by": "a:ceo",
+    "text": "Kampanye selesai, 4 leads baru"
+   }
+  ],
+  "notes": "Kampanye Qrion SPMB."
+ }
+}

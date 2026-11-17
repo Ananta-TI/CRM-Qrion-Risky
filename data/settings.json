@@ -1,0 +1,135 @@
+{
+ "products": {
+  "items": [
+   {
+    "id": "p-a",
+    "name": "Oncard"
+   },
+   {
+    "id": "p-b",
+    "name": "Ontuition"
+   },
+   {
+    "id": "p-c",
+    "name": "Ontime"
+   },
+   {
+    "id": "p-d",
+    "name": "Qrion Jurnal"
+   },
+   {
+    "id": "p-e",
+    "name": "Qrion SPMB"
+   },
+   {
+    "id": "p-f",
+    "name": "Onboard"
+   }
+  ]
+ },
+ "ams": {
+  "items": [
+   "Pindy",
+   "Dila",
+   "Nadia"
+  ]
+ },
+ "people": {
+  "items": [
+   "Ridho",
+   "Randy",
+   "Bima"
+  ]
+ },
+ "access": {
+  "roles": {
+   "pm": {
+    "name": "Project Manager",
+    "home": "project",
+    "access": {
+     "ringkasan": 1,
+     "isu": 2,
+     "project": 3,
+     "sekolah": 1,
+     "pembayaran": 2,
+     "administrasi": 2,
+     "branding": 2,
+     "pipeline": 1,
+     "absen": 2,
+     "akses": 1
+    }
+   },
+   "ceo": {
+    "name": "CEO",
+    "home": "ringkasan",
+    "access": {
+     "ringkasan": 1,
+     "isu": 2,
+     "project": 2,
+     "sekolah": 2,
+     "pembayaran": 2,
+     "administrasi": 2,
+     "branding": 2,
+     "pipeline": 2,
+     "absen": 1,
+     "akses": 1
+    }
+   },
+   "programmer": {
+    "name": "Programmer",
+    "home": "isu",
+    "access": {
+     "ringkasan": 0,
+     "isu": 3,
+     "isuNo": 1,
+     "project": 2,
+     "sekolah": 0,
+     "pembayaran": 0,
+     "pipeline": 0,
+     "akses": 1
+    }
+   },
+   "cs": {
+    "name": "Customer Service",
+    "home": "isu",
+    "access": {
+     "ringkasan": 0,
+     "isu": 2,
+     "project": 0,
+     "sekolah": 1,
+     "pembayaran": 0,
+     "branding": 1,
+     "pipeline": 0,
+     "akses": 1
+    }
+   },
+   "am": {
+    "name": "Account Manager",
+    "home": "sekolah",
+    "access": {
+     "ringkasan": 0,
+     "isu": 2,
+     "project": 0,
+     "sekolah": 2,
+     "pembayaran": 0,
+     "administrasi": 1,
+     "branding": 1,
+     "pipeline": 2,
+     "akses": 1
+    }
+   }
+  }
+ },
+ "absen": {
+  "jamMasuk": "09:00",
+  "jamPulang": "16:00",
+  "toleransi": 10
+ },
+ "invoice": {
+  "nama": "PT Qrion Digital Edukasi",
+  "kontak": "finance@qrion.id | 0761-555-0101",
+  "alamat": "Jl. Soekarno-Hatta No. 88, Pekanbaru, Riau",
+  "rekening": "BCA 1234567890 a.n. PT Qrion Digital Edukasi",
+  "penandatangan": "Dewi Anggraini, CEO"
+ }
+}

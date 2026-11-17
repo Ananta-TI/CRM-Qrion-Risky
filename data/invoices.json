@@ -1,0 +1,108 @@
+{
+ "v1": {
+  "no": "INV/2026/11/001",
+  "untuk": "SMA Harapan Nusantara",
+  "alamatUntuk": "Jl. Merdeka No. 1",
+  "tanggal": "@d-30",
+  "jatuhTempo": "@d-4",
+  "status": "terbit",
+  "items": [
+   {
+    "nama": "Langganan Oncard",
+    "qty": 2,
+    "harga": 500000
+   }
+  ],
+  "ppn": 0,
+  "diskon": 0,
+  "createdAt": "@t-30d@03:00",
+  "createdBy": "a:risky"
+ },
+ "v2": {
+  "no": "INV/2026/10/007",
+  "untuk": "SMK Teknologi Riau",
+  "alamatUntuk": "Jl. Tuanku Tambusai No. 45",
+  "tanggal": "@d-45",
+  "jatuhTempo": "@d-30",
+  "status": "lunas",
+  "items": [
+   {
+    "nama": "Langganan Oncard",
+    "qty": 3,
+    "harga": 2100000
+   },
+   {
+    "nama": "Langganan Ontime",
+    "qty": 3,
+    "harga": 900000
+   }
+  ],
+  "ppn": 11,
+  "diskon": 0,
+  "createdAt": "@t-45d@03:00",
+  "createdBy": "a:risky",
+  "paidAt": "@d-33"
+ },
+ "v3": {
+  "no": "INV/2026/11/004",
+  "untuk": "SMA Negeri 3 Duri",
+  "alamatUntuk": "Jl. Pertamina No. 21",
+  "tanggal": "@d-12",
+  "jatuhTempo": "@d+3",
+  "status": "terbit",
+  "items": [
+   {
+    "nama": "Langganan Oncard",
+    "qty": 1,
+    "harga": 3000000
+   },
+   {
+    "nama": "Langganan Ontuition",
+    "qty": 1,
+    "harga": 1000000
+   }
+  ],
+  "ppn": 11,
+  "diskon": 0,
+  "createdAt": "@t-12d@03:00",
+  "createdBy": "a:risky"
+ },
+ "v4": {
+  "no": "INV/2026/11/006",
+  "untuk": "SD Cahaya Bangsa",
+  "alamatUntuk": "Jl. Sudirman No. 12",
+  "tanggal": "@d-5",
+  "jatuhTempo": "@d+9",
+  "status": "draft",
+  "items": [
+   {
+    "nama": "Biaya onboarding",
+    "qty": 1,
+    "harga": 2500000
+   }
+  ],
+  "ppn": 0,
+  "diskon": 0,
+  "createdAt": "@t-5d@03:00",
+  "createdBy": "a:risky"
+ },
+ "v5": {
+  "no": "INV/2026/09/002",
+  "untuk": "Yayasan Abdi Negara",
+  "alamatUntuk": "Jl. Diponegoro No. 7",
+  "tanggal": "@d-70",
+  "jatuhTempo": "@d-55",
+  "status": "batal",
+  "items": [
+   {
+    "nama": "Langganan Oncard",
+    "qty": 2,
+    "harga": 1800000
+   }
+  ],
+  "ppn": 0,
+  "diskon": 0,
+  "createdAt": "@t-70d@03:00",
+  "createdBy": "a:risky"
+ }
+}

@@ -1,0 +1,355 @@
+{
+ "m1": {
+  "name": "SMA Harapan Nusantara",
+  "city": "Pekanbaru",
+  "jenjang": "SMA",
+  "status": "aktif",
+  "am": "Pindy",
+  "students": 820,
+  "contractStart": "@d-320",
+  "contractEnd": "@d+40",
+  "picName": "Bu Rina",
+  "picPhone": "081234567890",
+  "address": "Jl. Merdeka No. 1",
+  "products": [
+   {
+    "productId": "p-a",
+    "mrr": 3500000
+   },
+   {
+    "productId": "p-b",
+    "mrr": 1200000
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Bu Rina",
+    "title": "Kepala Sekolah",
+    "phone": "081234567890"
+   },
+   {
+    "name": "Pak Doni",
+    "title": "Operator Oncard",
+    "phone": "081277788899"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-3d@03:00",
+    "text": "Kunjungan evaluasi Oncard",
+    "type": "Kunjungan",
+    "by": "a:pindy"
+   },
+   {
+    "at": "@t-25d@03:00",
+    "text": "Perpanjangan kontrak dibahas dengan kepala sekolah",
+    "type": "Rapat",
+    "by": "a:pindy"
+   },
+   {
+    "at": "@t-60d@03:00",
+    "text": "Pelatihan operator kantin selesai",
+    "type": "Kunjungan",
+    "by": "a:pindy"
+   }
+  ],
+  "createdAt": "@t-325d@02:00"
+ },
+ "m2": {
+  "name": "SD Cahaya Bangsa",
+  "city": "Dumai",
+  "jenjang": "SD",
+  "status": "onboarding",
+  "am": "Dila",
+  "students": 310,
+  "contractStart": "@d-20",
+  "contractEnd": "@d+345",
+  "picName": "Pak Anton",
+  "picPhone": "081311112222",
+  "address": "Jl. Sudirman No. 12",
+  "products": [
+   {
+    "productId": "p-a",
+    "mrr": 800000
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Pak Anton",
+    "title": "Kepala Sekolah",
+    "phone": "081311112222"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-18d@03:00",
+    "text": "Kick-off onboarding dan pengumpulan data siswa",
+    "type": "Rapat",
+    "by": "a:dila"
+   },
+   {
+    "at": "@t-9d@03:00",
+    "text": "Data siswa 310 sudah diimpor",
+    "type": "Catatan",
+    "by": "a:dila"
+   }
+  ],
+  "createdAt": "@t-25d@02:00"
+ },
+ "m3": {
+  "name": "Yayasan Abdi Negara",
+  "city": "Pekanbaru",
+  "jenjang": "Yayasan",
+  "status": "berisiko",
+  "am": "Pindy",
+  "students": 1500,
+  "contractStart": "@d-400",
+  "contractEnd": "@d-12",
+  "picName": "Bu Lestari",
+  "picPhone": "081322334455",
+  "address": "Jl. Diponegoro No. 7",
+  "products": [],
+  "contacts": [
+   {
+    "name": "Bu Lestari",
+    "title": "Ketua Yayasan",
+    "phone": "081322334455"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-30d@03:00",
+    "text": "Telepon PIC, belum ada keputusan perpanjangan",
+    "type": "Telepon",
+    "by": "a:pindy"
+   },
+   {
+    "at": "@t-45d@03:00",
+    "text": "Surat penawaran perpanjangan dikirim",
+    "type": "Email",
+    "by": "a:pindy"
+   }
+  ],
+  "createdAt": "@t-405d@02:00"
+ },
+ "m4": {
+  "name": "SMK Teknologi Riau",
+  "city": "Pekanbaru",
+  "jenjang": "SMK",
+  "status": "aktif",
+  "am": "Dila",
+  "students": 640,
+  "contractStart": "@d-200",
+  "contractEnd": "@d+165",
+  "picName": "Pak Hendri",
+  "picPhone": "081344556677",
+  "address": "Jl. Tuanku Tambusai No. 45",
+  "products": [
+   {
+    "productId": "p-a",
+    "mrr": 2100000
+   },
+   {
+    "productId": "p-c",
+    "mrr": 900000
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Pak Hendri",
+    "title": "Wakasek Kurikulum",
+    "phone": "081344556677"
+   },
+   {
+    "name": "Bu Yuni",
+    "title": "Bendahara",
+    "phone": "081366778899"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-7d@03:00",
+    "text": "Demo Ontime ke wakasek, tertarik absensi guru",
+    "type": "Kunjungan",
+    "by": "a:dila"
+   },
+   {
+    "at": "@t-40d@03:00",
+    "text": "Evaluasi triwulan, puas dengan Oncard",
+    "type": "Rapat",
+    "by": "a:dila"
+   }
+  ],
+  "createdAt": "@t-205d@02:00"
+ },
+ "m5": {
+  "name": "SMP Bina Insani",
+  "city": "Siak",
+  "jenjang": "SMP",
+  "status": "aktif",
+  "am": "Nadia",
+  "students": 455,
+  "contractStart": "@d-150",
+  "contractEnd": "@d+215",
+  "picName": "Bu Mega",
+  "picPhone": "081355667788",
+  "address": "Jl. Raja Kecik No. 3",
+  "products": [
+   {
+    "productId": "p-a",
+    "mrr": 1600000
+   },
+   {
+    "productId": "p-d",
+    "mrr": 500000
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Bu Mega",
+    "title": "Kepala Sekolah",
+    "phone": "081355667788"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-12d@03:00",
+    "text": "Qrion Jurnal mulai dipakai kelas 8",
+    "type": "Catatan",
+    "by": "a:nadia"
+   },
+   {
+    "at": "@t-35d@03:00",
+    "text": "WhatsApp tentang jadwal pelatihan guru",
+    "type": "WhatsApp",
+    "by": "a:nadia"
+   }
+  ],
+  "createdAt": "@t-155d@02:00"
+ },
+ "m6": {
+  "name": "SMA Negeri 3 Duri",
+  "city": "Bengkalis",
+  "jenjang": "SMA",
+  "status": "aktif",
+  "am": "Nadia",
+  "students": 980,
+  "contractStart": "@d-300",
+  "contractEnd": "@d+65",
+  "picName": "Pak Samsul",
+  "picPhone": "081366001122",
+  "address": "Jl. Pertamina No. 21",
+  "products": [
+   {
+    "productId": "p-a",
+    "mrr": 3000000
+   },
+   {
+    "productId": "p-b",
+    "mrr": 1000000
+   },
+   {
+    "productId": "p-c",
+    "mrr": 750000
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Pak Samsul",
+    "title": "Kepala Sekolah",
+    "phone": "081366001122"
+   },
+   {
+    "name": "Bu Ratna",
+    "title": "Operator",
+    "phone": "081388990011"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-5d@03:00",
+    "text": "Kunjungan rutin, minta tambahan 2 mesin kartu",
+    "type": "Kunjungan",
+    "by": "a:nadia"
+   },
+   {
+    "at": "@t-50d@03:00",
+    "text": "Pembayaran semester genap diterima",
+    "type": "Catatan",
+    "by": "a:nadia"
+   }
+  ],
+  "createdAt": "@t-305d@02:00"
+ },
+ "m7": {
+  "name": "SD Islam Al-Furqan",
+  "city": "Pekanbaru",
+  "jenjang": "SD",
+  "status": "aktif",
+  "am": "Pindy",
+  "students": 270,
+  "contractStart": "@d-90",
+  "contractEnd": "@d+275",
+  "picName": "Bu Aisyah",
+  "picPhone": "081377445566",
+  "address": "Jl. Arifin Ahmad No. 9",
+  "products": [
+   {
+    "productId": "p-a",
+    "mrr": 700000
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Bu Aisyah",
+    "title": "Kepala Sekolah",
+    "phone": "081377445566"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-15d@03:00",
+    "text": "Panduan top up dibagikan ke wali murid",
+    "type": "WhatsApp",
+    "by": "a:pindy"
+   }
+  ],
+  "createdAt": "@t-95d@02:00"
+ },
+ "m8": {
+  "name": "Yayasan Pendidikan Mutiara",
+  "city": "Dumai",
+  "jenjang": "Yayasan",
+  "status": "churn",
+  "am": "Dila",
+  "students": 1100,
+  "contractStart": "@d-500",
+  "contractEnd": "@d-70",
+  "picName": "Pak Gunawan",
+  "picPhone": "081399887766",
+  "address": "Jl. Datuk Laksamana No. 5",
+  "products": [],
+  "contacts": [
+   {
+    "name": "Pak Gunawan",
+    "title": "Ketua Yayasan",
+    "phone": "081399887766"
+   }
+  ],
+  "log": [
+   {
+    "at": "@t-70d@03:00",
+    "text": "Kontrak berakhir, yayasan memilih berhenti",
+    "type": "Rapat",
+    "by": "a:dila"
+   },
+   {
+    "at": "@t-85d@03:00",
+    "text": "Keluhan layanan lambat dari yayasan",
+    "type": "Telepon",
+    "by": "a:dila"
+   }
+  ],
+  "createdAt": "@t-505d@02:00"
+ }
+}

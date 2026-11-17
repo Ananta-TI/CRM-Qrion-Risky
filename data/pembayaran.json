@@ -1,0 +1,306 @@
+{
+ "p1": {
+  "mitraId": "m1",
+  "tipe": "langganan",
+  "tanggal": "@d-40",
+  "total": 9500000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m-3",
+     "@m-2"
+    ],
+    "nominal": 3500000
+   },
+   {
+    "jenis": "langganan",
+    "nama": "Ontuition",
+    "bulan": [
+     "@m-3",
+     "@m-2"
+    ],
+    "nominal": 1200000
+   },
+   {
+    "jenis": "tambahan",
+    "nama": "Kartu Oncard",
+    "bulan": [
+     "@m-3"
+    ],
+    "nominal": 100000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-40d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p2": {
+  "mitraId": "m1",
+  "tipe": "langganan",
+  "tanggal": "@d-10",
+  "total": 9400000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m-1",
+     "@m+0"
+    ],
+    "nominal": 3500000
+   },
+   {
+    "jenis": "langganan",
+    "nama": "Ontuition",
+    "bulan": [
+     "@m-1",
+     "@m+0"
+    ],
+    "nominal": 1200000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-10d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p3": {
+  "mitraId": "m4",
+  "tipe": "langganan",
+  "tanggal": "@d-35",
+  "total": 9000000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m-3",
+     "@m-2",
+     "@m-1"
+    ],
+    "nominal": 2100000
+   },
+   {
+    "jenis": "langganan",
+    "nama": "Ontime",
+    "bulan": [
+     "@m-3",
+     "@m-2",
+     "@m-1"
+    ],
+    "nominal": 900000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-35d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p4": {
+  "mitraId": "m4",
+  "tipe": "langganan",
+  "tanggal": "@d-4",
+  "total": 3000000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m+0"
+    ],
+    "nominal": 2100000
+   },
+   {
+    "jenis": "langganan",
+    "nama": "Ontime",
+    "bulan": [
+     "@m+0"
+    ],
+    "nominal": 900000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-4d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p5": {
+  "mitraId": "m5",
+  "tipe": "langganan",
+  "tanggal": "@d-28",
+  "total": 4200000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m-2",
+     "@m-1"
+    ],
+    "nominal": 1600000
+   },
+   {
+    "jenis": "langganan",
+    "nama": "Qrion Jurnal",
+    "bulan": [
+     "@m-2",
+     "@m-1"
+    ],
+    "nominal": 500000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-28d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p6": {
+  "mitraId": "m6",
+  "tipe": "langganan",
+  "tanggal": "@d-20",
+  "total": 14250000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m-2",
+     "@m-1",
+     "@m+0"
+    ],
+    "nominal": 3000000
+   },
+   {
+    "jenis": "langganan",
+    "nama": "Ontuition",
+    "bulan": [
+     "@m-2",
+     "@m-1",
+     "@m+0"
+    ],
+    "nominal": 1000000
+   },
+   {
+    "jenis": "langganan",
+    "nama": "Ontime",
+    "bulan": [
+     "@m-2",
+     "@m-1",
+     "@m+0"
+    ],
+    "nominal": 750000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-20d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p7": {
+  "mitraId": "m7",
+  "tipe": "langganan",
+  "tanggal": "@d-15",
+  "total": 1400000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m-1",
+     "@m+0"
+    ],
+    "nominal": 700000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-15d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p8": {
+  "mitraId": "m2",
+  "tipe": "langganan",
+  "tanggal": "@d-12",
+  "total": 800000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m+0"
+    ],
+    "nominal": 800000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-12d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p9": {
+  "mitraId": "m3",
+  "tipe": "langganan",
+  "tanggal": "@d-75",
+  "total": 3600000,
+  "items": [
+   {
+    "jenis": "langganan",
+    "nama": "Oncard",
+    "bulan": [
+     "@m-4",
+     "@m-3"
+    ],
+    "nominal": 1800000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-75d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p10": {
+  "mitraId": "m6",
+  "tipe": "langganan",
+  "tanggal": "@d-50",
+  "total": 4500000,
+  "items": [
+   {
+    "jenis": "tambahan",
+    "nama": "Mesin kartu tambahan (2 unit)",
+    "bulan": [
+     "@m-2"
+    ],
+    "nominal": 4500000
+   }
+  ],
+  "catatan": "",
+  "bukti": "",
+  "createdAt": "@t-50d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p11": {
+  "mitraId": "m1",
+  "tipe": "topup",
+  "tanggal": "@d-6",
+  "total": 15000000,
+  "items": [],
+  "catatan": "Top up saldo kartu siswa kelas X-XI",
+  "bukti": "",
+  "createdAt": "@t-6d@04:00",
+  "createdBy": "a:risky"
+ },
+ "p12": {
+  "mitraId": "m6",
+  "tipe": "transaksi",
+  "tanggal": "@d-2",
+  "total": 8250000,
+  "items": [],
+  "catatan": "Transaksi kantin minggu ini",
+  "bukti": "",
+  "createdAt": "@t-2d@04:00",
+  "createdBy": "a:risky"
+ }
+}

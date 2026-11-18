@@ -387,10 +387,6 @@ tr.s-warn td:first-child {
   background: var(--fill);
 }
 
-.col.over {
-  outline: 2px dashed var(--accent);
-}
-
 .col header {
   display: flex;
   justify-content: space-between;
@@ -1001,4 +997,55 @@ select option {
   color: #fff;
   font-size: var(--fs-meta);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Panel samping & modal: masuk dengan geser + pudar (gaya referensi). */
+.drawer {
+  opacity: 0;
+  transform: translateX(28px) scale(0.985);
+  transform-origin: 100% 50%;
+  transition: transform 0.34s var(--ease), opacity 0.22s var(--ease);
+}
+
+.drawer.is-open {
+  opacity: 1;
+  transform: none;
+}
+
+.scrim {
+  opacity: 0;
+  transition: opacity 0.24s var(--ease);
+}
+
+.scrim.is-open {
+  opacity: 1;
+}
+
+.modal {
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+
+.modal.is-open {
+  opacity: 1;
+}
+
+.modal form {
+  opacity: 0;
+  transform: translateY(14px) scale(0.985);
+  transition: opacity 0.22s var(--ease), transform 0.32s var(--ease);
+}
+
+.modal.is-open form {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .scrim,
+  .modal,
+  .modal form {
+    transition: none;
+  }
 }

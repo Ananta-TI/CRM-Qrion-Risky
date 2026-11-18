@@ -1305,3 +1305,358 @@ textarea.ie {
     max-height: none;
   }
 }
+
+/* ---------- Papan: seret & lepas (rasa Cadra) ---------- */
+.card[data-drag] {
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
+.card[data-drag]:active {
+  cursor: grabbing;
+}
+
+/* Kartu asli yang diangkat: bukan klon, jadi tidak ada bayangan ganda. */
+.card.is-dragging {
+  position: fixed;
+  z-index: 92;
+  margin: 0;
+  border: 0;
+  background: var(--sheet);
+  cursor: grabbing;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+    0 24px 48px -12px rgba(20, 40, 60, 0.35),
+    0 2px 6px rgba(20, 40, 60, 0.1);
+}
+
+html.is-dragging,
+html.is-dragging * {
+  cursor: grabbing !important;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Slot kosong yang ikut bergerak ke kolom tujuan. */
+.drag-ph {
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: var(--r-sm);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.col {
+  transition:
+    background-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+
+.col.is-over {
+  background: color-mix(in srgb, var(--c, var(--accent)) 10%, var(--fill));
+  box-shadow: inset 0 0 0 1.5px
+    color-mix(in srgb, var(--c, var(--accent)) 55%, transparent);
+}
+
+.col:has(> .drag-ph) > small {
+  display: none;
+}
+
+.board.is-drag {
+  scroll-snap-type: none;
+}
+
+/* Kartu mendarat dengan sedikit pantulan, seperti Cadra. */
+.card.is-settling {
+  transform-origin: 50% 100%;
+  animation: card-settle 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes card-settle {
+  0% {
+    transform: scaleX(1.05) scaleY(0.9);
+  }
+  28% {
+    transform: scaleX(0.985) scaleY(1.02);
+  }
+  52% {
+    transform: scaleX(1.01) scaleY(0.994);
+  }
+  74% {
+    transform: scaleX(0.997) scaleY(1.003);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.is-settling {
+    animation: none;
+  }
+}
+
+/* ---------- Timeline project (gaya papan penjadwalan) ---------- */
+.tl__scroll {
+  max-height: 560px;
+  overflow: auto;
+  border-radius: var(--r);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+  scrollbar-width: thin;
+}
+
+.tl__inner {
+  position: relative;
+  width: calc(var(--tl-left) + var(--tl-w));
+}
+
+.tl__head {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: var(--tl-left) var(--tl-w);
+  border-bottom: 1px solid var(--sep);
+  background: var(--sheet);
+}
+
+.tl__corner {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: var(--s1) 14px;
+  border-right: 1px solid var(--sep);
+  background: var(--sheet);
+}
+
+.tl__corner span {
+  font-size: var(--fs-meta);
+  font-weight: 700;
+}
+
+.tl__corner small {
+  color: var(--ink2);
+  font-size: var(--fs-caption);
+}
+
+.tl__cells {
+  display: flex;
+}
+
+.tl__cell {
+  display: flex;
+  width: var(--tl-dw);
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  padding: 6px 0;
+  border-left: 1px solid var(--sep);
+}
+
+.tl__cell b {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tl__cell small {
+  color: var(--ink2);
+  font-size: 10px;
+}
+
+.tl__cell.is-weekend {
+  background: var(--fill);
+}
+
+.tl__cell.is-today {
+  background: var(--accent-soft);
+}
+
+.tl__cell.is-today b {
+  color: var(--green-d);
+}
+
+.tl__body {
+  position: relative;
+}
+
+.tl__cols {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--tl-left);
+  z-index: 0;
+  display: flex;
+}
+
+.tl__col {
+  width: var(--tl-dw);
+  flex: none;
+  border-left: 1px solid var(--sep);
+}
+
+.tl__col.is-weekend {
+  background: var(--fill);
+}
+
+.tl__col.is-today {
+  background: var(--accent-soft);
+}
+
+.tl__row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: var(--tl-left) var(--tl-w);
+  height: 52px;
+  align-items: center;
+  border-bottom: 1px solid var(--sep);
+  cursor: pointer;
+}
+
+.tl__row:hover .tl__lab strong {
+  color: var(--link);
+}
+
+.tl__lab {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 14px;
+  border-right: 1px solid var(--sep);
+  background: var(--sheet);
+}
+
+.tl__lab strong,
+.tl__lab small {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tl__lab strong {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.tl__lab small {
+  color: var(--ink2);
+  font-size: 11.5px;
+}
+
+.tl__lane {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.tl__bar {
+  position: absolute;
+  display: flex;
+  height: 22px;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 0 var(--s1);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  background: var(--accent-soft);
+}
+
+.tl__bar i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--accent);
+  opacity: 0.85;
+}
+
+.tl__bar b {
+  position: relative;
+  z-index: 1;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tl__bar.good {
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+
+.tl__bar.good i {
+  background: var(--good);
+}
+
+.tl__bar.warn {
+  border-color: var(--warn);
+  background: var(--warn-bg);
+}
+
+.tl__bar.warn i {
+  background: var(--warn);
+}
+
+.tl__bar.crit {
+  border-color: var(--crit);
+  background: var(--crit-bg);
+}
+
+.tl__bar.crit i {
+  background: var(--crit);
+}
+
+.tl__bar.info {
+  border-color: var(--info);
+  background: var(--info-bg);
+}
+
+.tl__bar.info i {
+  background: var(--info);
+}
+
+.tl__now {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 2px;
+  background: var(--crit);
+  pointer-events: none;
+}
+
+.tl__now b {
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--crit);
+}
+
+.tl__hint {
+  margin: var(--s1) 0 0;
+  color: var(--ink2);
+  font-size: 12px;
+}

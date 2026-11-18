@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Token desain QRION — mode terang saja.
+   Skala ukuran mengikuti rasio emas (φ = 1.618): 8 · 13 · 21 · 34 · 55.
+   Ubah nilai di sini; seluruh komponen memakai variabel yang sama.
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* Permukaan dan teks */
+  --bg1: #e6f1ff;
+  --bg2: #e3f7ec;
+  --bg: #eef5fa;
+  --ink: #1c1c1e;
+  --ink2: #58585d;
+  --faint: #8e8e93;
+  --surface: rgba(255, 255, 255, 0.62);
+  --sheet: #f9f9fb;
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-line: rgba(255, 255, 255, 0.75);
+  --field: rgba(255, 255, 255, 0.85);
+  --sunken: rgba(118, 118, 128, 0.12);
+  --fill: rgba(118, 118, 128, 0.12);
+  --sep: rgba(60, 60, 67, 0.14);
+  --line: var(--sep);
+  --rim: var(--glass-line);
+  --navy: var(--ink);
+  --rail-ink: var(--ink);
+  --rail: #10231f;
+
+  /* Aksi dan status */
+  --green: #34c759;
+  --green-d: #1e7a34;
+  --accent: #34c759;
+  --accent-ink: #fff;
+  --accent-soft: rgba(52, 199, 89, 0.16);
+  --link: #1e7a34;
+  --btn: #1e7a34;
+  --btn-ink: #fff;
+  --good: #1e7a34;
+  --good-bg: rgba(52, 199, 89, 0.16);
+  --ok: var(--good);
+  --warn: #a04a00;
+  --warn-bg: rgba(255, 149, 0, 0.16);
+  --crit: #d70015;
+  --crit-bg: rgba(255, 59, 48, 0.13);
+  --info: #0066cc;
+  --info-bg: rgba(10, 132, 255, 0.12);
+  --star: #ff9f0a;
+  --sel: #1c1c1e;
+  --sel-ink: #fff;
+
+  /* Skala jarak dan sudut (φ) */
+  --s1: 8px;
+  --s2: 13px;
+  --s3: 21px;
+  --s4: 34px;
+  --s5: 55px;
+  --r-xs: 8px;
+  --r-sm: 13px;
+  --r: 21px;
+  --r-lg: 34px;
+  --r-pill: 999px;
+
+  /* Skala tipografi */
+  --fs-caption: 11px;
+  --fs-meta: 13px;
+  --fs-body: 15px;
+  --fs-lead: 17px;
+  --fs-h3: 21px;
+  --fs-h2: 26px;
+  --fs-h1: 34px;
+  --fs-hero: 55px;
+  --lh-tight: 1.15;
+  --lh-body: 1.6;
+  --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, "Segoe UI", Arial, sans-serif;
+  --body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, "Segoe UI", Arial, sans-serif;
+
+  /* Efek, gerak, lapisan */
+  --shadow: inset 0 0 0 0.5px var(--glass-line), 0 20px 60px rgba(30, 60, 90, 0.16);
+  --blob1: #9be3c0;
+  --blob2: #a9cbff;
+  --blob3: #ffe0b8;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --z-scrim: 20;
+  --z-drawer: 21;
+  --z-modal: 30;
+  --z-toast: 40;
+  --z-sim: 60;
+  --z-gate: 300;
+}

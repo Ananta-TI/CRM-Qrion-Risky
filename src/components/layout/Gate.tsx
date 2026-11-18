@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useSession } from "@/lib/session";
-import { remoteMode } from "@/lib/db";
+import { useSession } from "@/lib/auth/session";
+import { remoteMode } from "@/lib/data/db";
 
 /** Layar masuk (username + password). Kredensial demo ada di data/accounts.json. */
 export default function Gate() {

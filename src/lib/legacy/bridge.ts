@@ -1,7 +1,7 @@
 "use client";
 /* Jembatan antara mesin modul (gaya Firestore) dan lapisan data/auth Next.js. */
-import { db } from "@/lib/db";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/data/db";
+import { supabase } from "@/lib/auth/supabase";
 
 type QR = {
   acct: Record<string, any> | null;

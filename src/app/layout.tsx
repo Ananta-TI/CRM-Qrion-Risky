@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Providers from "@/components/Providers";
+import "@/styles/index.css";
+import Providers from "@/components/layout/Providers";
 
 export const metadata: Metadata = {
   title: "QRION CRM",

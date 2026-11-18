@@ -1,6 +1,6 @@
 "use client";
 import { useCallback } from "react";
-import { useSession } from "./session";
+import { useSession } from "@/lib/auth/session";
 
 /** Nama tampilan untuk id pengguna: akun login ("a:id"), nama programmer/AM biasa, atau kosong. */
 export function useNameOf() {

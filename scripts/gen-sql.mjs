@@ -1,7 +1,7 @@
 // Membuat supabase/setup_all.sql: tabel relasional + RLS + data dummy + akun login.
 // Jalankan: node scripts/gen-sql.mjs   (SEED_PASSWORD=... untuk mengganti sandi awal)
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
-import { ENT, ddl, docOps, entOf, settingsOps, ALL_TABLES, ADMIN_ONLY } from "../lib/dbmap.mjs";
+import { ENT, ddl, docOps, entOf, settingsOps, ALL_TABLES, ADMIN_ONLY } from "../src/lib/data/dbmap.mjs";
 
 const PASSWORD = process.env.SEED_PASSWORD || "qrion123";
 const DOMAIN = "qrion.local";

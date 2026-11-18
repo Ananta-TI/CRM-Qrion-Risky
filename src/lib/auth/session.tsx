@@ -1,9 +1,9 @@
 "use client";
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { db, remoteMode, useCollection, type Doc } from "./db";
+import { db, remoteMode, useCollection, type Doc } from "@/lib/data/db";
 import { supabase, emailOf, usernameOf } from "./supabase";
 import { ITER, normU, pbk, unb64 } from "./auth";
-import { DEF_ACCESS } from "./core";
+import { DEF_ACCESS } from "@/lib/core";
 
 type Sim = { v: string; key: string; id: string; label: string } | null;
 type Ctx = {

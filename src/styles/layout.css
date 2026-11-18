@@ -1,0 +1,241 @@
+/* ==========================================================================
+   Kerangka aplikasi: rail navigasi kiri + area kerja.
+   ========================================================================== */
+.app {
+  display: grid;
+  grid-template-columns: 262px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.rail {
+  position: sticky;
+  top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  height: calc(100vh - 36px);
+  margin: 18px 0 18px 18px;
+  padding: 18px 12px 12px;
+  border-radius: var(--r-lg);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  -webkit-backdrop-filter: saturate(190%) blur(34px);
+  backdrop-filter: saturate(190%) blur(34px);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 0 var(--s1);
+  color: var(--ink);
+  font: 700 20px var(--display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.brand small {
+  color: var(--green-d);
+  font: 700 var(--fs-caption) var(--body);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.rail nav {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.rail nav::-webkit-scrollbar {
+  width: 0;
+}
+
+.rail a {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s1);
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  color: inherit;
+  font-weight: 600;
+  font-size: var(--fs-body);
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.rail a:hover {
+  background: var(--fill);
+}
+
+.rail a[aria-current="page"] {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.rail a b {
+  color: var(--ink2);
+  font-weight: 600;
+  font-size: var(--fs-meta);
+  opacity: 1;
+}
+
+.rail a[aria-current="page"] b {
+  color: var(--green-d);
+}
+
+.rail input {
+  width: 100%;
+  min-width: 130px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--fill);
+  box-shadow: none;
+  color: var(--ink);
+}
+
+.rail input::placeholder {
+  color: var(--ink2);
+  opacity: 1;
+}
+
+.me {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+  padding: 10px;
+  border-top: 0.5px solid var(--sep);
+  font-size: var(--fs-meta);
+}
+
+.me strong {
+  color: var(--ink);
+  font-size: var(--fs-meta);
+}
+
+.me span {
+  color: var(--ink2);
+}
+
+.simlbl {
+  display: block;
+  margin: 12px 0 4px;
+  color: var(--ink2);
+  font-size: var(--fs-caption);
+}
+
+#simsel {
+  width: 100%;
+}
+
+main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--s3);
+  padding: var(--s3) clamp(16px, 3vw, var(--s4)) var(--s5);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s2);
+}
+
+.head > div {
+  min-width: 0;
+}
+
+.head p {
+  max-width: 62ch;
+  margin: 2px 0 0;
+  color: var(--ink2);
+  font-size: var(--fs-body);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  align-items: center;
+}
+
+.toolbar input[type="search"] {
+  flex: 1 1 200px;
+  min-width: 160px;
+}
+
+/* Latar bergerak halus (dimatikan bila pengguna memilih kurangi gerak). */
+.mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mesh i {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+}
+
+.mesh i:nth-child(1) {
+  top: -14vmax;
+  left: -12vmax;
+  width: 46vmax;
+  height: 46vmax;
+  background: var(--blob2);
+}
+
+.mesh i:nth-child(2) {
+  top: 10vmax;
+  right: -10vmax;
+  width: 42vmax;
+  height: 42vmax;
+  background: var(--blob1);
+}
+
+.mesh i:nth-child(3) {
+  bottom: -18vmax;
+  left: 22vw;
+  width: 36vmax;
+  height: 36vmax;
+  background: var(--blob3);
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mesh i {
+    animation: drift 22s ease-in-out infinite alternate;
+  }
+
+  .mesh i:nth-child(2) {
+    animation-delay: -7s;
+  }
+
+  .mesh i:nth-child(3) {
+    animation-delay: -13s;
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translate3d(4vmax, 3vmax, 0) scale(1.08);
+  }
+}
+
+.gated .app,
+.gated #simbar {
+  visibility: hidden;
+}

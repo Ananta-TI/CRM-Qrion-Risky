@@ -1,15 +1,15 @@
 "use client";
 import { useRouter } from "next/navigation";
-import ViewFrame from "@/components/ViewFrame";
+import ViewFrame from "@/components/ui/ViewFrame";
 import { Bars, Panel, Pill, RowItem, Rows } from "@/components/ui";
-import { useAccess } from "@/lib/access";
+import { useAccess } from "@/lib/auth/access";
 import {
   LSRC, STAGES, addDays, addM, code, contract, daysTo, fmtD, invEff, invTot, isYM, live, mLabel, nowYM, overdue,
   pHealth, pProg, paySummary, rp, rpS, sMrr, sla, stage, today, tsort, tstat,
 } from "@/lib/core";
-import { useCollection } from "@/lib/db";
+import { useCollection } from "@/lib/data/db";
 import { useNameOf } from "@/lib/names";
-import { useSession } from "@/lib/session";
+import { useSession } from "@/lib/auth/session";
 
 export default function Ringkasan() {
   const A = useAccess();

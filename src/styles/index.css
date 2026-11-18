@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Titik masuk CSS QRION CRM.
+   Urutan impor menentukan kaskade: token → dasar → kerangka → komponen →
+   gaya modul → responsif. Semua berada di layer `components` supaya utilitas
+   Tailwind tetap bisa menimpa bila dibutuhkan.
+   ========================================================================== */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@import "./tokens.css" layer(components);
+@import "./base.css" layer(components);
+@import "./layout.css" layer(components);
+@import "./components.css" layer(components);
+@import "./views.css" layer(components);
+@import "./responsive.css" layer(components);

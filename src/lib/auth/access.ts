@@ -1,8 +1,8 @@
 "use client";
 import { useMemo } from "react";
-import { useCollection } from "./db";
+import { useCollection } from "@/lib/data/db";
 import { useSession } from "./session";
-import { DEF_ACCESS, VIEWS } from "./core";
+import { DEF_ACCESS, VIEWS } from "@/lib/core";
 
 export type AccessMap = Record<string, { name: string; home: string; access: Record<string, number> }>;
 

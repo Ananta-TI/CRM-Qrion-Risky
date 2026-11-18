@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { QR, bootLegacy, legacyApi, syncSim } from "@/lib/legacy/bridge";
-import { useSession } from "@/lib/session";
+import { useSession } from "@/lib/auth/session";
 
 /** Menampung modul yang dirender oleh mesin modul. Elemen #legacy-island diisi oleh mesin, bukan React. */
 export default function LegacyIsland({ view }: { view: string }) {

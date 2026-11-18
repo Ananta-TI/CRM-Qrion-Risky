@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import Shell from "@/components/Shell";
-import { useAccess } from "@/lib/access";
-import { useSession } from "@/lib/session";
+import Shell from "@/components/layout/Shell";
+import { useAccess } from "@/lib/auth/access";
+import { useSession } from "@/lib/auth/session";
 
 /** Beranda: arahkan ke menu awal sesuai peran, atau tampilkan layar masuk. */
 export default function Home() {

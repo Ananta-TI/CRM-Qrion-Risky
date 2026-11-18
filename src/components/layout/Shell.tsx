@@ -4,11 +4,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import Gate from "./Gate";
 import { VIEWS, live } from "@/lib/core";
-import { useAccess } from "@/lib/access";
-import { useCollection } from "@/lib/db";
-import { useSession } from "@/lib/session";
+import { useAccess } from "@/lib/auth/access";
+import { useCollection } from "@/lib/data/db";
+import { useSession } from "@/lib/auth/session";
 import { useNameOf } from "@/lib/names";
-import { useToast } from "./Toast";
+import { useToast } from "@/components/ui/Toast";
 import { QR, legacyBooted, syncSim } from "@/lib/legacy/bridge";
 
 export default function Shell({ children }: { children: React.ReactNode }) {

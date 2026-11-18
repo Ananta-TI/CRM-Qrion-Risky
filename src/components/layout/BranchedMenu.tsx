@@ -98,14 +98,14 @@ export default function BranchedMenu({
     cb.current.onSelect?.(value, item);
   };
   const toggle = (i: number) => {
+    const willOpen = !open.has(i);
     setOpen((prev) => {
       const next = new Set(prev);
-      const isOpen = !next.has(i);
-      if (isOpen) next.add(i);
+      if (willOpen) next.add(i);
       else next.delete(i);
-      onToggle?.(i, isOpen);
       return next;
     });
+    onToggle?.(i, willOpen);
   };
 
   const r = Math.min(radius, rowHeight / 2 - 2);

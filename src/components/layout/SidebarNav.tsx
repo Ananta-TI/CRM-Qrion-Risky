@@ -82,13 +82,11 @@ export default function SidebarNav({ view, allowed, counts }: { view: string; al
   const toggle = (index: number, isOpen: boolean) => {
     const key = groups[index]?.key;
     if (!key) return;
-    setOpenKeys((prev) => {
-      const next = isOpen ? [...new Set([...prev, key])] : prev.filter((k) => k !== key);
-      try {
-        localStorage.setItem(OPEN_KEY, JSON.stringify(next));
-      } catch {}
-      return next;
-    });
+    const next = isOpen ? [...new Set([...openKeys, key])] : openKeys.filter((k) => k !== key);
+    setOpenKeys(next);
+    try {
+      localStorage.setItem(OPEN_KEY, JSON.stringify(next));
+    } catch {}
   };
 
   return (

@@ -11,6 +11,7 @@
 @import "./tokens.css" layer(components);
 @import "./base.css" layer(components);
 @import "./layout.css" layer(components);
+@import "./nav.css" layer(components);
 @import "./components.css" layer(components);
 @import "./views.css" layer(components);
 @import "./responsive.css" layer(components);

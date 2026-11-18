@@ -100,6 +100,11 @@
   color: var(--ink);
 }
 
+.rail input:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 .rail input::placeholder {
   color: var(--ink2);
   opacity: 1;
@@ -143,18 +148,49 @@ main {
   padding: var(--s3) clamp(16px, 3vw, var(--s4)) var(--s5);
 }
 
+/* Header halaman — dipakai semua modul, baik React maupun mesin legacy. */
+.page-head,
 .head {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
   gap: var(--s2);
+  min-height: 66px;
+  padding: var(--s2) var(--s3);
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(140% 200% at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 58%),
+    radial-gradient(140% 200% at 100% 0%, color-mix(in srgb, var(--info) 14%, transparent), transparent 58%),
+    var(--glass);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: saturate(190%) blur(34px);
+  backdrop-filter: saturate(190%) blur(34px);
 }
 
+.page-head::after,
+.head::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--info), transparent 85%);
+  opacity: 0.55;
+}
+
+.page-head-main,
 .head > div {
   min-width: 0;
 }
 
+.page-head h1,
+.head h1 {
+  overflow-wrap: anywhere;
+}
+
+.page-head p,
 .head p {
   max-width: 62ch;
   margin: 2px 0 0;
@@ -162,11 +198,45 @@ main {
   font-size: var(--fs-body);
 }
 
+.page-head p:empty,
+.head p:empty {
+  display: none;
+}
+
+.page-head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--s1);
+}
+
+.page-head-actions .actions {
+  justify-content: flex-end;
+}
+
+/* Mesin legacy merender header, toolbar, dan badan sebagai saudara di dalam
+   wadah ini; samakan jaraknya dengan `main` agar semua modul konsisten. */
+#legacy-island {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s1);
   align-items: center;
+}
+
+/* Samakan tinggi kontrol di toolbar (sebelumnya tombol 36px vs input 38px). */
+.toolbar .btn,
+.toolbar .seg button,
+.toolbar select,
+.toolbar input {
+  height: 38px;
 }
 
 .toolbar input[type="search"] {
@@ -233,9 +303,4 @@ main {
   to {
     transform: translate3d(4vmax, 3vmax, 0) scale(1.08);
   }
-}
-
-.gated .app,
-.gated #simbar {
-  visibility: hidden;
 }

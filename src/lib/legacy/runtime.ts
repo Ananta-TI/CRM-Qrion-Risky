@@ -434,7 +434,7 @@ function render(){
   else if(bar&&body&&typing(bar)&&main.dataset.v===vk){body.innerHTML=v.body}
   else{
     main.dataset.v=vk;
-    main.innerHTML='<div class="head"><div><h1>'+esc(v.title)+'</h1><p>'+esc(v.sub||'')+'</p></div>'+(v.action||'')+'</div>'+banners()+(v.bar?'<div class="toolbar">'+v.bar+'</div>':'')+'<div id="vbody">'+v.body+'</div>';
+    main.innerHTML='<header class="page-head"><div class="page-head-main"><h1>'+esc(v.title)+'</h1><p>'+esc(v.sub||'')+'</p></div>'+(v.action?'<div class="page-head-actions">'+v.action+'</div>':'')+'</header>'+banners()+(v.bar?'<div class="toolbar">'+v.bar+'</div>':'')+'<div id="vbody">'+v.body+'</div>';
   }
   renderDrawer();paySum();fixA11y();
 }
@@ -1802,7 +1802,7 @@ document.addEventListener('drop',async e=>{const c=e.target.closest&&e.target.cl
   if(kind==='isu'&&c.dataset.istat){const i=S.issues.find(x=>x.id===id),v=c.dataset.istat;if(i&&i.status!==v){await tstatus(i,v,i.status==='Open'&&v==='In Progress'&&!i.assignee?{assignee:me.id}:{})}}
   if(kind==='proj'&&c.dataset.pstat){const p=S.projects.find(x=>x.id===id);if(p&&p.status!==c.dataset.pstat)await write(()=>db.collection('projects').doc(id).update({status:c.dataset.pstat,log:(p.log||[]).concat([{at:new Date().toISOString(),by:me.id,text:'Status diubah menjadi '+PSTAT[c.dataset.pstat]}])}),'Dipindahkan ke '+PSTAT[c.dataset.pstat])}});
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches&&e.target.matches('div[data-open]')){const [k,id]=e.target.dataset.open.split(':');S.drawer=[k,id];render()}});
-function route(){if(S.catT)catSave();const h=(window.__QR&&window.__QR.view)||'ringkasan';S.view=VIEWS.some(v=>v[0]===h)?h:'ringkasan';if(S.view!=='tim'){S.prodDraft=null;S.accDraft=null}if(S.view!=='isu'&&S.drawer&&S.drawer[0]==='isu')S.drawer=null;S.gq='';const g=$('#gq');if(g)g.value='';render();window.scrollTo(0,0)}
+function route(){if(S.catT)catSave();const h=(window.__QR&&window.__QR.view)||'ringkasan';S.view=VIEWS.some(v=>v[0]===h)?h:'ringkasan';if(S.view!=='tim'){S.prodDraft=null;S.accDraft=null}S.drawer=null;S.form=null;S.payForm=null;S.expForm=null;S.admForm=null;S.brandForm=null;S.tplForm=null;['#lmodal','#lscrim','#ldrawer'].forEach(s=>{const e=$(s);if(e)e.hidden=true});S.gq='';const g=$('#gq');if(g)g.value='';render();window.scrollTo(0,0)}
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(h===S.view)render()});
 
 /* ---------- start ---------- */

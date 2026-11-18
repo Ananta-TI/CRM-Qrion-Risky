@@ -1,18 +1,20 @@
 "use client";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Gate from "./Gate";
+import StatusScreen from "./StatusScreen";
+import AppSkeleton from "./AppSkeleton";
+import SidebarNav from "./SidebarNav";
 import { VIEWS, live } from "@/lib/core";
 import { useAccess } from "@/lib/auth/access";
-import { useCollection } from "@/lib/data/db";
+import { db, useCollection } from "@/lib/data/db";
 import { useSession } from "@/lib/auth/session";
 import { useNameOf } from "@/lib/names";
 import { useToast } from "@/components/ui/Toast";
-import { QR, legacyBooted, syncSim } from "@/lib/legacy/bridge";
+import { QR, legacyBooted, refreshLegacy, syncSim } from "@/lib/legacy/bridge";
 
 export default function Shell({ children }: { children: React.ReactNode }) {
-  const { ready, acct, sim, setSim, logout } = useSession();
+  const { ready, authName, acct, sim, setSim, logout } = useSession();
   const A = useAccess();
   const nameOf = useNameOf();
   const path = usePathname();
@@ -28,18 +30,29 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   const toast = useToast();
   const viewRef = useRef(view);
   viewRef.current = view;
-  const doLogout = () => {
-    logout();
-    if (legacyBooted()) setTimeout(() => location.reload(), 150);
+  const [leaving, setLeaving] = useState(false);
+
+  const doLogout = async () => {
+    if (leaving) return;
+    setLeaving(true);
+    try {
+      await logout();
+    } catch {}
+    // Muat ulang penuh: memastikan state mesin legacy dan cache klien ikut bersih.
+    window.location.assign("/");
   };
+
   QR.acct = acct;
   QR.toast = toast;
   QR.logout = doLogout;
   QR.setSim = setSim;
 
+  // Sesi/akun berubah → mesin legacy perlu menggambar ulang (refresh & login).
   useEffect(() => {
+    if (!legacyBooted()) return;
     syncSim(sim ? sim.v : "");
-  }, [sim]);
+    refreshLegacy();
+  }, [acct, sim]);
 
   useEffect(() => {
     const h = () => {
@@ -52,7 +65,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   }, [router]);
 
   useEffect(() => {
-    document.body.classList.toggle("gated", !entered);
+    // Kunci scroll selama layar masuk/status tampil; kerangka aplikasi tetap terlihat.
     document.body.style.overflow = entered ? "" : "hidden";
   }, [entered]);
 
@@ -69,6 +82,13 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     sekolah: schools.filter((s) => live(s)).length,
     pipeline: leads.filter((l) => !["menang", "kalah"].includes(l.stage)).length,
   };
+
+  const dataError = db.status === "error";
+  const dataReady = db.status === "ready";
+  const waiting = ready && !!authName && !acct && !dataError && !dataReady;
+  const noAccount = ready && !!authName && !acct && dataReady;
+  const showGate = ready && !waiting && !acct && !dataError && !noAccount;
+  const viewAllowed = !view || !entered || A.allowed(view);
 
   return (
     <>
@@ -87,20 +107,21 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             id="gq"
             placeholder="Cari semua data"
             aria-label="Cari semua data"
+            disabled={!entered}
             onInput={(e) => {
               const v = (e.target as HTMLInputElement).value;
               if (viewRef.current === "ringkasan" && v.trim()) router.push("/isu?q=" + encodeURIComponent(v));
             }}
           />
-          <nav id="nav" aria-label="Modul">
-            {entered &&
-              VIEWS.filter((v) => A.allowed(v[0])).map(([k, l]) => (
-                <Link key={k} href={"/" + k} aria-current={view === k ? "page" : undefined}>
-                  {l}
-                  {n[k] != null ? <b>{n[k]}</b> : null}
-                </Link>
+          {entered ? (
+            <SidebarNav view={view} allowed={A.allowed} counts={n} />
+          ) : (
+            <nav id="nav" aria-label="Modul" aria-hidden="true">
+              {Array.from({ length: 9 }).map((_, i) => (
+                <span className="sk sk-nav" key={i} />
               ))}
-          </nav>
+            </nav>
+          )}
           <div className="me" id="me">
             {acct ? (
               <>
@@ -108,8 +129,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 <span>
                   {A.roleName(acct.role)} · @{acct.id}
                 </span>
-                <button className="btn small" onClick={doLogout} style={{ marginTop: 8 }}>
-                  Keluar
+                <button className="btn small" onClick={doLogout} disabled={leaving} style={{ marginTop: 8 }}>
+                  {leaving ? "Keluar…" : "Keluar"}
                 </button>
                 {A.own || sim ? (
                   <>
@@ -133,14 +154,31 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 ) : null}
               </>
             ) : (
-              <span>Belum masuk</span>
+              <span>{ready ? "Belum masuk" : "Memeriksa sesi…"}</span>
             )}
           </div>
         </aside>
-        <main id="main">{entered ? children : null}</main>
+        <main id="main">{entered && viewAllowed ? children : <AppSkeleton />}</main>
       </div>
-      {!entered && ready ? <Gate /> : null}
-      {!ready ? <Gate /> : null}
+
+      {ready && !waiting && dataError && !acct ? (
+        <StatusScreen title="Data belum bisa dimuat" text={db.error || "Periksa koneksi lalu coba lagi."}>
+          <button className="btn primary" onClick={() => db.init()}>
+            Coba lagi
+          </button>
+          <button className="btn" onClick={doLogout}>
+            Keluar
+          </button>
+        </StatusScreen>
+      ) : null}
+      {noAccount ? (
+        <StatusScreen title="Akun belum aktif" text="Sesi masuk valid, tetapi akun ini belum terdaftar atau dinonaktifkan di CRM. Hubungi super admin.">
+          <button className="btn primary" onClick={doLogout}>
+            Keluar
+          </button>
+        </StatusScreen>
+      ) : null}
+      {showGate ? <Gate /> : null}
     </>
   );
 }

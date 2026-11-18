@@ -175,3 +175,9 @@ export function syncSim(want: string) {
   const api = (window as any).__QR_API;
   if (api && api.simV() !== want) api.setSim(want);
 }
+/** Minta mesin legacy menggambar ulang (mis. setelah akun/sesi berubah). */
+export function refreshLegacy() {
+  if (!booting) return;
+  const api = (window as any).__QR_API;
+  if (api) api.rerender();
+}

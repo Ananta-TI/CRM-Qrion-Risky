@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { QR, bootLegacy, legacyApi, syncSim } from "@/lib/legacy/bridge";
 import { useSession } from "@/lib/auth/session";
+import AppSkeleton from "@/components/layout/AppSkeleton";
 
 /** Menampung modul yang dirender oleh mesin modul. Elemen #legacy-island diisi oleh mesin, bukan React. */
 export default function LegacyIsland({ view }: { view: string }) {
@@ -31,11 +32,7 @@ export default function LegacyIsland({ view }: { view: string }) {
   return (
     <>
       <div id="legacy-island" suppressHydrationWarning>
-        <div className="head">
-          <div>
-            <p>Memuat data…</p>
-          </div>
-        </div>
+        <AppSkeleton />
       </div>
       <div id="lscrim" className="scrim" hidden />
       <aside id="ldrawer" className="drawer" hidden aria-label="Detail" />

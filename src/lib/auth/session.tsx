@@ -7,12 +7,15 @@ import { DEF_ACCESS } from "@/lib/core";
 
 type Sim = { v: string; key: string; id: string; label: string } | null;
 type Ctx = {
+  /** true setelah status sesi diketahui (bukan berarti data sudah selesai dimuat). */
   ready: boolean;
+  /** Username dari sesi Supabase. Null pada mode lokal atau saat belum masuk. */
+  authName: string | null;
   acct: Doc | null;
   sim: Sim;
   setSim: (v: string) => void;
   login: (u: string, pw: string) => Promise<string>;
-  logout: () => void;
+  logout: () => Promise<void>;
   accounts: Doc[];
 };
 const SessionCtx = createContext<Ctx | null>(null);
@@ -25,26 +28,41 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   const [sim, setSimState] = useState<Sim>(null);
   const [fails, setFails] = useState({ n: 0, until: 0 });
-
-  const [rUser, setRUser] = useState<string | null>(null);
+  const [authName, setAuthName] = useState<string | null>(null);
 
   useEffect(() => {
     if (supabase) {
       let off = false;
       (async () => {
-        const { data } = await supabase!.auth.getSession();
-        const em = data.session?.user?.email;
-        if (em) {
-          await db.init();
-          if (!off) setRUser(usernameOf(em));
+        try {
+          // Jangan biarkan refresh menggantung bila jaringan lambat.
+          const res: any = await Promise.race([supabase!.auth.getSession(), new Promise((r) => setTimeout(() => r(null), 6000))]);
+          const em = res?.data?.session?.user?.email;
+          if (off) return;
+          if (em) {
+            // Sesi ada: tampilkan "memuat data" (bukan form login), lalu muat datanya.
+            setAuthName(usernameOf(em));
+            setReady(true);
+            await db.init();
+          } else {
+            setReady(true);
+          }
+        } catch {
+          if (!off) setReady(true);
         }
-        if (!off) setReady(true);
       })();
-      const { data: sub } = supabase.auth.onAuthStateChange((ev) => {
+      const { data: sub } = supabase.auth.onAuthStateChange((ev, session) => {
         if (ev === "SIGNED_OUT") {
           db.clear();
-          setRUser(null);
+          setAuthName(null);
+          setSimState(null);
+          return;
         }
+        const em = session?.user?.email;
+        if (!em) return;
+        setAuthName(usernameOf(em));
+        // Masuk dari tab lain: pastikan data CRM ikut dimuat.
+        if (ev === "SIGNED_IN") void db.init();
       });
       return () => {
         off = true;
@@ -59,13 +77,13 @@ export function SessionProvider({ children }: { children: ReactNode }) {
 
   const acct = useMemo(() => {
     if (remoteMode) {
-      const a = rUser ? accounts.find((x) => x.id === rUser) : null;
+      const a = authName ? accounts.find((x) => x.id === authName) : null;
       return a && a.aktif !== false ? a : null;
     }
     if (!tok) return null;
     const a = accounts.find((x) => x.id === tok.u);
     return a && a.aktif !== false && a.hash === tok.h ? a : null;
-  }, [tok, accounts, rUser]);
+  }, [tok, accounts, authName]);
 
   const login = useCallback(
     async (uRaw: string, pw: string) => {
@@ -85,6 +103,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
           return /invalid login/i.test(error.message) ? "Username atau password salah." : error.message;
         }
         setFails({ n: 0, until: 0 });
+        setAuthName(u);
         await db.init();
         if (db.status === "error") {
           const m = db.error;
@@ -96,7 +115,6 @@ export function SessionProvider({ children }: { children: ReactNode }) {
           await supabase.auth.signOut();
           return "Akun tidak aktif atau belum terdaftar di CRM.";
         }
-        setRUser(u);
         return "";
       }
       try {
@@ -123,11 +141,19 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     },
     [accounts, fails],
   );
-  const logout = useCallback(() => {
+
+  /** Keluar: cabut sesi server, dengan batas waktu agar tidak menggantung. */
+  const logout = useCallback(async () => {
     if (supabase) {
-      supabase.auth.signOut();
+      try {
+        await Promise.race([supabase.auth.signOut(), new Promise((r) => setTimeout(r, 4000))]);
+      } catch {}
+      // Jaring pengaman bila jaringan macet: bersihkan sesi lokal.
+      try {
+        await supabase.auth.signOut({ scope: "local" });
+      } catch {}
       db.clear();
-      setRUser(null);
+      setAuthName(null);
       setSimState(null);
       return;
     }
@@ -137,6 +163,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     setTok(null);
     setSimState(null);
   }, []);
+
   const setSim = useCallback(
     (v: string) => {
       if (!v) return setSimState(null);
@@ -151,7 +178,10 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     [accessDoc],
   );
 
-  const value = useMemo(() => ({ ready, acct, sim, setSim, login, logout, accounts }), [ready, acct, sim, setSim, login, logout, accounts]);
+  const value = useMemo(
+    () => ({ ready, authName, acct, sim, setSim, login, logout, accounts }),
+    [ready, authName, acct, sim, setSim, login, logout, accounts],
+  );
   return <SessionCtx.Provider value={value}>{children}</SessionCtx.Provider>;
 }
 export const useSession = () => {
@@ -159,4 +189,3 @@ export const useSession = () => {
   if (!c) throw new Error("SessionProvider belum dipasang");
   return c;
 };
-

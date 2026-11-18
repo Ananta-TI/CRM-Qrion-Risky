@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Navigasi sidebar: menu bercabang (desktop) dan daftar mendatar (mobile).
+   ========================================================================== */
+.nav-branch {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.rail .nav-flat {
+  display: none;
+}
+
+.bm {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 6px;
+  font-size: var(--bm-font, 14px);
+  line-height: 1.2;
+}
+
+/* Garis batang utama di kiri. */
+.bm::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  border-radius: 1px;
+  background: linear-gradient(to bottom, var(--sep) 0%, var(--sep) 55%, transparent 100%);
+}
+
+/* Penanda bagian aktif yang bergeser mengikuti judul grup. */
+.bm-marker {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 2px;
+  height: 16px;
+  border-radius: 1px;
+  background: var(--green-d);
+  opacity: 0;
+  transition: top 0.22s var(--ease), opacity 0.15s ease;
+}
+
+.bm-marker[data-on] {
+  opacity: 1;
+}
+
+.bm-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-head {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: var(--s1);
+  padding: 9px 4px;
+  border: 0;
+  border-radius: var(--r-xs);
+  background: none;
+  color: var(--ink2);
+  font: 500 calc(var(--bm-font, 14px) + 1px) / 1.2 var(--body);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bm-head:hover,
+.bm-section.is-open > .bm-head,
+.bm-head[data-active] {
+  color: var(--ink);
+}
+
+.bm-head[data-active] {
+  font-weight: 600;
+}
+
+.bm-chevron {
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  flex: none;
+  opacity: 0.7;
+  transform: rotate(-90deg);
+  transition: transform 0.18s var(--ease);
+}
+
+.bm-section.is-open > .bm-head .bm-chevron {
+  transform: rotate(0deg);
+}
+
+.bm-ic {
+  display: inline-flex;
+  flex: none;
+  opacity: 0.85;
+}
+
+.bm-head[data-active] .bm-ic,
+.bm-item[aria-current="true"] .bm-ic {
+  color: var(--green-d);
+  opacity: 1;
+}
+
+.bm-label {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bm-badge {
+  margin-left: auto;
+  padding: 1px 8px;
+  border-radius: var(--r-pill);
+  background: var(--fill);
+  color: var(--ink2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+}
+
+.bm-item[aria-current="true"] .bm-badge {
+  background: var(--accent-soft);
+  color: var(--green-d);
+}
+
+/* Lipatan grup memakai grid 0fr→1fr agar tingginya beranimasi mulus. */
+.bm-fold {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--bm-fold, 300ms) var(--ease);
+}
+
+.bm-section.is-open > .bm-fold {
+  grid-template-rows: 1fr;
+}
+
+.bm-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.bm-body {
+  position: relative;
+  box-sizing: border-box;
+  padding: 6px 0;
+}
+
+.bm-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.bm-section.is-open > .bm-fold .bm-lines {
+  opacity: 1;
+  transition: opacity 0.25s ease 0.1s;
+}
+
+.bm-line {
+  fill: none;
+  stroke: var(--sep);
+  stroke-width: var(--bm-line-w, 1.5);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bm-reach {
+  fill: none;
+  stroke: var(--green-d);
+  stroke-width: var(--bm-line-w, 1.5);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset var(--bm-draw, 400ms) var(--ease);
+}
+
+.bm-item {
+  display: flex;
+  width: 100%;
+  height: var(--bm-row, 36px);
+  box-sizing: border-box;
+  align-items: center;
+  gap: var(--s1);
+  padding: 0 6px 0 var(--bm-indent, 40px);
+  border: 0;
+  background: none;
+  color: var(--ink2);
+  font: 500 var(--bm-font, 14px) / 1.2 var(--body);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bm-item:hover {
+  color: var(--ink);
+}
+
+.bm-item[aria-current="true"] {
+  color: var(--green-d);
+  font-weight: 600;
+}
+
+.bm-head:focus-visible,
+.bm-item:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--green) 55%, transparent);
+  outline-offset: -2px;
+}
+
+/* Daftar mendatar untuk layar kecil. */
+.nav-flat a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 800px) {
+  .nav-branch {
+    display: none;
+  }
+
+  .nav-flat,
+  .rail .nav-flat {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bm-marker,
+  .bm-fold,
+  .bm-reach,
+  .bm-lines,
+  .bm-chevron {
+    transition: none;
+  }
+}

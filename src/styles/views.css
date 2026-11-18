@@ -25,7 +25,9 @@
 
 .ms select {
   height: 30px;
-  padding: 3px 6px;
+  padding: 3px 26px 3px 6px;
+  background-position: right 8px center;
+  background-size: 12px;
   font-size: 12px;
 }
 

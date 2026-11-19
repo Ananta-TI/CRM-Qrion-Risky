@@ -26,14 +26,50 @@
     height: auto;
   }
 
+  .nt-tools input[type="search"] {
+    max-width: none;
+    flex: 1 1 100%;
+  }
+
+  .nt-tools select {
+    min-width: 0;
+    flex: 1 1 140px;
+  }
+
   .nt-l {
     max-height: 240px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
+  .nt-bar {
+    align-items: flex-start;
+  }
+
+  .nt-acts {
+    width: 100%;
+  }
+
+  .nt-fmt {
+    padding: 5px 10px;
+  }
+
+  .nt-tags input[type="text"] {
+    width: auto;
+    min-width: 100px;
+    flex: 1;
+  }
+
+  .nt-r {
+    min-height: 420px;
+  }
+
   .nt-r textarea {
     min-height: 320px;
+  }
+
+  .nt-read {
+    padding: 16px 18px 40px;
   }
 }
 

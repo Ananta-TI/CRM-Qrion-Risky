@@ -69,7 +69,7 @@ const KEY={isu:'issues',project:'projects',sekolah:'schools',sekprod:'schools',p
 const S={view:'ringkasan',people:['Ridho','Randy'],ams:[],issues:[],projects:[],schools:[],leads:[],products:[],roles:{},team:[],names:{},asked:new Set(),
   loaded:new Set(),slow:false,dead:false,drawer:null,form:null,pending:false,prodDraft:null,defaulted:false,
   sort:{},csv:null,dl:null,imp:null,gq:'',
-  f:{isu:{q:'',st:'',prio:'',who:'',tab:'beranda'},project:{q:'',status:'aktif',who:'',type:'',asg:'',mode:'daftar'},sekolah:{q:'',status:'',who:''},pipeline:{q:'',who:'',src:'',mode:'papan'},pay:{tab:'status',q:'',f:'all',y:'',m:'',p:'',who:'',open:null},adm:{tab:'surat',q:'',arah:'',st:'',kode:'',y:''},brand:{q:'',kat:''},cat:{q:'',sel:null},log:{q:'',m:'',n:80},exp:{m:'',q:'',cat:''},akses:{sid:'',tab:'ringkas',q:'',st:'',kls:'',pg:1,sel:null},abs:{tab:'saya',m:'',d:'',st:'hadir',cat:''}},pay:[],cat:[],audit:[],abs:[],exp:[],qms:{},akLogged:new Set(),expForm:null,absSet:null,payForm:null,surat:[],mou:[],admForm:null,brand:[],brandForm:null};
+  f:{isu:{q:'',st:'',prio:'',who:'',tab:'beranda'},project:{q:'',status:'aktif',who:'',type:'',asg:'',mode:'daftar'},sekolah:{q:'',status:'',who:''},pipeline:{q:'',who:'',src:'',mode:'papan'},pay:{tab:'status',q:'',f:'all',y:'',m:'',p:'',who:'',open:null},adm:{tab:'surat',q:'',arah:'',st:'',kode:'',y:''},brand:{q:'',kat:''},cat:{q:'',sel:null,tab:'aktif',tag:'',mode:'baca',draft:null,edit:null},log:{q:'',m:'',n:80},exp:{m:'',q:'',cat:''},akses:{sid:'',tab:'ringkas',q:'',st:'',kls:'',pg:1,sel:null},abs:{tab:'saya',m:'',d:'',st:'hadir',cat:''}},pay:[],cat:[],audit:[],abs:[],exp:[],qms:{},akLogged:new Set(),expForm:null,absSet:null,payForm:null,surat:[],mou:[],admForm:null,brand:[],brandForm:null};
 const me={rid:null,get id(){return S.sim&&S.sim.id?S.sim.id:S.acct?'a:'+S.acct.id:this.rid},set id(v){this.rid=v},isOwner:false,canWrite:null};
 const own=()=>me.isOwner&&!S.sim&&!S.acct;
 let db=null,user=null;
@@ -414,13 +414,98 @@ function payTot(r){let t=0,miss=0;r.items.forEach(y=>{if(typeof y.nominal==='num
 const ntTitle=t=>{const l=String(t||'').split('\n').map(x=>x.trim()).find(Boolean);return l||'Catatan baru'};
 const ntPrev=t=>{const ls=String(t||'').split('\n').map(x=>x.trim()).filter(Boolean);return ls.slice(1).join(' ')||'Tidak ada teks tambahan'};
 const ntWhen=x=>{const iso0=x.diubah||x.dibuat;if(!iso0)return '';const d=new Date(iso0);if(isNaN(d))return '';return String(iso0).slice(0,10)===today()?d.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}):fmtD(String(iso0).slice(0,10))};
-const ntItem=(x,on)=>'<button type="button" class="nt-i" data-act="cat-open" data-id="'+esc(x.id)+'"'+(on?' aria-current="true"':'')+'><b>'+esc(ntTitle(x.teks))+'</b><span>'+esc(ntWhen(x))+(x.teks?' · ':'')+esc(x.teks?ntPrev(x.teks):'')+'</span></button>';
+const ntTags=x=>{const a=Array.isArray(x&&x.tags)?x.tags:[];return [...new Set(a.map(t=>String(t||'').trim().toLowerCase().replace(/^#+/,'').replace(/\s+/g,' ')).filter(Boolean))].slice(0,8)};
+const ntTagIn=t=>[...new Set(String(t||'').split(',').map(x=>x.trim().toLowerCase().replace(/^#+/,'').replace(/\s+/g,' ').slice(0,24)).filter(Boolean))].slice(0,8);
+const ntSame=(a,b)=>String(a||'').replace(/\r\n?/g,'\n')===String(b||'').replace(/\r\n?/g,'\n');
+const ntStmp=x=>String((x&&(x.diubah||x.dibuat))||'');
+const ntSort=(a,b)=>(!!b.pin-!!a.pin)||ntStmp(b).localeCompare(ntStmp(a));
+const ntAll=()=>S.cat.slice().sort(ntSort);
+const ntPool=()=>ntAll().filter(x=>S.f.cat.tab==='arsip'?!!x.arsip:!x.arsip);
+const ntTagPool=()=>{const s=new Set();ntAll().forEach(x=>ntTags(x).forEach(t=>s.add(t)));return [...s].sort((a,b)=>a.localeCompare(b,'id'))};
+const ntList=()=>{const f=S.f.cat,q=f.q.trim().toLowerCase();return ntPool().filter(x=>!q||String(x.teks||'').toLowerCase().indexOf(q)>=0||ntTags(x).some(t=>t.indexOf(q)>=0)).filter(x=>!f.tag||ntTags(x).indexOf(f.tag)>=0)};
+const ntFind=id=>S.cat.find(x=>x.id===id);
+function ntSyncSel(){const f=S.f.cat,list=ntList();if(f.mode==='tulis')return;if(f.sel&&list.some(x=>x.id===f.sel))return;f.sel=list.length?list[0].id:null}
+const ntItem=(x,on)=>{const tags=ntTags(x);return '<button type="button" class="nt-i" data-act="cat-open" data-id="'+esc(x.id)+'"'+(on?' aria-current="true"':'')+'><span class="nt-i-head"><b>'+esc(ntTitle(x.teks))+'</b>'+(x.pin?'<span class="nt-star" title="Disematkan" aria-label="Disematkan">★</span>':'')+'</span><span class="nt-i-sub">'+esc((x.id==='new'?'Belum disimpan':ntWhen(x))+(x.teks?' · '+ntPrev(x.teks):''))+'</span>'+(tags.length?'<span class="nt-i-tags">'+tags.map(t=>'#'+esc(t)).join(' ')+'</span>':'')+'</button>'};
+/* Toolbar atas halaman Catatan: pencarian, filter tag, dan pilihan aktif/arsip. */
+const ntBar=(f,tags,arcN)=>'<div class="nt-tools"><input type="search" data-f="cat.q" placeholder="Cari judul, isi, atau tag" aria-label="Cari catatan" value="'+esc(f.q)+'"><select data-f="cat.tag" aria-label="Saring berdasarkan tag">'+opt('','Semua tag',f.tag)+(f.tag&&tags.indexOf(f.tag)<0?opt(f.tag,'#'+f.tag,f.tag):'')+tags.map(t=>opt(t,'#'+t,f.tag)).join('')+'</select><div class="nt-seg" role="group" aria-label="Tampilkan catatan"><button type="button" data-act="cat-mode" data-m="aktif" aria-pressed="'+(f.tab!=='arsip')+'">Aktif</button><button type="button" data-act="cat-mode" data-m="arsip" aria-pressed="'+(f.tab==='arsip')+'">Arsip'+(arcN?' <span class="nt-n">'+arcN+'</span>':'')+'</button></div></div>';
+/* Baris daftar catatan di kolom kiri. */
+const ntRow=(x,on)=>ntItem(x,on);
+/* Panel kanan: baca catatan seperti membaca email, lalu bisa langsung diedit. */
+function ntRead(cur,tags){
+  const tagsCur=ntTags(cur),pin=!!cur.pin,st=S.catSt,status=ntStatus(),stCls=st&&st.id===cur.id&&st.k==='saved'?' is-saved':st&&st.id===cur.id&&st.k==='error'?' is-error':'';
+  const tagsRow='<div class="nt-tags"><span class="nt-tags-lb">Tag</span>'+(tagsCur.length?tagsCur.map(t=>'<span class="chip nt-tag">#'+esc(t)+'<button type="button" class="nt-tag-x" data-act="cat-untag" data-tag="'+esc(t)+'" aria-label="Hapus tag '+esc(t)+'">×</button></span>').join(''):'<span class="sub">Belum ada tag</span>')+'<input type="text" id="nt-tag-in" list="nt-taglist" placeholder="Tambah tag" aria-label="Tambah tag" autocomplete="off" maxlength="120"><button type="button" class="btn small" data-act="cat-tag-add">Tambah</button><datalist id="nt-taglist">'+tags.map(t=>'<option value="'+esc(t)+'"></option>').join('')+'</datalist></div>';
+  return '<div class="nt-r"><div class="nt-bar"><span id="ntdate">'+(cur.diubah?'Diubah '+fmtDT(cur.diubah):'Tanpa tanggal')+(cur.arsip?' · Diarsipkan':'')+'</span><span class="sp"></span><span id="ntst" class="nt-st'+stCls+'">'+esc(status)+'</span><span class="nt-acts"><button type="button" class="btn small" data-act="cat-pin" aria-pressed="'+pin+'" title="'+(pin?'Lepas sematan':'Sematkan di atas')+'">'+(pin?'★ Lepas':'☆ Sematkan')+'</button><button type="button" class="btn small" data-act="cat-archive" title="'+(cur.arsip?'Kembalikan ke catatan aktif':'Pindahkan ke arsip')+'">'+(cur.arsip?'Kembalikan':'Arsipkan')+'</button><button type="button" class="btn small danger" data-act="cat-del" data-confirm="Klik lagi untuk menghapus">Hapus</button><button type="button" class="btn small primary" data-act="cat-edit">Ubah</button></span></div>'+tagsRow
+    +'<div class="nt-read" tabindex="0">'+ntHtml(cur.teks)+'</div></div>';
+}
+/* Panel kanan saat mengedit. */
+function ntWrite(cur,tags){
+  const meta=cur.id==='new'?(S.f.cat.draft||(S.f.cat.draft={pin:false,tags:[]})):cur,tagsCur=ntTags(meta),pin=!!(meta&&meta.pin);
+  const st=S.catSt,status=ntStatus(),stCls=st&&st.id===cur.id&&st.k==='saved'?' is-saved':st&&st.id===cur.id&&st.k==='error'?' is-error':'';
+  const fmt=[['bold','<b>B</b>','Tebal (Ctrl+B)'],['italic','<i>I</i>','Miring (Ctrl+I)'],['strike','<s>S</s>','Coret'],['code','&lt;/&gt;','Kode'],['h','H','Judul bagian'],['ul','•','Daftar butir'],['todo','☑','Checklist']].map(b=>'<button type="button" class="nt-fbtn" data-act="cat-fmt" data-k="'+b[0]+'" title="'+b[2]+'" aria-label="'+b[2]+'">'+b[1]+'</button>').join('');
+  const tagsRow='<div class="nt-tags"><span class="nt-tags-lb">Tag</span>'+(tagsCur.length?tagsCur.map(t=>'<span class="chip nt-tag">#'+esc(t)+'<button type="button" class="nt-tag-x" data-act="cat-untag" data-tag="'+esc(t)+'" aria-label="Hapus tag '+esc(t)+'">×</button></span>').join(''):'<span class="sub">Belum ada tag</span>')+'<input type="text" id="nt-tag-in" list="nt-taglist" placeholder="Tambah tag" aria-label="Tambah tag" autocomplete="off" maxlength="120"><button type="button" class="btn small" data-act="cat-tag-add">Tambah</button><datalist id="nt-taglist">'+tags.map(t=>'<option value="'+esc(t)+'"></option>').join('')+'</datalist></div>';
+  return '<div class="nt-r"><div class="nt-bar"><span id="ntdate">'+(cur.id==='new'?'Catatan baru':cur.diubah?'Diubah '+fmtDT(cur.diubah):'Tanpa tanggal')+'</span><span class="sp"></span><span id="ntst" class="nt-st'+stCls+'">'+esc(status)+'</span><span class="nt-acts">'+(cur.id!=='new'?'<button type="button" class="btn small" data-act="cat-pin" aria-pressed="'+pin+'" title="'+(pin?'Lepas sematan':'Sematkan di atas')+'">'+(pin?'★ Lepas':'☆ Sematkan')+'</button>':'')+(cur.id!=='new'?'<button type="button" class="btn small danger" data-act="cat-del" data-confirm="Klik lagi untuk menghapus">Hapus</button>':'')+'<button type="button" class="btn small" data-act="cat-cancel">Batal</button><button type="button" class="btn small primary" data-act="cat-save">Simpan</button></span></div>'
+    +'<div class="nt-fmt">'+fmt+'<span class="sp"></span><span id="ntcount" class="nt-count">'+esc(ntCount(cur.teks))+'</span></div>'+tagsRow
+    +'<textarea id="nt-text" data-nid="'+esc(cur.id)+'" data-cn="1" placeholder="Tulis di sini. Baris pertama jadi judul. Gunakan #, **tebal**, atau - [ ] checklist." aria-label="Isi catatan">'+esc(cur.teks||'')+'</textarea></div>';
+}
+/* Mode panel kanan: 'baca' menampilkan preview, 'tulis' menampilkan editor. */
+const ntEditing=()=>S.f.cat.mode==='tulis';
+/* Kurva isi panel kanan; dipakai baik oleh view maupun saat menggambar ulang. */
+function ntPaneBody(f,tags){
+  const cur=f.sel==='new'?null:ntFind(f.sel);
+  if(f.mode==='tulis'){
+    if(f.sel==='new'){const d=f.draft||(f.draft={pin:false,tags:[]});return ntWrite({id:'new',teks:'',pin:!!d.pin,tags:d.tags||[]},tags)}
+    if(!cur){f.mode='baca';return ntPaneBody(f,tags)}
+    return ntWrite(cur,tags);
+  }
+  return cur?ntRead(cur,tags):'<div class="nt-e"><div><p style="margin:0 0 12px">'+(f.tab==='arsip'?'Belum ada catatan diarsipkan yang dipilih.':'Pilih catatan di kiri, atau tekan "Catatan baru".')+'</p><button class="btn primary" data-act="cat-new">Catatan baru</button></div></div>';
+}
+/* Gambar ulang hanya panel kanan (dipakai setelah aksi agar isi ikut berubah). */
+function ntPaint(){
+  const pane=$('#ntpane');if(!pane)return false;const f=S.f.cat;
+  const ta=$('#nt-text'),wasTyping=!!(ta&&document.activeElement===ta);
+  pane.innerHTML=ntPaneBody(f,ntTagPool());
+  const nta=$('#nt-text');
+  if(nta){const end=nta.value.length;nta.setSelectionRange(end,end);if(wasTyping||f.mode==='tulis')nta.focus()}
+  return true;
+}
+
+const ntCount=t=>{const s=String(t||''),w=s.trim()?s.trim().split(/\s+/).length:0,td=(s.match(/^\s*[-*]\s+\[[ xX]\]/gm)||[]).length,dn=(s.match(/^\s*[-*]\s+\[[xX]\]/gm)||[]).length;return w+' kata · '+s.length+' karakter'+(td?' · '+dn+'/'+td+' selesai':'')};
+const ntStatus=()=>{const s=S.catSt;return s&&s.id===S.f.cat.sel?({saving:'Menyimpan…',saved:'Tersimpan',error:'Gagal menyimpan'}[s.k]||''):''};
+const ntInline=t=>{const p=esc(t||'').split('`');return p.map((x,i)=>i%2?'<code>'+x+'</code>':x.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>').replace(/~~([^~]+)~~/g,'<s>$1</s>')).join('')};
+function ntHtml(t){const lines=String(t||'').split('\n');let out='',listTag='',listCls='',inCode=false,code=[];const close=()=>{if(listTag){out+='</'+listTag+'>';listTag='';listCls=''}};const open=(tag,cls)=>{if(listTag!==tag||listCls!==(cls||'')){close();out+='<'+tag+(cls?' class="'+cls+'"':'')+'>';listTag=tag;listCls=cls||''}};
+  for(let i=0;i<lines.length;i++){const raw=lines[i],line=raw.replace(/\t/g,'  '),trim=line.trim();
+    if(/^```/.test(trim)){if(inCode){out+='<pre>'+esc(code.join('\n'))+'</pre>';code=[];inCode=false}else{close();inCode=true}continue}
+    if(inCode){code.push(raw);continue}
+    if(!trim){close();continue}
+    const h=line.match(/^(#{1,3})\s+(.+)$/);if(h){close();const n=h[1].length;out+='<h'+n+'>'+ntInline(h[2])+'</h'+n+'>';continue}
+    if(/^---+$/.test(trim)){close();out+='<hr>';continue}
+    const ck=line.match(/^\s*[-*]\s+\[([ xX])\]\s+(.*)$/);if(ck){open('ul','nt-todo');const on=ck[1].toLowerCase()==='x';out+='<li class="nt-todo-i"><button type="button" class="nt-box" role="checkbox" aria-checked="'+(on?'true':'false')+'" data-act="cat-check" data-i="'+i+'" aria-label="Tandai item '+(i+1)+'"><span aria-hidden="true">'+(on?'✓':'')+'</span></button><span class="'+(on?'done':'')+'">'+ntInline(ck[2])+'</span></li>';continue}
+    const ul=line.match(/^\s*[-*]\s+(.+)$/);if(ul){open('ul');out+='<li>'+ntInline(ul[1])+'</li>';continue}
+    const ol=line.match(/^\s*\d+[.)]\s+(.+)$/);if(ol){open('ol');out+='<li>'+ntInline(ol[1])+'</li>';continue}
+    const bq=line.match(/^>\s?(.*)$/);if(bq){close();out+='<blockquote>'+ntInline(bq[1])+'</blockquote>';continue}
+    close();out+='<p>'+ntInline(line)+'</p>'}
+  if(inCode&&code.length)out+='<pre>'+esc(code.join('\n'))+'</pre>';close();return out||'<p class="nt-empty">Belum ada isi. Tulis di tab Tulis.</p>'}
+/* Sisipkan format di posisi kursor terakhir. Bila textarea tidak fokus (mis. setelah
+   menekan tombol format), pakai posisi yang dicatat saat kursor terakhir aktif. */
+function ntFormat(kind){const el=$('#nt-text');if(!el)return;const v=el.value,st=S.catCaret||[];const cl=n=>n==null?v.length:Math.max(0,Math.min(n,v.length));
+  const ss=cl(st[0]),se=Math.max(ss,cl(st[1])),sel=v.slice(ss,se);const wrap=(a,b)=>{const t=sel||'teks';el.value=v.slice(0,ss)+a+t+b+v.slice(se);el.selectionStart=ss+a.length;el.selectionEnd=ss+a.length+t.length};
+  const pre=p=>{const start=v.lastIndexOf('\n',ss-1)+1,stop=v.indexOf('\n',se),end=stop<0?v.length:stop;const block=v.slice(start,end).split('\n').map(l=>p+l.replace(/^(\s*)(?:[-*]\s+\[[ xX]\]\s+|[-*]\s+|\d+[.)]\s+)/,'$1')).join('\n');el.value=v.slice(0,start)+block+v.slice(end);el.selectionStart=start;el.selectionEnd=start+block.length};
+  if(kind==='bold')wrap('**','**');else if(kind==='italic')wrap('*','*');else if(kind==='strike')wrap('~~','~~');else if(kind==='code')wrap('`','`');else if(kind==='h')pre('## ');else if(kind==='ul')pre('- ');else if(kind==='todo')pre('- [ ] ');else return;
+  el.focus();el.setSelectionRange(el.selectionEnd,el.selectionEnd);S.catCaret=[el.selectionStart,el.selectionEnd];el.dispatchEvent(new Event('input',{bubbles:true}))}
 const ntBlur=()=>{const a=document.activeElement;if(a&&a.blur&&a.id==='nt-text')a.blur();S.pending=false};
-async function catSave(){const c=catCol(),f=S.f.cat,el=$('#nt-text');if(!c||!el)return;clearTimeout(S.catT);S.catT=null;const teks=el.value,now=new Date().toISOString(),st=$('#ntst');
-  if(f.sel==='new'){if(!teks.trim())return;const ref=c.doc();f.sel=ref.id;const ci=$('.nt-i[aria-current="true"]');if(ci)ci.dataset.id=ref.id;S.cat.push({id:ref.id,teks,dibuat:now,diubah:now});try{await ref.set({teks,dibuat:now,diubah:now})}catch(e){toast(errMsg(e),true)}if(st)st.textContent='Tersimpan';return}
-  const old=S.cat.find(x=>x.id===f.sel);if(!old||old.teks===teks)return;old.teks=teks;old.diubah=now;
-  try{await c.doc(old.id).set({teks,dibuat:old.dibuat||now,diubah:now});if(st)st.textContent='Tersimpan'}catch(e){toast(errMsg(e),true)}}
-async function catFlush(){if(S.catT){await catSave()}const f=S.f.cat,c=catCol();if(c&&f.sel&&f.sel!=='new'){const x=S.cat.find(y=>y.id===f.sel);if(x&&!String(x.teks||'').trim()){try{await c.doc(x.id).delete()}catch(e){}S.cat=S.cat.filter(y=>y.id!==x.id)}}}
+/* Setelah aksi editor, lepaskan fokus agar render() benar-benar menggambar ulang isi. */
+const ntBlurBody=()=>{const a=document.activeElement,b=document.getElementById('vbody');if(a&&a.blur&&b&&b.contains(a))a.blur();S.pending=false};
+function ntSaved(id,iso){S.catSt={k:'saved',id,at:Date.now()};if(S.f.cat.sel===id){const st=$('#ntst');if(st){st.textContent='Tersimpan';st.className='nt-st is-saved'}const dt=$('#ntdate');if(dt&&iso)dt.textContent='Diubah '+fmtDT(iso)}}
+function ntFailed(e){S.catSt={k:'error',id:S.f.cat.sel,at:Date.now()};const st=$('#ntst');if(st){st.textContent='Gagal menyimpan';st.className='nt-st is-error'}toast(errMsg(e),true)}
+async function ntPut(x,teks){const c=catCol();if(!c||!x||!x.id||x.id==='new')return false;const now=new Date().toISOString(),oldT=x.teks,oldU=x.diubah;x.teks=teks;x.diubah=now;
+  try{await c.doc(x.id).update({teks,dibuat:x.dibuat||now,diubah:now});ntSaved(x.id,now);return true}catch(e){x.teks=oldT;x.diubah=oldU;ntFailed(e);return false}}
+async function ntPatch(id,patch){const c=catCol(),x=ntFind(id);if(!c||!x)return false;const before={};Object.keys(patch).forEach(k=>{before[k]=x[k]});Object.assign(x,patch);queue();
+  try{await c.doc(id).update(patch);return true}catch(e){Object.keys(before).forEach(k=>{if(before[k]===undefined)delete x[k];else x[k]=before[k]});toast(errMsg(e),true);queue();return false}}
+async function catSave(){clearTimeout(S.catT);S.catT=null;const c=catCol(),f=S.f.cat,el=$('#nt-text');if(!c||!el||String(el.dataset.nid||'')!==String(f.sel))return false;const teks=el.value,now=new Date().toISOString();
+  if(f.sel==='new'){if(!teks.trim())return false;const d=f.draft||{},meta={};if(d.pin)meta.pin=true;const tags=ntTags(d);if(tags.length)meta.tags=tags;const ref=c.doc();f.sel=ref.id;f.draft={pin:!!d.pin,tags:d.tags||[],id:ref.id,isNew:true};el.dataset.nid=ref.id;S.cat.push(Object.assign({id:ref.id,teks,dibuat:now,diubah:now},meta));
+    try{await ref.set(Object.assign({teks,dibuat:now,diubah:now},meta));ntSaved(ref.id,now);return true}catch(e){S.cat=S.cat.filter(y=>y.id!==ref.id);f.sel='new';f.draft=d;el.dataset.nid='new';ntFailed(e);return false}}
+  const old=ntFind(f.sel);if(!old)return false;if(ntSame(old.teks,teks)){ntSaved(old.id,old.diubah||now);return true}return ntPut(old,teks)}
+async function catFlush(){if(S.catT||$('#nt-text'))await catSave();const f=S.f.cat,c=catCol();if(f.sel==='new'){f.draft={pin:false,tags:[]}}if(!c||!f.sel||f.sel==='new')return;const x=ntFind(f.sel);if(x&&!String(x.teks||'').trim()&&!ntTags(x).length&&!x.pin){try{await c.doc(x.id).delete();S.cat=S.cat.filter(y=>y.id!==x.id)}catch(e){}if(f.sel===x.id)f.sel=null;if(S.catSt&&S.catSt.id===x.id)S.catSt=null}}
 const ABS_ST={hadir:['Hadir di kantor','good'],wfh:['WFH','info'],dinas:['Dinas luar','info'],izin:['Izin','warn'],sakit:['Sakit','warn']};
 const absCfg=()=>Object.assign({jamMasuk:'09:00',jamPulang:'16:00',toleransi:10},S.absSet||{});
 const absId=(d,u)=>d+'_'+String(u).replace(/[^a-zA-Z0-9_-]/g,'_');
@@ -1136,17 +1221,14 @@ absen(){
     +'<section class="panel" style="margin-top:14px"><header><h2>Rekap bulanan</h2><span class="inline"><input type="month" data-abf="m" value="'+esc(ym)+'" aria-label="Pilih bulan">'+csvBtn()+'</span></header>'+(rec.length?rTbl:'<div class="empty">Belum ada data.</div>')+'</section>'+cfgp;
   return{title:'Absen',sub:'Kehadiran tim: harian dan rekap bulanan.',bar:tabs,body}},
 catatan(){
-  const f=S.f.cat,q=f.q.trim().toLowerCase(),all=S.cat.slice().sort((a,b)=>String(b.diubah||b.dibuat||'').localeCompare(String(a.diubah||a.dibuat||'')));
-  const list=all.filter(x=>!q||String(x.teks||'').toLowerCase().indexOf(q)>=0);
-  if(!f.sel||(f.sel!=='new'&&!all.some(x=>x.id===f.sel)))f.sel=all.length?all[0].id:null;
-  const cur=f.sel==='new'?{id:'new',teks:''}:all.find(x=>x.id===f.sel),t0=today();
+  const f=S.f.cat,q=f.q.trim().toLowerCase(),all=ntAll(),list=ntList(),tags=ntTagPool(),arcN=S.cat.filter(x=>x.arsip).length,t0=today();
+  ntSyncSel();
+  const bar=ntBar(f,tags,arcN);
   let h='',grp='';
-  list.forEach(x=>{const d=String(x.diubah||x.dibuat||'').slice(0,10),n=d?days(d,t0):99,g=n<=0?'Hari ini':n===1?'Kemarin':n<=7?'7 hari terakhir':n<=30?'30 hari terakhir':'Lebih lama';if(g!==grp){grp=g;h+='<div class="nt-g">'+g+'</div>'}
-    h+=ntItem(x,x.id===f.sel)});
-  const left='<div class="nt-l" id="ntl">'+(f.sel==='new'?ntItem({id:'new',teks:''},true):'')+(h||(f.sel==='new'?'':'<div class="nt-g">'+(all.length?'Tidak ada yang cocok':'Belum ada catatan')+'</div>'))+'</div>';
-  const right=cur?'<div class="nt-r"><div class="nt-bar"><span id="ntdate">'+(cur.diubah?'Diubah '+fmtDT(cur.diubah):'Catatan baru')+'</span><span class="sp"></span><span id="ntst"></span><button class="btn small danger" data-act="cat-del" data-confirm="Klik lagi untuk menghapus">Hapus</button></div><textarea id="nt-text" data-cn="1" placeholder="Tulis di sini. Baris pertama jadi judul." aria-label="Isi catatan">'+esc(cur.teks||'')+'</textarea></div>'
-    :'<div class="nt-r"><div class="nt-e"><div><p style="margin:0 0 12px">Belum ada catatan yang dipilih.</p><button class="btn primary" data-act="cat-new">Catatan baru</button></div></div></div>';
-  return{title:'Catatan',sub:'Catatan pribadi, hanya Anda yang bisa membukanya.',action:'<div><button class="btn primary" data-act="cat-new">Catatan baru</button></div>',bar:'<input type="search" data-f="cat.q" placeholder="Cari catatan" aria-label="Cari catatan" value="'+esc(f.q)+'">',body:'<div class="nt">'+left+right+'</div>'};
+  list.forEach(x=>{const d=String(x.diubah||x.dibuat||'').slice(0,10),n=d?days(d,t0):99,g=n<=0?'Hari ini':n===1?'Kemarin':n<=7?'7 hari terakhir':n<=30?'30 hari terakhir':'Lebih lama';if(g!==grp){grp=g;h+='<div class="nt-g">'+g+'</div>'}h+=ntRow(x,x.id===f.sel)});
+  const left='<div class="nt-l" id="ntl">'+(h||'<div class="nt-g">'+(q||f.tag?'Tidak ada yang cocok':f.tab==='arsip'?'Belum ada catatan diarsipkan':'Belum ada catatan')+'</div>')+'</div>';
+  const pane='<div class="nt-pane" id="ntpane">'+ntPaneBody(f,tags)+'</div>';
+  return{title:'Catatan',sub:'Catatan pribadi, hanya Anda yang bisa membukanya.',action:'<div><button class="btn primary" data-act="cat-new">Catatan baru</button></div>',bar,body:'<div class="nt">'+left+pane+'</div>'};
 },
 tim(){
   const adm=isAdmin();
@@ -1924,9 +2006,29 @@ const ACT={
     }catch(e){toast((e&&e.message)||'Gagal menyimpan akun.',true)}},
   async 'ac-toggle'(b){const a=S.accounts.find(x=>x.id===b.dataset.u);if(!a||!own())return;await write(()=>db.doc('accounts/'+a.id).set(Object.assign(acDoc(a),{aktif:a.aktif===false})),a.aktif===false?'Akun diaktifkan':'Akun dinonaktifkan')},
   async 'ac-del'(b){if(!own()||!armed(b))return;try{await window.__QR.dropUser(b.dataset.u)}catch(e){toast((e&&e.message)||'Gagal menghapus login.',true);return}await write(()=>db.doc('accounts/'+b.dataset.u).delete(),'Akun dihapus')},
-  async 'cat-new'(){await catFlush();S.f.cat.q='';S.f.cat.sel='new';ntBlur();render();const e=$('#nt-text');if(e)e.focus()},
-  async 'cat-open'(b){const id=b.dataset.id;if(id===S.f.cat.sel)return;await catFlush();S.f.cat.sel=id;ntBlur();render()},
-  async 'cat-del'(b){const c=catCol(),id=S.f.cat.sel;if(!armed(b))return;clearTimeout(S.catT);S.catT=null;if(id&&id!=='new'&&c){try{await c.doc(id).delete();toast('Catatan dihapus')}catch(e){toast(errMsg(e),true);return}}S.f.cat.sel=null;render()},
+  async 'cat-new'(){await catFlush();const f=S.f.cat;f.q='';f.tag='';f.tab='aktif';f.mode='tulis';f.sel='new';f.draft={pin:false,tags:[],id:null,isNew:true};S.catSt=null;S.catCaret=null;render();const t=$('#nt-text');if(t){t.focus();t.setSelectionRange(t.value.length,t.value.length)}},
+  async 'cat-open'(b){const id=b.dataset.id;if(!id)return;await catFlush();const f=S.f.cat;f.sel=id;f.mode='baca';f.draft=null;S.catSt=null;S.catCaret=null;render()},
+  async 'cat-edit'(){const f=S.f.cat;if(!f.sel||f.sel==='new')return;await catSave();f.mode='tulis';f.edit={id:f.sel,teks:(ntFind(f.sel)||{}).teks||''};if(!ntPaint())render();const t=$('#nt-text');if(t){t.focus();t.setSelectionRange(t.value.length,t.value.length)}},
+  async 'cat-save'(){const f=S.f.cat;await catSave();f.draft=null;f.edit=null;f.mode='baca';ntBlurBody();render()},
+  async 'cat-cancel'(){const f=S.f.cat;clearTimeout(S.catT);S.catT=null;const t=$('#nt-text');
+    if(f.draft&&f.draft.isNew){const x=f.draft.id?ntFind(f.draft.id):null;if(x){const c=catCol();try{if(c)await c.doc(x.id).delete();S.cat=S.cat.filter(y=>y.id!==x.id)}catch(e){}}f.draft=null;f.sel=null}
+    else if(f.edit&&ntFind(f.edit.id)){const x=ntFind(f.edit.id);if(t&&t.value!==x.teks)x.teks=f.edit.teks}
+    f.edit=null;f.mode='baca';S.catSt=null;ntSyncSel();ntBlurBody();render()},
+  async 'cat-del'(b){if(!armed(b))return;const c=catCol(),f=S.f.cat,id=f.sel;clearTimeout(S.catT);S.catT=null;
+    if(!id||id==='new'){f.draft=null;f.sel=null;f.mode='baca';if(!ntPaint())render();return}
+    if(c){try{await c.doc(id).delete();toast('Catatan dihapus')}catch(e){toast(errMsg(e),true);return}}
+    f.draft=null;S.catSt=null;f.sel=null;f.mode='baca';render()},
+  async 'cat-pin'(){const f=S.f.cat;if(f.sel==='new'&&!await catSave()){const d=f.draft||(f.draft={pin:false,tags:[]});d.pin=!d.pin;render();return}await catSave();const x=ntFind(f.sel);if(!x)return;if(await ntPatch(x.id,{pin:!x.pin})){f.mode=f.mode==='tulis'?'tulis':'baca';ntBlurBody();render()}},
+  async 'cat-archive'(){const f=S.f.cat;if(!f.sel||f.sel==='new')return;await catSave();const x=ntFind(f.sel);if(!x)return;const to=!x.arsip;if(await ntPatch(x.id,{arsip:to})){f.sel=null;f.mode='baca';S.catSt=null;render();toast(to?'Catatan diarsipkan':'Catatan dikembalikan')}},
+  async 'cat-mode'(b){const m=b.dataset.m==='arsip'?'arsip':'aktif',f=S.f.cat;if(f.tab===m)return;await catFlush();f.tab=m;f.sel=null;f.mode='baca';S.catSt=null;render()},
+  'cat-fmt'(b){ntFormat(b.dataset.k)},
+  async 'cat-check'(b){clearTimeout(S.catT);S.catT=null;const x=ntFind(S.f.cat.sel);if(!x)return;const i=+b.dataset.i,lines=String(x.teks||'').split('\n'),m=(lines[i]||'').match(/^(\s*[-*]\s+\[)([ xX])(\]\s+.*)$/);if(!m)return;lines[i]=m[1]+(m[2]==='x'?' ':'x')+m[3];S.catSt={k:'saving',id:x.id,at:Date.now()};await ntPut(x,lines.join('\n'));ntPaint()},
+  async 'cat-tag-add'(){const f=S.f.cat,inp=$('#nt-tag-in'),add=ntTagIn(inp?inp.value:'');if(!add.length)return;
+    if(f.sel==='new'&&f.mode==='tulis'){const d=f.draft||(f.draft={pin:false,tags:[]});d.tags=ntTagIn(ntTags(d).concat(add).join(','));render();return}
+    await catSave();const x=ntFind(f.sel);if(!x)return;const next=ntTagIn(ntTags(x).concat(add).join(','));if(await ntPatch(x.id,{tags:next})){ntBlurBody();render()}},
+  async 'cat-untag'(b){const f=S.f.cat,tag=String(b.dataset.tag||'');if(!tag)return;
+    if(f.sel==='new'&&f.mode==='tulis'){const d=f.draft;if(d)d.tags=ntTags(d).filter(t=>t!==tag);render();return}
+    await catSave();const x=ntFind(f.sel);if(!x)return;const next=ntTags(x).filter(t=>t!==tag);if(await ntPatch(x.id,{tags:next})){ntSyncSel();ntBlurBody();render()}},
   'abs-tab'(b){S.f.abs.tab=b.dataset.t;render()},
   async 'abs-in'(){const f=S.f.abs,d=today();if(!me.id||!db||S.absBusy)return;if(absOf(d,me.id)){toast('Anda sudah absen hari ini.',true);return}
     S.absBusy=true;const now=new Date().toISOString(),nt=absNoTime({status:f.st}),doc={tanggal:d,uid:me.id,nama:nameOf(me.id),status:f.st,masuk:nt?null:now,pulang:null,catatan:String(f.cat||'').trim(),dibuat:now};
@@ -1968,9 +2070,9 @@ document.addEventListener('click',e=>{
 document.addEventListener('submit',e=>{e.preventDefault();if(e.target.id==='frm')submitForm();if(e.target.id==='lgf')doLogin();if(e.target.id==='acf')ACT['ac-save']()});
 document.addEventListener('input',e=>{
   const t=e.target;
-  if(t.dataset.f&&t.type==='search'){const [v,k]=t.dataset.f.split('.');S.f[v][k]=t.value;queue()}
+  if(t.dataset.f&&t.type==='search'){const [v,k]=t.dataset.f.split('.');S.f[v][k]=t.value;if(v==='cat'){if(S.catT)catSave();ntSyncSel()}queue()}
   if(t.id==='gq'){S.gq=t.value;queue()}
-  if(t.dataset.cn){const it=$('.nt-i[aria-current="true"]'),v=t.value;if(it){it.querySelector('b').textContent=ntTitle(v);it.querySelector('span').textContent=(v.trim()?'Baru saja · '+ntPrev(v):'')}const st=$('#ntst');if(st)st.textContent='Menyimpan…';clearTimeout(S.catT);S.catT=setTimeout(catSave,700);return}
+  if(t.dataset.cn){const v=t.value;if(document.activeElement===t)S.catCaret=[t.selectionStart,t.selectionEnd];const cnt=$('#ntcount');if(cnt)cnt.textContent=ntCount(v);S.catSt={k:'saving',id:S.f.cat.sel,at:Date.now()};const st=$('#ntst');if(st){st.textContent='Menyimpan…';st.className='nt-st'}clearTimeout(S.catT);S.catT=setTimeout(catSave,700);return}
   if(t.dataset.ef&&S.expForm){S.expForm[t.dataset.ef]=t.value;return}
   if(t.dataset.abf&&t.dataset.abf!=='m'&&t.dataset.abf!=='d'){S.f.abs[t.dataset.abf]=t.value;if(t.dataset.abf==='st'){return}}
   if(S.acForm&&t.dataset.lf){S.acForm[t.dataset.lf]=t.dataset.lf==='username'?t.value.toLowerCase():t.value}
@@ -1998,7 +2100,7 @@ document.addEventListener('change',async e=>{
   if(t.dataset.att){await pickFiles(t.dataset.att,t);return}
   if(t.dataset.up){const f0=t.files&&t.files[0],k=t.dataset.up;t.value='';if(!f0||!S.assets||!me.isOwner||S.sim)return;if(f0.size>5*1048576){toast('Gambar maksimal 5 MB.',true);return}try{const r=await S.assets.upload(f0);await write(()=>db.doc('settings/invoice').set(Object.assign({},S.invSet,{[k]:r.url})),'Gambar tersimpan')}catch(e){toast('Gagal mengunggah gambar.',true)}return}
   if(t.dataset.sim!=null){window.__QR.setSim(t.value);return}
-  if(t.dataset.f&&t.tagName==='SELECT'){const [v,k]=t.dataset.f.split('.');S.f[v][k]=t.value;queue();return}
+  if(t.dataset.f&&t.tagName==='SELECT'){const [v,k]=t.dataset.f.split('.');S.f[v][k]=t.value;if(v==='cat'){if(S.catT)catSave();ntSyncSel()}queue();return}
   if(t.dataset.ack&&S.accDraft&&S.accDraft[t.dataset.ack]){const r=S.accDraft[t.dataset.ack];if(t.dataset.acm)r.access[t.dataset.acm]=+t.value;else r[t.dataset.acf]=t.value;return}
   if(t.dataset.ef&&S.expForm){S.expForm[t.dataset.ef]=t.value;return}
   if(t.dataset.efc&&S.expForm){S.expForm[t.dataset.efc]=t.checked;return}
@@ -2021,7 +2123,16 @@ document.addEventListener('change',async e=>{
   if(t.dataset.actChange==='lstage'){const c=cur();await write(()=>c.ref.update({stage:t.value}),'Tahap diperbarui')}
 });
 document.addEventListener('focusout',()=>{if(S.pending){S.pending=false;setTimeout(render,0)}});
+/* Ingat posisi kursor di editor catatan agar tombol format menyisipkan di tempat terakhir. */
+const ntTrack=e=>{const t=e.target;if(t&&t.id==='nt-text'){S.catCaret=[t.selectionStart,t.selectionEnd]}};
+document.addEventListener('keyup',ntTrack);
+document.addEventListener('mouseup',ntTrack);
+document.addEventListener('select',ntTrack);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.documentElement.classList.contains('is-dragging'))return;if(e.key==='Escape'){if(S.form){ACT['form-close']()}else if(S.drawer){S.drawer=null;render()}}});
+document.addEventListener('keydown',e=>{if(S.view!=='catatan'||S.f.cat.mode!=='tulis')return;const t=e.target,mod=e.ctrlKey||e.metaKey;
+  if(e.key==='Enter'&&t&&t.id==='nt-tag-in'){e.preventDefault();ACT['cat-tag-add']();return}
+  if(mod&&t&&t.id==='nt-text'&&/^[bi]$/i.test(e.key)){e.preventDefault();ntFormat(e.key.toLowerCase()==='b'?'bold':'italic');return}
+  if(mod&&/^s$/i.test(e.key)){e.preventDefault();if(ntEditing())ACT['cat-save']();else catSave().then(ok=>{if(ok)toast('Catatan tersimpan')})}});
 const colCan=c=>c.dataset.pstat?canPlan():c.dataset.istat?canHandle():can('pipeline');
 const cardCanDrag=el=>{const d=(el&&el.dataset.drag)||'';if(d.indexOf('lead:')===0)return can('pipeline');if(d.indexOf('proj:')===0)return canPlan();if(d.indexOf('isu:')===0)return canHandle();return false};
 const reducedMotion=()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}};
@@ -2264,7 +2375,7 @@ document.addEventListener('click',e=>{if(performance.now()<CLICK_GUARD){e.preven
 document.addEventListener('contextmenu',e=>{const c=dragCardOf(e.target);if(c&&cardCanStart(c))e.preventDefault()});
 window.addEventListener('blur',()=>{if(DRAG)endDrag(true);else clearPending()});
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches&&e.target.matches('div[data-open]')){const [k,id]=e.target.dataset.open.split(':');S.drawer=[k,id];render()}});
-function route(){if(S.catT)catSave();const h=(window.__QR&&window.__QR.view)||'ringkasan';S.view=VIEWS.some(v=>v[0]===h)?h:'ringkasan';if(S.view!=='tim'){S.prodDraft=null;S.accDraft=null}S.drawer=null;S.form=null;S.payForm=null;S.expForm=null;S.admForm=null;S.brandForm=null;S.tplForm=null;closeModal(true);closeDrawer(true);S.gq='';const g=$('#gq');if(g)g.value='';render();window.scrollTo(0,0)}
+function route(){if(S.view==='catatan')catFlush();const h=(window.__QR&&window.__QR.view)||'ringkasan';S.view=VIEWS.some(v=>v[0]===h)?h:'ringkasan';if(S.view!=='tim'){S.prodDraft=null;S.accDraft=null}S.drawer=null;S.form=null;S.payForm=null;S.expForm=null;S.admForm=null;S.brandForm=null;S.tplForm=null;closeModal(true);closeDrawer(true);S.gq='';const g=$('#gq');if(g)g.value='';render();window.scrollTo(0,0)}
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(h===S.view)render()});
 
 /* ---------- start ---------- */

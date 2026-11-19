@@ -1978,7 +1978,70 @@ textarea.ie {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- Catatan pribadi ---------- */
+/* ---------- Catatan pribadi (daftar + panel baca/editor) ---------- */
+.nt-tools {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-tools input[type="search"] {
+  min-width: 180px;
+  max-width: 420px;
+  flex: 1 1 220px;
+}
+
+.nt-tools select {
+  width: auto;
+  min-width: 140px;
+}
+
+.nt-seg {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+}
+
+.nt-seg button {
+  height: 28px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: none;
+  color: var(--ink2);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nt-seg button:hover {
+  background: var(--fill);
+  color: var(--ink);
+}
+
+.nt-seg button[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--good);
+}
+
+.nt-n {
+  display: inline-block;
+  min-width: 16px;
+  margin-left: 3px;
+  padding: 0 5px;
+  border-radius: var(--r-pill);
+  background: var(--fill);
+  color: var(--ink2);
+  font-size: 11px;
+  text-align: center;
+}
+
 .nt {
   display: grid;
   grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
@@ -2011,28 +2074,46 @@ textarea.ie {
   border: 0;
   border-radius: var(--r-sm);
   background: none;
+  color: inherit;
   font: inherit;
   text-align: left;
   cursor: pointer;
 }
 
 .nt-i:hover {
-  background: var(--fill);
+  background: var(--surface);
 }
 
 .nt-i[aria-current="true"] {
   background: var(--accent-soft);
 }
 
+.nt-i-head {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+}
+
 .nt-i b {
   display: block;
+  min-width: 0;
+  flex: 1;
   overflow: hidden;
   font-size: 14.5px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.nt-i span {
+.nt-star {
+  flex: 0 0 auto;
+  color: var(--star);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.nt-i-sub,
+.nt-i-tags {
   display: block;
   margin-top: 2px;
   overflow: hidden;
@@ -2042,28 +2123,177 @@ textarea.ie {
   white-space: nowrap;
 }
 
-.nt-r {
+.nt-i-tags {
+  color: var(--link);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.nt-pane {
   display: flex;
   min-width: 0;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.nt-r {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .nt-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px;
+  padding: 9px 14px;
   border-bottom: 1px solid var(--line);
   color: var(--ink2);
   font-size: 12.5px;
+}
+
+#ntdate {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nt-bar .sp {
   flex: 1;
 }
 
+.nt-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.nt-st {
+  min-height: 1em;
+  font-variant-numeric: tabular-nums;
+}
+
+.nt-st.is-saved {
+  color: var(--good);
+}
+
+.nt-st.is-error {
+  color: var(--crit);
+}
+
+.nt-fmt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--line);
+  background: var(--fill);
+}
+
+.nt-fbtn {
+  display: inline-flex;
+  min-width: 30px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: none;
+  color: var(--ink2);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nt-fbtn:hover {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.nt-fbtn:active {
+  transform: scale(0.96);
+}
+
+.nt-fmt .sp {
+  flex: 1;
+}
+
+.nt-count {
+  color: var(--ink2);
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+.nt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nt-tags-lb {
+  color: var(--ink2);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.nt-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding-right: 4px;
+  margin: 0;
+  background: var(--accent-soft);
+  color: var(--good);
+}
+
+.nt-tag-x {
+  display: inline-flex;
+  width: 17px;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nt-tag-x:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.nt-tags input[type="text"] {
+  width: 130px;
+  height: 28px;
+  padding: 2px 9px;
+  font-size: 12px;
+}
+
+.nt-tags .btn.small {
+  height: 28px;
+  padding: 0 10px;
+}
+
 .nt-r textarea {
-  min-height: 0;
+  min-height: 300px;
   flex: 1;
   padding: 18px 22px;
   border: 0;
@@ -2073,6 +2303,144 @@ textarea.ie {
   line-height: var(--lh-body);
   outline: 0;
   resize: none;
+}
+
+/* Panel baca: seluruh isi catatan tampil langsung, seperti membaca email. */
+.nt-read {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 40px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  overflow-wrap: anywhere;
+}
+
+.nt-read > :first-child {
+  margin-top: 0;
+}
+
+.nt-read > :last-child {
+  margin-bottom: 0;
+}
+
+.nt-read p {
+  margin: 0 0 9px;
+}
+
+.nt-read h1,
+.nt-read h2,
+.nt-read h3 {
+  margin: 16px 0 7px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.nt-read h1 {
+  font-size: 24px;
+}
+
+.nt-read h2 {
+  font-size: 20px;
+}
+
+.nt-read h3 {
+  font-size: 17px;
+}
+
+.nt-read ul,
+.nt-read ol {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+
+.nt-read li {
+  margin: 2px 0;
+}
+
+.nt-read blockquote {
+  margin: 0 0 10px;
+  padding: 4px 12px;
+  border-left: 3px solid var(--accent);
+  color: var(--ink2);
+}
+
+.nt-read hr {
+  margin: 14px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.nt-read pre {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  border-radius: var(--r-sm);
+  background: var(--fill);
+  font-size: 13px;
+}
+
+.nt-read code {
+  padding: 1px 4px;
+  border-radius: 5px;
+  background: var(--fill);
+  font-size: 0.92em;
+}
+
+.nt-read pre code {
+  padding: 0;
+  background: none;
+}
+
+.nt-read .nt-empty {
+  color: var(--faint);
+}
+
+.nt-read ul.nt-todo {
+  padding-left: 0;
+  list-style: none;
+}
+
+.nt-todo-i {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 4px 0;
+}
+
+.nt-todo-i > span:last-child {
+  min-width: 0;
+}
+
+.nt-box {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  padding: 0;
+  place-items: center;
+  border: 1.5px solid var(--faint);
+  border-radius: 6px;
+  background: var(--surface);
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nt-box:hover {
+  border-color: var(--accent);
+}
+
+.nt-box[aria-checked="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.nt-box[aria-checked="true"] + span {
+  color: var(--faint);
+  text-decoration: line-through;
 }
 
 .nt-e {

@@ -140,6 +140,16 @@ const user = {
 };
 
 let booting: Promise<void> | null = null;
+/** Elemen yang dipakai mesin modul: island di halaman legacy, atau satu di Shell. */
+function ensureHost() {
+  let host = document.getElementById("legacy-island");
+  if (host) return host;
+  host = document.createElement("div");
+  host.id = "legacy-island";
+  host.hidden = true;
+  document.body.appendChild(host);
+  return host;
+}
 /** Pasang shim `window.claude` lalu jalankan mesin modul sekali per muatan halaman. */
 export function bootLegacy(): Promise<void> {
   if (booting) return booting;
@@ -148,6 +158,7 @@ export function bootLegacy(): Promise<void> {
   db.onError((m) => QR.toast(m, true));
   booting = import("./runtime").then((m) => {
     m.default();
+    ensureHost();
     return new Promise<void>((resolve) => {
       let n = 0;
       const t = setInterval(() => {

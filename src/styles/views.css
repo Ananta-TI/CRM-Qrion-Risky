@@ -630,149 +630,1061 @@
 }
 
 /* ---------- Pembayaran mitra ---------- */
-table.mtab {
-  min-width: 1080px;
-  border-collapse: separate;
-  border-spacing: 0;
+/* Tab dipisah dari filter supaya toolbar tidak menumpuk saat layar sempit. */
+.toolbar > .pay-tabbar {
+  flex: 1 0 100%;
+  min-width: 0;
 }
 
-.mtab th:first-child,
-.mtab td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 2;
-  min-width: 210px;
-  max-width: 230px;
-  background: var(--sheet);
+.pay-tabbar .seg {
+  display: inline-flex;
 }
 
-.mtab th.mon,
-.mtab td.mon {
-  width: 120px;
-  min-width: 120px;
-  vertical-align: top;
-}
-
-.mtab td {
-  border-top: 1px solid var(--sep);
-}
-
-.mtab td.mon .th {
-  width: 100%;
-}
-
-.mtab td.mon .pill {
-  max-width: 112px;
-  white-space: normal;
-  line-height: 1.25;
-}
-
-th.now {
-  color: var(--ink);
-  box-shadow: inset 0 -3px 0 var(--green);
-}
-
-th.mon,
-td.mon {
-  min-width: 84px;
-  text-align: center;
-}
-
-.th {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: inherit;
-  font: inherit;
-  text-align: inherit;
-  cursor: pointer;
-}
-
-.th:hover {
-  color: var(--ink);
-}
-
-.pitem {
-  display: grid;
-  grid-template-columns: 130px minmax(140px, 1.4fr) minmax(200px, 1.6fr) minmax(130px, 1fr) auto;
-  gap: var(--s1);
-  align-items: center;
-}
-
-.pitem .per {
+.pay-filters {
   display: flex;
+  flex: 1 0 100%;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: var(--s1);
+  min-width: 0;
+}
+
+.pay-filters input[type="search"] {
+  flex: 1 1 260px;
+  min-width: 180px;
+}
+
+.pay-filters select {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.pay-filter-toggle {
+  display: none;
+}
+
+.pay-filter-toggle[aria-expanded="true"] {
+  background: var(--sel);
+  color: var(--sel-ink);
+}
+
+.pay-adv {
+  display: flex;
+  flex: 2 1 420px;
+  min-width: 0;
+  gap: var(--s1);
+}
+
+.pay-adv select {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.pay-adv select:first-child {
+  flex: 1.3 1 0;
+}
+
+.pay-page {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pay-page > .pay-newmitra {
+  flex-basis: auto !important;
+  margin: 0 !important;
+}
+
+.pay-newmitra .fields {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.pay-muted {
+  color: var(--faint);
+}
+
+/* Ringkasan status per bulan */
+.pay-board {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--s2);
+  padding: var(--s3);
+  border-radius: var(--r);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: saturate(190%) blur(34px);
+  backdrop-filter: saturate(190%) blur(34px);
+}
+
+.pay-board-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s2);
+}
+
+.pay-board-head h2 {
+  margin: 0;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.02em;
+}
+
+.pay-board-head p {
+  margin: 2px 0 0;
   color: var(--ink2);
   font-size: var(--fs-meta);
 }
 
-.pitem .per input {
-  width: 64px;
-  flex: none;
+.pay-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 14px;
+  color: var(--ink2);
+  font-size: 12px;
 }
 
-.pwrap {
-  margin-top: 10px;
-  padding: 10px 12px;
+.pay-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.pay-legend i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pay-legend i.lg {
+  background: var(--green);
+}
+
+.pay-legend i.ex {
+  background: var(--star);
+}
+
+.pay-legend i.in {
+  background: var(--info);
+}
+
+.pay-legend em {
+  color: var(--faint);
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.pay-matrix-scroll {
+  overflow-x: auto;
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 0.5px var(--line);
+  -webkit-overflow-scrolling: touch;
+}
+
+.pay-matrix {
+  min-width: 940px;
+}
+
+.mhead,
+.mrow {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.mhead {
+  background: var(--sheet);
+  border-bottom: 0.5px solid var(--sep);
+}
+
+.mhead-mon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 2px;
+  color: var(--ink2);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.mhead-mon.now {
+  color: var(--good);
+  box-shadow: inset 0 -2px 0 var(--green);
+}
+
+.mhead .mcells,
+.mrow .mcells {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.mhead .mcells {
+  padding: 0 8px;
+}
+
+.mrow {
+  border-top: 0.5px solid var(--line);
+}
+
+.mrow:first-of-type {
+  border-top: 0;
+}
+
+.mrow.is-open {
+  background: color-mix(in srgb, var(--green) 4%, transparent);
+}
+
+.mwho {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  padding: 10px 14px;
+  background: var(--sheet);
+}
+
+.mhead .mwho {
+  z-index: 3;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink2);
+}
+
+.mwho-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.mwho strong {
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.mwho > span {
+  color: var(--ink2);
+  font-size: 11.5px;
+  overflow-wrap: anywhere;
+}
+
+.mwho .pill {
+  font-size: 10.5px;
+  padding: 1px 7px;
+}
+
+.mrow .mcells {
+  padding: 6px 8px;
+}
+
+.mcellwrap {
+  display: flex;
+  min-width: 0;
+  padding: 2px;
+}
+
+.mcell {
+  display: flex;
+  width: 100%;
+  height: 46px;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 3px 2px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--fill);
+  color: var(--ink2);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.mcell.is-empty {
+  background: transparent;
+  color: var(--faint);
+  cursor: default;
+}
+
+.mcell.is-lg {
+  background: color-mix(in srgb, var(--green) 12%, transparent);
+  box-shadow: inset 0 0 0 0.5px color-mix(in srgb, var(--green) 24%, transparent);
+  color: var(--good);
+}
+
+.mcell.is-ex {
+  background: color-mix(in srgb, var(--star) 14%, transparent);
+  box-shadow: inset 0 0 0 0.5px color-mix(in srgb, var(--star) 30%, transparent);
+  color: var(--warn);
+}
+
+.mcell.is-in {
+  background: color-mix(in srgb, var(--info) 11%, transparent);
+  box-shadow: inset 0 0 0 0.5px color-mix(in srgb, var(--info) 24%, transparent);
+  color: var(--info);
+}
+
+.mcell.is-filled:hover {
+  transform: translateY(-1px);
+}
+
+.mcell.is-open {
+  box-shadow: 0 0 0 1.5px currentColor;
+}
+
+.mcell:focus-visible {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}
+
+.mval {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mlab {
+  display: none;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.mdots {
+  display: flex;
+  gap: 3px;
+  height: 4px;
+}
+
+.mdots i {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.mdots i.lg {
+  background: var(--green);
+}
+
+.mdots i.ex {
+  background: var(--star);
+}
+
+.mdots i.in {
+  background: var(--info);
+}
+
+.mdetail {
+  grid-column: 1 / -1;
+  padding: 12px 14px 14px;
+  border-top: 0.5px solid var(--line);
+  background: color-mix(in srgb, var(--sheet) 76%, transparent);
+}
+
+.mdetail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mdetail-head strong {
+  font-size: 13.5px;
+}
+
+.mdetail-head span {
+  display: block;
+  margin-top: 1px;
+  color: var(--ink2);
+  font-size: 11.5px;
+}
+
+.mdetail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mdetail-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 7px 9px;
+  border-radius: 9px;
+  background: var(--fill);
+}
+
+.mdetail-name {
+  font-size: 12.5px;
+  overflow-wrap: anywhere;
+}
+
+.mdetail-val {
+  font-size: 12.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.mdetail-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mdetail-total strong {
+  font-size: 15px;
+}
+
+.mdetail-empty {
+  padding: 4px 0;
+  color: var(--ink2);
+  font-size: 13px;
+}
+
+.pay-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 26px 16px;
+  border: 1px dashed var(--line);
+  border-radius: var(--r-sm);
+  color: var(--ink2);
+  font-size: 13px;
+  text-align: center;
+}
+
+.pay-empty strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+/* Formulir pembayaran */
+.pay-form {
+  gap: 16px;
+  padding: var(--s3);
+}
+
+.pay-form-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pay-form-head h2 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+}
+
+.pay-form-head p {
+  max-width: 70ch;
+  margin: 2px 0 0;
+  color: var(--ink2);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.pay-form-head > .pill {
+  flex: none;
+  margin-top: 2px;
+}
+
+.pay-type {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 13px;
   border-radius: var(--r-sm);
   background: var(--fill);
 }
 
+.pay-type .lbl {
+  min-width: 120px;
+}
+
+.pay-type .seg {
+  flex: 1 1 auto;
+}
+
+.pay-block {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pay-block + .pay-block {
+  padding-top: 14px;
+  border-top: 0.5px solid var(--line);
+}
+
+.pay-block-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pay-block-head h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.pay-hint {
+  margin: 0;
+  color: var(--ink2);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.pay-opt {
+  color: var(--faint);
+  font-weight: 400;
+}
+
+.pay-fields {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.pay-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink2);
+  font-size: 12.5px;
+}
+
+.payitem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--r-sm);
+  background: var(--glass);
+  box-shadow: inset 0 0 0 0.5px var(--glass-line);
+}
+
+.payitem-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.payitem-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(170px, 0.8fr);
+  gap: var(--s2);
+}
+
+.payitem-months {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 10px;
+  border-top: 0.5px solid var(--line);
+}
+
+.payitem-label {
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.payitem-label span {
+  display: block;
+  margin-top: 2px;
+  color: var(--ink2);
+  font-weight: 400;
+}
+
+.pay-add {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pay-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--r-sm);
+  background: var(--fill);
+}
+
+.pay-total > span {
+  display: block;
+  color: var(--ink2);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pay-total-val {
+  margin-top: 1px;
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.pay-total-val strong {
+  font-weight: 700;
+}
+
+.pay-total-warn {
+  display: block;
+  color: var(--warn);
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.pay-actions {
+  justify-content: flex-end;
+}
+
+/* Chip bulan/tahun pada formulir pembayaran. */
 .ytabs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  margin-bottom: 6px;
 }
 
 .mchips {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 6px;
   padding: 2px 0 var(--s1);
 }
 
-/* Chip bulan/tahun pada formulir pembayaran. */
-.mchip {
-  height: 34px;
-  padding: 0 10px;
+.pay-form .mchip,
+.pay-form .mchips .mchip {
+  height: 36px;
+  padding: 0;
   border: 0;
-  border-radius: var(--r-pill);
-  background: var(--fill);
-  box-shadow: inset 0 0 0 0.5px var(--sep);
+  border-radius: 9px;
+  background: var(--glass);
+  box-shadow: inset 0 0 0 0.5px var(--glass-line);
   color: var(--ink);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
 }
 
-.mchip:hover {
-  background: color-mix(in srgb, var(--fill) 70%, var(--ink) 10%);
+.pay-form .mchip.yt {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: var(--r-pill);
 }
 
-.mchip[aria-pressed="true"] {
+.pay-form .mchip:hover {
+  background: color-mix(in srgb, var(--fill) 65%, var(--ink) 8%);
+}
+
+.pay-form .mchip[aria-pressed="true"] {
   background: var(--btn);
   box-shadow: none;
   color: var(--btn-ink);
 }
 
-.mchip.yt {
-  height: 32px;
-}
-
-.mchips .mchip {
-  padding: 7px 0;
-  text-align: center;
-}
-
-.mchip.yt[aria-pressed="true"] {
+.pay-form .mchip.yt[aria-pressed="true"] {
   background: var(--ink);
   color: var(--sel-ink);
+}
+
+.pay-form .ytabs .btn.small {
+  margin-left: auto;
+}
+
+/* Riwayat pembayaran */
+.pay-hist-sum {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 14px 16px;
+  border-radius: var(--r-sm);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+.pay-hist-sum div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.pay-hist-sum span {
+  color: var(--ink2);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pay-hist-sum strong {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.pay-hist-sum em {
+  margin-left: auto;
+  color: var(--ink2);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.pay-hist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pay-hist {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  padding: 14px;
+  border-radius: var(--r);
+  background: var(--glass);
+  box-shadow: inset 0 0 0 0.5px var(--glass-line), 0 10px 30px rgba(30, 60, 90, 0.08);
+}
+
+.pay-hist-date {
+  display: flex;
+  min-height: 58px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border-radius: var(--r-sm);
+  background: var(--fill);
+}
+
+.pay-hist-date strong {
+  font-family: var(--display);
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.pay-hist-date span {
+  color: var(--ink2);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pay-hist-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 2px;
+}
+
+.pay-hist-title strong {
+  font-size: 15px;
+}
+
+.pay-hist-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pay-hist-items .pill {
+  padding: 2px 9px;
+  font-size: 11.5px;
+}
+
+.pay-hist-note {
+  display: -webkit-box;
+  max-width: 70ch;
+  margin: 2px 0 0;
+  overflow: hidden;
+  color: var(--ink2);
+  font-size: 12.5px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.pay-hist-side {
+  display: flex;
+  min-width: 140px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.pay-hist-total {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pay-hist-proof {
+  font-size: 12px;
+}
+
+.pay-hist-actions {
+  justify-content: flex-end;
+}
+
+.pay-invoice .tiles {
+  margin-bottom: 0;
+}
+
+/* Daftar invoice memakai tabel di layar lebar dan kartu di layar kecil. */
+.pay-inv-list {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pay-inv-listhead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 2px;
+}
+
+.pay-inv-listhead h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.pay-inv-listhead p {
+  margin: 2px 0 0;
+  color: var(--ink2);
+  font-size: 12px;
+}
+
+.pay-inv-table .tablewrap {
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 0.5px var(--glass-line), var(--shadow);
+}
+
+.pay-inv-table th {
+  background: color-mix(in srgb, var(--fill) 74%, transparent);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pay-inv-table td {
+  vertical-align: middle;
+}
+
+.pay-inv-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.pay-inv-table tbody tr:hover {
+  background: var(--fill);
+}
+
+.pay-inv-table .pay-inv-date {
+  color: var(--ink2);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+.pay-inv-table .pay-inv-total {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pay-inv-late {
+  color: var(--crit);
+}
+
+.pay-inv-rowacts {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.pay-inv-cards {
+  display: none;
+}
+
+/* Pratinjau invoice: kanvas abu lembut dengan kertas putih di tengah. */
+.invdoc-shell {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.invdoc-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 2px;
+}
+
+.invdoc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.invdoc-actions .btn {
+  white-space: nowrap;
+}
+
+.invdoc {
+  padding: 28px;
+  border-radius: 18px;
+  overflow: auto;
+  background: radial-gradient(900px 300px at 50% -80px, #f8fafc 0, transparent 65%), #e9edf2;
+  box-shadow: inset 0 0 0 0.5px var(--line);
+}
+
+.invdoc .inv {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+.pay-inv-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--r);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+.pay-inv-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pay-inv-no {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--link);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.pay-inv-no:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pay-inv-to {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.pay-inv-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  color: var(--ink2);
+  font-size: 12px;
+}
+
+.pay-inv-meta em {
+  color: var(--crit);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.pay-inv-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 0.5px solid var(--line);
+}
+
+.pay-inv-foot > strong {
+  font-family: var(--display);
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.pay-inv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-left: auto;
 }
 
 /* ---------- Pipeline ---------- */

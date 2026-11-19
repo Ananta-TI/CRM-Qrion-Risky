@@ -177,3 +177,345 @@
     font-size: var(--fs-meta);
   }
 }
+
+/* ---------- Pembayaran mitra ---------- */
+@media (max-width: 900px) {
+  .pay-form .pay-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .payitem-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pay-tabbar .seg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .pay-tabbar .seg button {
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+  }
+
+  .pay-filters input[type="search"] {
+    flex: 1 0 100%;
+  }
+
+  .pay-filters > select {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .pay-filter-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+    min-width: 0;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+  }
+
+  .pay-adv {
+    display: none;
+    flex: 1 0 100%;
+    grid-template-columns: 1fr;
+    gap: var(--s1);
+  }
+
+  .pay-adv.is-open {
+    display: grid;
+  }
+
+  .pay-adv select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pay-page {
+    gap: 12px;
+  }
+
+  .pay-page .tiles {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pay-page .tile {
+    padding: 11px 12px;
+    gap: 1px;
+  }
+
+  .pay-page .tile strong {
+    font-size: 20px;
+  }
+
+  .pay-page .tile span,
+  .pay-page .tile em {
+    font-size: 11.5px;
+  }
+
+  .pay-board {
+    gap: 10px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .pay-board-head {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 4px;
+  }
+
+  .pay-legend {
+    justify-content: flex-start;
+  }
+
+  .pay-matrix-scroll {
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .pay-matrix {
+    min-width: 0;
+  }
+
+  .mhead {
+    display: none;
+  }
+
+  .mrow {
+    display: block;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-top: 0;
+    border-radius: var(--r-sm);
+    background: var(--glass);
+    box-shadow: var(--shadow);
+  }
+
+  .mrow:last-child {
+    margin-bottom: 0;
+  }
+
+  .mrow.is-open {
+    background: var(--glass);
+  }
+
+  .mwho {
+    position: static;
+    padding: 0 0 10px;
+    background: transparent;
+  }
+
+  .mrow .mcells {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 4px;
+    padding: 0;
+  }
+
+  .mcell {
+    height: 44px;
+  }
+
+  .mlab {
+    display: block;
+  }
+
+  .mdetail {
+    margin-top: 10px;
+    padding: 10px 0 0;
+    background: transparent;
+  }
+
+  .mdetail-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .mdetail-item .btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .pay-form {
+    padding: var(--s2);
+  }
+
+  .pay-form .pay-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .pay-form-head {
+    flex-wrap: wrap;
+  }
+
+  .pay-type {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .pay-type .lbl {
+    min-width: 0;
+  }
+
+  .pay-type .seg {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 6px;
+  }
+
+  .pay-type .seg button {
+    height: auto;
+    min-height: 38px;
+    padding: 6px 4px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .payitem-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .pay-form .mchips {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .pay-add {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pay-foot {
+    align-items: stretch;
+  }
+
+  .pay-total {
+    width: 100%;
+  }
+
+  .pay-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .pay-actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .pay-hist-sum {
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .pay-hist-sum em {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .pay-hist {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .pay-hist-date span {
+    font-size: 9px;
+    letter-spacing: 0.02em;
+  }
+
+  .pay-hist-side {
+    grid-column: 1 / -1;
+    min-width: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 0.5px solid var(--line);
+  }
+
+  .pay-hist-actions {
+    margin-left: auto;
+  }
+
+  .pay-inv-listhead {
+    align-items: flex-start;
+  }
+
+  .pay-inv-table {
+    display: none;
+  }
+
+  .pay-inv-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .invdoc-shell {
+    gap: 10px;
+  }
+
+  .invdoc-bar {
+    align-items: stretch;
+  }
+
+  .invdoc-bar > .btn {
+    align-self: flex-start;
+  }
+
+  .invdoc-actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .invdoc-actions .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .invdoc {
+    padding: 12px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pay-filters select {
+    padding-left: 10px;
+    padding-right: 32px;
+    background-position: right 10px center;
+  }
+}
+
+@media (max-width: 380px) {
+  .pay-page .tile strong {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 340px) {
+  .pay-page .tiles {
+    grid-template-columns: 1fr;
+  }
+
+  .pay-filters > select {
+    flex: 1 1 calc(50% - var(--s1));
+  }
+
+  .pay-filter-toggle {
+    flex: 1 0 100%;
+  }
+}
